@@ -1,14 +1,32 @@
 <template>
-    <div>
+    <div
+        v-motion
+        :initial="{ opacity: 0, y: 100 }"
+        :visible-once="{ opacity: 1, y: 0 }"
+        :delay="0"
+        :duration="600"
+    >
         <swiper :effect="'flip'" :grabCursor="true" :pagination="{
             dynamicBullets: true,
         }" :navigation="true" :modules="modules" :id="id" class="swiper-wrapper">
             <swiper-slide :class="roleBgClass">
                 <div class="h-100">
-                    <div class="container title-works">
+                    <div class="container title-works"
+                        v-motion
+                        :initial="{ opacity: 0, y: 100 }"
+                        :visible-once="{ opacity: 1, y: 0 }"
+                        :delay="100"
+                        :duration="1000"
+                    >
                         <span v-html="workTitle"></span>
                     </div>
-                    <div class="description-work">
+                    <div class="description-work"
+                        v-motion
+                        :initial="{ opacity: 0, y: 100 }"
+                        :visible-once="{ opacity: 1, y: 0 }"
+                        :delay="100"
+                        :duration="1000"
+                    >
                         <div class="container showreel-work">
                             <div class="row justify-content-between">
                                 <div class="col-sm my-background-block">

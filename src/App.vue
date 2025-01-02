@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import { useRoute, RouterView } from 'vue-router'
 import HeaderPage from './views/HeaderPage.vue'
-import FooterPage from './views/FooterPage.vue'
-import TestimonialBlock from './views/TestimonialBlock.vue'
 import ScrollTop from './views/ScrollTop.vue'
 import { watch } from 'vue'
-
 
 const route = useRoute();
 
@@ -47,14 +44,7 @@ window.onscroll = () => {
             </transition> -->
         </router-view>
     </div>
-    <div id="testimonial-block">
-        <TestimonialBlock />
-    </div>
     <div id="scroll-top">
         <ScrollTop />
-    </div>
-    <div id="footer-block">
-        <!-- Footer -->
-        <FooterPage />
     </div>
 </template>

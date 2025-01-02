@@ -1,6 +1,12 @@
 <template>
-    <div class="footer-bg">
-        <div class="position-relative d-flex justify-content-center footer-info-block">
+    <div class="footer-bg overflow-hidden" v-motion-fade>
+        <div class="position-relative d-flex justify-content-center footer-info-block"
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :visible-once="{ opacity: 1, y: 0 }"
+            :delay="100"
+            :duration="1000"
+        >
             <img class="img-fluid footer-img" src="/images/Footer-resize.png" alt="Minh_with_header.png">
             <div
                 class="position-absolute d-flex border-bottom border-dark border-3 justify-content-between d-none slogan-top">

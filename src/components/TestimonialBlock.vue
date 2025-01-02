@@ -64,8 +64,6 @@
 }
 </style>
 <script lang="ts">
-import { useRoute } from 'vue-router'
-import { computed } from 'vue'
 import '../assets/testimonial.css';
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';

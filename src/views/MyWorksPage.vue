@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import '../assets/my-works.css';
 import MyWorkBlock from '../components/MyWorkBlock.vue';
+import FooterPage from '../components/FooterPage.vue'
 
 function scrollToView(refName: string) {
     const element = document.getElementById(refName)
@@ -12,17 +13,35 @@ function scrollToView(refName: string) {
         <div class="container">
             <div class="row">
                 <div class="text-white col-sm">
-                    <div>
+                    <div
+                        v-motion
+                        :initial="{ opacity: 0, y: 50 }"
+                        :visible-once="{ opacity: 1, y: 0 }"
+                        :delay="50"
+                        :duration="1000"
+                    >
                         <p class="text-uppercase my-works">My Works</p>
                     </div>
-                    <div>
+                    <div
+                        v-motion
+                        :initial="{ opacity: 0, y: 100 }"
+                        :visible-once="{ opacity: 1, y: 0 }"
+                        :delay="100"
+                        :duration="1000"
+                    >
                         <p class="h5">
                             Since 2020, I've self-taught and edited a range of videos, including tutorials,
                             documentaries, K.O.P., TVCs, and short movies
                         </p>
                     </div>
                 </div>
-                <div class="col-sm text-end h4">
+                <div class="col-sm text-end h4"
+                    v-motion
+                    :initial="{ opacity: 0, y: 100 }"
+                    :visible-once="{ opacity: 1, y: 0 }"
+                    :delay="100"
+                    :duration="1000"
+                >
                     <div class="row">
                         <div class="col">
                             <div class="works-header">
@@ -65,7 +84,13 @@ function scrollToView(refName: string) {
             </div>
         </div>
         <div id="scroll-text">
-            <div class="marquee branding-text text-center text-uppercase">
+            <div class="marquee branding-text text-center text-uppercase"
+                v-motion
+                :initial="{ opacity: 0, x: 10 }"
+                :enter="{ opacity: 1, x: 0 }"
+                :delay="100"
+                :duration="1000"
+            >
                 <p class="h1 me-3">Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
                     Backstage Professionalism Premiere Pro After Effects Cap Cut</p>
                 <p class="h1">Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
@@ -186,5 +211,8 @@ function scrollToView(refName: string) {
                 platformDesc='---'
             />
         </div>
+    </div><!-- Footer -->
+    <div id="footer-block">
+        <FooterPage />
     </div>
 </template>
