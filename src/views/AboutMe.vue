@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import '../assets/about-me.css'
+import TestimonialBlock from '../components/TestimonialBlock.vue'
+import FooterPage from '../components/FooterPage.vue'
 </script>
 
 <template>
@@ -7,7 +9,13 @@ import '../assets/about-me.css'
         <div class="desk-angle-1">
             <div class="container pb-5" id="about-me">
                 <div class="row">
-                    <div class="col-md mb-5">
+                    <div class="col-md mb-5"
+                        v-motion
+                        :initial="{ opacity: 0, y: 100 }"
+                        :visible-once="{ opacity: 1, y: 0 }"
+                        :delay="100"
+                        :duration="1000"
+                    >
                         <div class="position-relative d-flex justify-content-center">
                             <img class="avatar img-fluid" src="/images/minh2-edited.png" alt="MinhDarkBG" />
                             <h1
@@ -16,7 +24,13 @@ import '../assets/about-me.css'
                             </h1>
                         </div>
                     </div>
-                    <div class="col-md me-5">
+                    <div class="col-md me-5"
+                        v-motion
+                        :initial="{ opacity: 0, y: 100 }"
+                        :visible-once="{ opacity: 1, y: 0 }"
+                        :delay="100"
+                        :duration="1000"
+                    >
                         <div class="text-white">
                             <div class="text-end" id="nameHeader">
                                 <span class="fw-bold" id="fullName">Minh Nguyen</span>
@@ -60,7 +74,13 @@ import '../assets/about-me.css'
                         </div>
                     </div>
                 </div>
-                <div id="achievements" class="row">
+                <div id="achievements" class="row"
+                    v-motion
+                    :initial="{ opacity: 0, y: 100 }"
+                    :visible-once="{ opacity: 1, y: 0 }"
+                    :delay="100"
+                    :duration="1000"
+                >
                     <div class="col-sm text-center text-white video-editing-block ps-5 pe-5">
                         <div class="text-uppercase title-achievements h2">
                             Video Editing
@@ -88,7 +108,13 @@ import '../assets/about-me.css'
                 </div>
             </div>
             <div id="scroll-text">
-                <div class="marquee branding-text text-center text-uppercase">
+                <div class="marquee branding-text text-center text-uppercase overflow-hidden"
+                    v-motion
+                    :initial="{ opacity: 0, x: 10 }"
+                    :visible-once="{ opacity: 1, x: 0 }"
+                    :delay="100"
+                    :duration="1000"
+                >
                     <p class="h1 me-3">Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
                         Backstage Professionalism Premiere Pro After Effects Cap Cut</p>
                     <p class="h1">Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
@@ -96,5 +122,20 @@ import '../assets/about-me.css'
                 </div>
             </div>
         </div>
+    </div>
+    <!-- TestimonialBlock -->
+    <div id="testimonial-block">
+        <TestimonialBlock
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :visible-once="{ opacity: 1, y: 0 }"
+            :variants="{ custom: { scale: 2 } }"
+            :delay="100"
+            :duration="1000"
+        />
+    </div>
+    <!-- Footer -->
+    <div id="footer-block">
+        <FooterPage />
     </div>
 </template>

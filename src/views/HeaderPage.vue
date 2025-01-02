@@ -6,7 +6,10 @@ let show = ref(false);
 
 function closePopup() {
     show.value = false;
-    window.scrollTo(0, 0);
+    window.scrollTo({
+        top: 0,
+        behavior: 'instant'
+    });
 }
 </script>
 <template>

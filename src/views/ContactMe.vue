@@ -1,6 +1,12 @@
 <template>
     <div class="background">
-        <div class="container contact-block">
+        <div class="container contact-block"
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :visible-once="{ opacity: 1, y: 0 }"
+            :delay="100"
+            :duration="1000"
+        >
             <div class="body-info-contact">
                 <div class="d-flex justify-content-center">
                     <div class="rect">
@@ -59,7 +65,12 @@
             </div>
         </div>
     </div>
+    <!-- Footer -->
+    <div id="footer-block">
+        <FooterPage />
+    </div>
 </template>
 <script lang="ts" setup>
 import '../assets/contact-me.css'
+import FooterPage from '../components/FooterPage.vue'
 </script>
