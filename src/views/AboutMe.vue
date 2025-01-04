@@ -122,20 +122,20 @@ import FooterPage from '../components/FooterPage.vue'
                 </div>
             </div>
         </div>
-    </div>
-    <!-- TestimonialBlock -->
-    <div id="testimonial-block">
-        <TestimonialBlock
-            v-motion
-            :initial="{ opacity: 0, y: 100 }"
-            :visible-once="{ opacity: 1, y: 0 }"
-            :variants="{ custom: { scale: 2 } }"
-            :delay="100"
-            :duration="1000"
-        />
-    </div>
-    <!-- Footer -->
-    <div id="footer-block">
-        <FooterPage />
+        <!-- TestimonialBlock -->
+        <div id="testimonial-block">
+            <TestimonialBlock
+                v-motion
+                :initial="{ opacity: 0, y: 100 }"
+                :visible-once="{ opacity: 1, y: 0 }"
+                :variants="{ custom: { scale: 2 } }"
+                :delay="100"
+                :duration="1000"
+            />
+        </div>
+        <!-- Footer -->
+        <div id="footer-block">
+            <FooterPage />
+        </div>
     </div>
 </template>

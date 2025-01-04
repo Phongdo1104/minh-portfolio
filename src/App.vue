@@ -37,11 +37,10 @@ window.onscroll = () => {
     </div>
     <!-- body -->
     <div class="before-header" id="body">
-        <router-view v-slot="{ Component }">
-            <!-- Use a custom transition or fallback to `fade` -->
-            <component :is="Component" />
-            <!-- <transition :name="route.meta.transition || 'fade'">
-            </transition> -->
+        <router-view v-slot="{ Component, route }">
+            <transition :name="route.meta.transition || 'fade'" mode="out-in">
+                <component :is="Component" />
+            </transition>
         </router-view>
     </div>
     <div id="scroll-top">
