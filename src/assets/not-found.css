@@ -1,0 +1,36 @@
+.background {
+  background-image: url('/images/Workspace.png');
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.body-rect {
+  padding: 2rem;
+  background-color: #d9d9d9;
+}
+.rect {
+  width: calc(30vw + 20vh);
+  padding-top: 3vw;
+}
+
+.btn-return {
+  font-family: 'oswald_regular';
+  color: #ffffff;
+  background: #e15735;
+  padding: 0.5rem 3rem;
+  font-size: 16px;
+}
+
+@media (max-width: 767px) {
+  .contact-block {
+    padding-top: unset;
+  }
+  .body-rect div {
+    padding: 0.5rem 0 0.5rem 0 !important;
+  }
+  .rect {
+    width: calc(40vw + 20vh);
+    padding-top: 2rem;
+  }
+}

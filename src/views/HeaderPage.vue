@@ -44,7 +44,7 @@ function closePopup() {
                         My Projects
                     </RouterLink>
                     <RouterLink to="/contact-me" class="text-decoration-none ms-5">
-                        <button id="get-in-touch" class="ps-5 pt-2 pb-2 pe-5 fw-bold border border-2 border-dark">Get In Touch</button>
+                        <button type="button" id="get-in-touch" class="ps-5 pt-2 pb-2 pe-5 fw-bold border border-2 border-dark">Get In Touch</button>
                     </RouterLink>
                 </div>
             </div>
