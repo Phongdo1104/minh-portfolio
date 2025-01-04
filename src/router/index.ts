@@ -12,31 +12,26 @@ const router = createRouter({
             path: '/',
             name: 'home',
             component: HomePage,
-            meta: { transition: 'fade' }
         },
         {
             path: '/about-me',
             name: 'about-me',
             component: AboutMe,
-            meta: { transition: 'fade' }
         },
         {
             path: '/my-works',
             name: 'my-works',
             component: MyWorks,
-            meta: { transition: 'fade' }
         },
         {
             path: '/contact-me',
             name: 'contact-me',
             component: ContactMe,
-            meta: { transition: 'fade' }
         },
         {
             path: '/:pathMatch(.*)*',
             name: "not-found",
             component: NotFoundPage,
-            meta: { transition: 'fade' }
         }
     ]
 })
