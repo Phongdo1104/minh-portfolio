@@ -68,10 +68,8 @@ function onAfterEnter() {
             <router-view v-slot="{ Component }">
                 <transition :css="false" @before-enter="onBeforeEnter" @enter="onEnter" @after-enter="onAfterEnter"
                     mode="in-out">
-                    <keep-alive>
-                        <component :is="Component" />
-                    </keep-alive>
-                </Transition>
+                    <component :is="Component" />
+                </transition>
             </router-view>
         </div>
         <div id="scroll-top">
