@@ -212,7 +212,8 @@ function scrollToView(refName: string) {
                     platformDesc='---'
                 />
             </div>
-        </div><!-- Footer -->
+        </div>
+        <!-- Footer -->
         <div id="footer-block">
             <FooterPage />
         </div>
