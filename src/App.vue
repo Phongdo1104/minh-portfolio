@@ -1,49 +1,174 @@
 <script setup lang="ts">
-import { useRoute, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import HeaderPage from './views/HeaderPage.vue'
 import ScrollTop from './views/ScrollTop.vue'
-import { watch } from 'vue'
+import { gsap } from "gsap";
+import { computed, reactive } from 'vue';
 
-const route = useRoute();
+let transitionTitle = reactive({
+    title: String(document.title)
+})
 
-watch(() => route.name, () => {
-    let currentRouteName = route.name;
-    const display = ['my-works', 'contact-me'].includes(String(currentRouteName));
-    const testimonialBlock = document.getElementById('testimonial-block');
-    if (!display) {
-        testimonialBlock?.classList.add('d-block');
-        testimonialBlock?.classList.remove('d-none');
+let firstEnter: boolean = true;
+const tl = gsap.timeline();
+
+function onBeforeEnter(el: any) {
+    transitionTitle.title = String(document.title);
+    console.log("before enter");
+    if (!firstEnter) {
+        const transition = document.getElementById('transition');
+        const transitionText = document.getElementById('content-transition');
+
+        transition?.setAttribute('style', 'opacity:1');
+        transition?.setAttribute('style', 'opacity: 1')
+        transitionText?.setAttribute('style', 'opacity:0');
+
+        const headerLinks = document.getElementById('header-block');
+        headerLinks?.setAttribute('style', 'pointer-events: none');
     } else {
-        testimonialBlock?.classList.remove('d-block');
-        testimonialBlock?.classList.add('d-none');
+        console.log('first');
+        const beginTransition = document.getElementById('begin-transition');
+        const beginTextTransition = document.getElementById('begin-content-transition');
+
+        beginTextTransition?.setAttribute('style', 'opacity: 0; transform: translateY(-60px)');
+        tl.to(beginTransition, {
+            duration: 2,
+            opacity: 1,
+            ease: 'slow(0.7,0.7,false)',
+        }).to(beginTextTransition, {
+            duration: .75,
+            opacity: 1,
+            y: 0,
+            ease: 'slow(0.7,0.7,false)'
+        }, '<25%')
     }
-});
+}
 
-window.onscroll = () => {
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollTopBtn?.classList.add("scroll-top-in");
-        scrollTopBtn?.classList.remove("scroll-top-out");
+function onEnter(el: any, done: any) {
+    console.log('on enter');
+
+    if (!firstEnter) {
+        tl.to('#transition', {
+            yPercent: 100,
+            duration: 1,
+            ease: 'power4.out',
+            stagger: .5,
+        }).to('#transition', {
+            '--radiusBottomLeft': '0%',
+            '--radiusBottomRight': '0%',
+            duration: .5,
+            stagger: .1
+        }, '<15%').to('#content-transition', {
+            duration: .5,
+            opacity: 1,
+            ease: 'slow(0.7,0.7,false)',
+            onComplete: () => {
+                firstEnter = false;
+                done();
+            }
+        }, '<25%')
     } else {
-        scrollTopBtn?.classList.add("scroll-top-out");
-        scrollTopBtn?.classList.remove("scroll-top-in");
+        tl.to('#begin-transition', {
+            duration: 1,
+            ease: 'power4.out',
+            stagger: .5,
+        }, '<15%').to('#begin-content-transition', {
+            duration: .5,
+            opacity: 1,
+            ease: 'slow(0.7,0.7,false)',
+            onComplete: done
+        }, '<25%')
+    }
+}
+
+function onAfterEnter() {
+    console.log('after enter');
+    if (!firstEnter) {
+        tl.to('#transition', {
+            duration: 1,
+            yPercent: 200,
+            ease: 'slow(0.7,0.7,false)',
+            stagger: .1,
+            onComplete: () => {
+                console.log('animation done 1');
+                const transition = document.getElementById('transition');
+                transition?.setAttribute('style', 'opacity:0; border-radius: 0 0 0 0');
+            }
+        })
+            .to('#transition', {
+                '--radiusTopLeft': '70%',
+                '--radiusTopRight': '70%',
+                duration: .75,
+                stagger: .1
+            }, '<15%')
+            .to('#transition', {
+                duration: .5,
+                yPercent: -100,
+                ease: 'slow(0.7,0.7,false)',
+                stagger: .1,
+                onComplete: () => {
+                    console.log('animation done 2');
+                    const headerLinks = document.getElementById('header-block');
+                    headerLinks?.setAttribute('style', 'pointer-events: unset');
+                }
+            })
+    } else {
+        firstEnter = false;
+
+        tl.to('#begin-transition', {
+            duration: 2,
+            yPercent: 200,
+            ease: 'slow(0.7,0.7,false)',
+            stagger: .1,
+            onComplete: () => {
+                console.log('animation done 2');
+                const beginTransition = document.getElementById('begin-transition');
+                beginTransition?.setAttribute('style', 'opacity:0; border-radius: 0 0 0 0; transform: translate(0%, -100%)');
+            }
+        })
+            .to('#begin-transition', {
+                '--radiusTopLeft': '80%',
+                '--radiusTopRight': '80%',
+                duration: 1,
+                stagger: .1,
+                onComplete: () => {
+                    console.log('animation done 2');
+                    const headerLinks = document.getElementById('header-block');
+                    headerLinks?.setAttribute('style', 'pointer-events: unset');
+                }
+            }, '<5%')
     }
 }
 </script>
 <template>
-    <div id="header-block">
-        <!-- Header -->
-        <HeaderPage />
-    </div>
-    <!-- body -->
-    <div class="before-header" id="body">
-        <router-view v-slot="{ Component }">
-            <transition name="fade" mode="out-in">
-                <component :is="Component" />
-            </transition>
-        </router-view>
-    </div>
-    <div id="scroll-top">
-        <ScrollTop />
+    <div>
+        <div id="header-block">
+            <!-- Header -->
+            <HeaderPage />
+        </div>
+
+        <!-- body -->
+        <div class="before-header" id="body">
+            <router-view v-slot="{ Component }">
+                <transition :css="false" @before-enter="onBeforeEnter" @enter="onEnter" @after-enter="onAfterEnter"
+                    mode="in-out">
+                    <component :is="Component" />
+                </transition>
+            </router-view>
+        </div>
+        <div id="scroll-top">
+            <ScrollTop />
+        </div>
+        <!-- Animation -->
+        <div id="transition" class="transition-overlay">
+            <div class="text-transition">
+                <h1 id="content-transition">{{ transitionTitle.title }}</h1>
+            </div>
+        </div>
+        <div id="begin-transition" class="transition-overlay-begin">
+            <div class="text-transition">
+                <h1 id="begin-content-transition">{{ transitionTitle.title }}</h1>
+            </div>
+        </div>
     </div>
 </template>

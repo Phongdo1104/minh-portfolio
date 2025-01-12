@@ -74,10 +74,61 @@
 
 .scroll-top-in {
   display: block;
+  opacity: 1;
+  transition: opacity 0.25s ease;
 }
 
 .scroll-top-out {
   display: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* Animation */
+.transition-overlay-begin {
+  opacity: 0;
+  --radiusTopLeft: 0;
+  --radiusTopRight: 0;
+  border-radius: var(--radiusTopLeft) var(--radiusTopRight) 0 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: #e15735;
+  opacity: 1;
+  pointer-events: unset;
+  transform: translate(0%, 0%);
+}
+
+.transition-overlay {
+  opacity: 0;
+  --radiusTopLeft: 0;
+  --radiusTopRight: 0;
+  --radiusBottomLeft: 90%;
+  --radiusBottomRight: 90%;
+  border-radius: var(--radiusTopLeft) var(--radiusTopRight) var(--radiusBottomRight)
+    var(--radiusBottomLeft);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: #e15735;
+  opacity: 1;
+  pointer-events: unset;
+  transform: translate(0%, -100%);
+}
+
+.text-transition {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 
 @media (max-width: 767px) {

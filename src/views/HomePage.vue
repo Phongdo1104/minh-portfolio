@@ -45,8 +45,8 @@
                     </div>
                     <div class="col-md img-profile-block"
                         v-motion
-                        :initial="{ opacity: 0, x: 100 }"
-                        :visible-once="{ opacity: 1, x: 0 }"
+                        :initial="{ opacity: 0, y: 100 }"
+                        :visible-once="{ opacity: 1, y: 0 }"
                         :delay="100"
                         :duration="1000"
                     >
