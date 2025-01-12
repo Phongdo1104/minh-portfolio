@@ -3,61 +3,145 @@ import { RouterView } from 'vue-router'
 import HeaderPage from './views/HeaderPage.vue'
 import ScrollTop from './views/ScrollTop.vue'
 import { gsap } from "gsap";
+import { computed, reactive } from 'vue';
+
+let transitionTitle = reactive({
+    title: String(document.title)
+})
 
 let firstEnter: boolean = true;
-let resetEnterDuration: boolean = true;
 const tl = gsap.timeline();
 
 function onBeforeEnter(el: any) {
-    document.body.classList.add('stop-scrolling');
-    const transition = document.getElementById("transition");
-    if (firstEnter) {
-        transition?.classList.add("transform-scale-y");
+    transitionTitle.title = String(document.title);
+    console.log("before enter");
+    if (!firstEnter) {
+        const transition = document.getElementById('transition');
+        const transitionText = document.getElementById('content-transition');
+
+        transition?.setAttribute('style', 'opacity:1');
+        transition?.setAttribute('style', 'opacity: 1')
+        transitionText?.setAttribute('style', 'opacity:0');
+
+        const headerLinks = document.getElementById('header-block');
+        headerLinks?.setAttribute('style', 'pointer-events: none');
+    } else {
+        console.log('first');
+        const beginTransition = document.getElementById('begin-transition');
+        const beginTextTransition = document.getElementById('begin-content-transition');
+
+        beginTextTransition?.setAttribute('style', 'opacity: 0; transform: translateY(-60px)');
+        tl.to(beginTransition, {
+            duration: 2,
+            opacity: 1,
+            ease: 'slow(0.7,0.7,false)',
+        }).to(beginTextTransition, {
+            duration: .75,
+            opacity: 1,
+            y: 0,
+            ease: 'slow(0.7,0.7,false)'
+        }, '<25%')
     }
-    el.style.scaleX = 1;
-    el.style.opacity = 1;
 }
 
 function onEnter(el: any, done: any) {
-    let enterDuration = 0.1;
-    if (firstEnter && resetEnterDuration) {
-        enterDuration = 0;
-    }
+    console.log('on enter');
 
-    tl.to("#transition li", {
-        duration: .5,
-        scaleX: 1,
-        transformOrigin: "bottom left",
-        stagger: enterDuration,
-        onComplete: () => {
-            const transition = document.getElementById("transition");
-            transition?.classList.remove('pointer-event-none');
-            transition?.classList.remove("transform-scale-y");
-            firstEnter = false;
-            resetEnterDuration = false;
-            done();
-        }
-    })
+    if (!firstEnter) {
+        tl.to('#transition', {
+            yPercent: 100,
+            duration: 1,
+            ease: 'power4.out',
+            stagger: .5,
+        }).to('#transition', {
+            '--radiusBottomLeft': '0%',
+            '--radiusBottomRight': '0%',
+            duration: .5,
+            stagger: .1
+        }, '<15%').to('#content-transition', {
+            duration: .5,
+            opacity: 1,
+            ease: 'slow(0.7,0.7,false)',
+            onComplete: () => {
+                firstEnter = false;
+                done();
+            }
+        }, '<25%')
+    } else {
+        tl.to('#begin-transition', {
+            duration: 1,
+            ease: 'power4.out',
+            stagger: .5,
+        }, '<15%').to('#begin-content-transition', {
+            duration: .5,
+            opacity: 1,
+            ease: 'slow(0.7,0.7,false)',
+            onComplete: done
+        }, '<25%')
+    }
 }
 
 function onAfterEnter() {
-    const transition = document.getElementById("transition");
-    transition?.classList.add('pointer-event-none');
+    console.log('after enter');
+    if (!firstEnter) {
+        tl.to('#transition', {
+            duration: 1,
+            yPercent: 200,
+            ease: 'slow(0.7,0.7,false)',
+            stagger: .1,
+            onComplete: () => {
+                console.log('animation done 1');
+                const transition = document.getElementById('transition');
+                transition?.setAttribute('style', 'opacity:0; border-radius: 0 0 0 0');
+            }
+        })
+            .to('#transition', {
+                '--radiusTopLeft': '70%',
+                '--radiusTopRight': '70%',
+                duration: .75,
+                stagger: .1
+            }, '<15%')
+            .to('#transition', {
+                duration: .5,
+                yPercent: -100,
+                ease: 'slow(0.7,0.7,false)',
+                stagger: .1,
+                onComplete: () => {
+                    console.log('animation done 2');
+                    const headerLinks = document.getElementById('header-block');
+                    headerLinks?.setAttribute('style', 'pointer-events: unset');
+                }
+            })
+    } else {
+        firstEnter = false;
 
-    tl.to("#transition li", {
-        duration: .5,
-        scaleX: 0,
-        transformOrigin: "bottom left",
-        stagger: .1,
-        onComplete: () => {
-            document.body.classList.remove('stop-scrolling');
-        }
-    })
+        tl.to('#begin-transition', {
+            duration: 2,
+            yPercent: 200,
+            ease: 'slow(0.7,0.7,false)',
+            stagger: .1,
+            onComplete: () => {
+                console.log('animation done 2');
+                const beginTransition = document.getElementById('begin-transition');
+                beginTransition?.setAttribute('style', 'opacity:0; border-radius: 0 0 0 0; transform: translate(0%, -100%)');
+            }
+        })
+            .to('#begin-transition', {
+                '--radiusTopLeft': '80%',
+                '--radiusTopRight': '80%',
+                duration: 1,
+                stagger: .1,
+                onComplete: () => {
+                    console.log('animation done 2');
+                    const headerLinks = document.getElementById('header-block');
+                    headerLinks?.setAttribute('style', 'pointer-events: unset');
+                }
+            }, '<5%')
+    }
 }
-
 </script>
 <template>
-    <div class="stop-scrolling">
+    <div>
         <div id="header-block">
             <!-- Header -->
             <HeaderPage />
@@ -76,14 +160,15 @@ function onAfterEnter() {
             <ScrollTop />
         </div>
         <!-- Animation -->
-        <div>
-            <ul id="transition">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div id="transition" class="transition-overlay">
+            <div class="text-transition">
+                <h1 id="content-transition">{{ transitionTitle.title }}</h1>
+            </div>
+        </div>
+        <div id="begin-transition" class="transition-overlay-begin">
+            <div class="text-transition">
+                <h1 id="begin-content-transition">{{ transitionTitle.title }}</h1>
+            </div>
         </div>
     </div>
 </template>

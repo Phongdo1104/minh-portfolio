@@ -1,11 +1,5 @@
 <template>
-    <div
-        v-motion
-        :initial="{ opacity: 0, y: 100 }"
-        :visible-once="{ opacity: 1, y: 0 }"
-        :delay="0"
-        :duration="600"
-    >
+    <div>
         <swiper :effect="'flip'" :grabCursor="true" :pagination="{
             dynamicBullets: true,
         }" :navigation="true" :modules="modules" :id="id" class="swiper-wrapper">
