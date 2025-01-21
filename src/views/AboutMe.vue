@@ -48,19 +48,20 @@ import FooterPage from '../components/FooterPage.vue'
                                     clients' original stories.
                                 </p>
                             </div>
-                            <div class="mb-2">
+                            <div class="deprecated">[WILL BE CHANGED LATER]</div>
+                            <div class="mb-2 deprecated">
                                 <p class="h5">I am proficient in the following tools:</p>
                             </div>
-                            <div class="row col-auto d-flex justify-content-start mb-5" id="tools">
+                            <div class="row col-auto d-flex justify-content-start mb-5 deprecated" id="tools">
                                 <div class="col-auto">
-                                    <img class="logo-tools img-fluid" src="/images/PRIcons.png" alt="PremierIcon" />
+                                    <img class="logo-tools img-fluid" src="/images/PRIcons.png" alt="PremiereIcon" />
                                 </div>
                                 <div class="col-auto ms-3">
-                                    <img class="logo-tools img-fluid" src="/images/AFIcons.png" alt="PremierIcon" />
+                                    <img class="logo-tools img-fluid" src="/images/AFIcons.png" alt="PremiereIcon" />
                                 </div>
                                 <div class="col-auto ms-3">
                                     <img class="logo-tools img-fluid" src="/images/CapCut_logoIcons.png"
-                                        alt="PremierIcon" />
+                                        alt="PremiereIcon" />
                                 </div>
                             </div>
                             <div class="mb-5 h5" id="experience">
