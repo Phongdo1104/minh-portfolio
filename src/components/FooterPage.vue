@@ -21,17 +21,17 @@
                 <div class="slogan-text">together!</div>
             </div>
             <div class="position-absolute info-btn contact-info-block">
-                <div class="row d-flex justify-content-evenly">
-                    <a href="#" class="col-auto btn-prop d-none responsive-icon-black">
+                <div class="row d-flex justify-content-evenly" id="icon-contact">
+                    <a href="https://www.behance.net/minhngeditor" target="_blank" class="col-auto btn-prop d-none responsive-icon-black">
                         <img class="icon-contact" src="/svg/Instagram.svg" alt="">
                     </a>
-                    <a href="#" class="col-auto btn-prop d-flex responsive-icon-white invert-color-icon">
+                    <a href="https://www.behance.net/minhngeditor" target="_blank" class="col-auto btn-prop d-flex responsive-icon-white invert-color-icon">
                         <img class="icon-contact" src="/svg/Instagram.svg" alt="">
                     </a>
-                    <a href="#" class="col-auto btn-prop invert-color-icon">
+                    <a href="https://www.linkedin.com/in/minh-nguyen-smvideoeditor" target="_blank" class="icon-mid-left col-auto btn-prop invert-color-icon">
                         <img class="icon-contact" src="/svg/Linkedin.svg" alt="">
                     </a>
-                    <a href="#" class="col-auto btn-prop invert-color-icon">
+                    <a href="mailto:minh.nguyen.editor@gmail.com" class="icon-mid-right col-auto btn-prop invert-color-icon">
                         <img class="icon-contact" src="/svg/Mail.svg" alt="">
                     </a>
                     <a href="#" class="col-auto btn-prop d-none responsive-icon-black">

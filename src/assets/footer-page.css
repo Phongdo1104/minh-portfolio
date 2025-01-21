@@ -15,6 +15,10 @@
   padding-top: 10vw;
 }
 
+#icon-contact a {
+  scale: 0.7;
+}
+
 @media (min-width: 768px) {
   .slogan-top {
     display: flex !important;
