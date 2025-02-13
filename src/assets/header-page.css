@@ -6,9 +6,15 @@
   width: 45px;
 }
 
+.header-router {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
 #header-links a {
   font-family: 'oswald_light';
-  color: #000000;
+  color: #ffffff;
 }
 
 @font-face {
@@ -17,20 +23,24 @@
 }
 
 #header-block {
-  background-color: #d9d9d9;
+  background-color: #1C1D20;
   width: 100%;
 }
 
 #get-in-touch {
   background: #e15735;
   color: #ffffff;
+  font-family: "oswald_regular";
+  padding: .5rem 3rem;
+  font-weight: 700;
+  border: 2px #1C1D20 !important;
 }
 .w3-button {
   width: 100%;
 }
 .sidebar-navigation {
   overflow: auto;
-  background-color: #d9d9d9;
+  background-color: #f1f1f1;
   z-index: 3;
   width: 100%;
   height: 100%;
@@ -47,7 +57,7 @@
   align-items: center;
 }
 .menu-mobile-bg {
-  background: url('/images/Footer-resize.png');
+  background: url('/images/profile-bg-2.jpg');
   position: fixed;
   width: 50%;
   top: 0;
@@ -69,7 +79,7 @@
 }
 .fixed-header {
   position: fixed;
-  background-color: #d9d9d9;
+  background-color: #f1f1f1;
   height: 80px !important;
   width: 100%;
 }

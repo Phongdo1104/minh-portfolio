@@ -89,6 +89,15 @@
   display: inline-block;
 }
 
+.about-me-info-block {
+  padding-bottom: 5rem;
+}
+
+.about-me-info {
+  color: #ffffff;
+  padding-left: 5rem;
+}
+
 @keyframes marquee {
   0% {
     transform: translate3d(0, 0, 0);
@@ -133,6 +142,9 @@
 }
 
 @media (max-width: 766px) {
+  .about-me-info {
+    padding-left: unset;
+  }
   #nameHeader {
     text-align: center !important;
   }

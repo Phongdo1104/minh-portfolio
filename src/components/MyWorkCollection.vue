@@ -60,7 +60,7 @@ import MyWorkBlock from '../components/MyWorkBlock.vue';
             :delay="0"
             :duration="600"
         >
-            <MyWorkBlock workTitle="Documentary" roleBgClass="documentary-bg"
+            <MyWorkBlock workTitle="Event Recap" roleBgClass="documentary-bg"
                 businessObjBgSrc="/images/MyWorks/DocumentaryBg.png" workInfoBgClass="documentary-bg"
                 id="documentary-block"
                 myBgDescription='CornPress is an internet publisher with a diverse<br>portfolio of websites, including <a href="#">Pointer Clicker</a>'
@@ -109,7 +109,7 @@ import MyWorkBlock from '../components/MyWorkBlock.vue';
             :delay="0"
             :duration="600"
         >
-            <MyWorkBlock workTitle="Short Video" roleBgClass="short-video-bg"
+            <MyWorkBlock workTitle="Street Videography" roleBgClass="short-video-bg"
                 businessObjBgSrc="/images/MyWorks/ShortVideoBg.png" workInfoBgClass="short-video-bg" id="short-video"
                 myBgDescription='CornPress is an internet publisher with a diverse<br>portfolio of websites, including <a href="#">Pointer Clicker</a>'
                 myRoleDescription='Creative Direction / Video Editing / <br> Motion Design / Sound Design'

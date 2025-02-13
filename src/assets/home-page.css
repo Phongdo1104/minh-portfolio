@@ -4,7 +4,7 @@
 }
 
 #fixedHeader.scrolled-out {
-  background-color: #d9d9d9 !important;
+  background-color: #f1f1f1 !important;
   transition: background-color 200ms linear;
 }
 
@@ -12,26 +12,44 @@
   background: #0d160b;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.info-profile {
+.profile-image {
+  padding-top: 50px;
+}
+
+/* .info-profile {
   bottom: 0px;
   z-index: 2;
-}
+} */
 
 .info-profile p {
-  font-size: 23px;
+  font-size: 20px;
   padding-right: 30px;
+  margin-bottom: unset;
 }
 
 .showreel-btn {
-  width: calc(10vw + 10vh);
-  opacity: 40%;
+  display: flex;
+  width: 50% !important;
+  opacity: 50%;
+  padding-bottom: 2rem;
+  filter: invert(7%) sepia(9%) saturate(570%) hue-rotate(180deg) brightness(95%) contrast(98%);
+}
+
+.showreel-btn:hover {
+  filter: invert(39%) sepia(69%) saturate(595%) hue-rotate(334deg) brightness(97%) contrast(90%);
+}
+
+.intro-line {
+  padding-bottom: 2rem;
 }
 
 .profile-parent-block {
-  width: 40%;
-  padding-bottom: 8rem;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 #contact-btn-profile {
@@ -78,7 +96,7 @@
 }
 
 #selected-works-block {
-  background: #d9d9d9;
+  background: #f1f1f1;
 }
 
 #selected-works-block .title {
@@ -86,7 +104,7 @@
 }
 
 .description-works .info-project-block {
-  padding: 5rem 8rem;
+  padding: 8rem 0 5rem 8rem;
 }
 
 .works-collection {
@@ -99,7 +117,7 @@
 }
 
 .sub-description-works {
-  font-family: 'teachers_extra_bold';
+  font-family: 'roboto_regular';
   padding-right: 10rem;
 }
 
@@ -142,6 +160,7 @@
 
 .genre-description {
   margin-right: 10px;
+  font-weight: 800;
 }
 
 .arches-project {
@@ -214,16 +233,30 @@
 }
 
 .profile-block-md {
-  padding-top: 100px;
+  padding-top: 50px !important;
+  display: flex;
+  justify-content: center;
 }
 
 .info-profile div {
   padding-left: 10px;
 }
 
+.border-line {
+    border-bottom: 1px #000000 solid;
+    width: 50%;
+}
+
 @media (max-width: 500px) {
   .marquee-homepage p {
     font-size: 35px !important;
+  }
+}
+
+@media (max-width: 761px) {
+  .profile-parent-block {
+    flex-direction: unset;
+    justify-content: center;
   }
 }
 
@@ -280,12 +313,16 @@
 
 @media (max-width: 991px) {
   .info-profile p {
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
 
   .marquee-homepage p {
     font-size: 50px;
   }
+
+  /* .showreel-btn {
+    width: 70%;
+  } */
 }
 
 @media (max-width: 1100px) {
@@ -325,7 +362,7 @@
   }
 
   .info-project-block {
-    padding: 2rem !important;
+    padding: 0 2rem 2rem 2rem !important;
   }
 
   .logo-project-mobile {
@@ -344,5 +381,8 @@
 @media (max-width: 1199px) {
   .info-profile p {
     font-size: 20px;
+  }
+  .showreel-btn {
+    width: 40% !important;
   }
 }

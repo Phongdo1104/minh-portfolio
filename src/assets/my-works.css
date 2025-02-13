@@ -11,8 +11,9 @@
   font-size: 110px;
 }
 
-.works-header a {
+.works-header span {
   font-family: 'oswald_regular';
+  cursor: pointer;
 }
 
 .workspace .container {

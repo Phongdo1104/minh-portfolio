@@ -58,36 +58,36 @@ window.onscroll = () => {
                             <div class="col">
                                 <div class="works-header">
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('tutorial-video')"
-                                            class="text-white text-decoration-none">Tutorial</a>
+                                        <span @click="scrollToView('tutorial-video')"
+                                            class="text-white text-decoration-none">Tutorial</span>
                                     </div>
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('documentary-block')"
-                                            class="text-white text-decoration-none">Documentary</a>
+                                        <span @click="scrollToView('documentary-block')"
+                                            class="text-white text-decoration-none">Event Recap</span>
                                     </div>
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('tvc-video')"
-                                            class="text-white text-decoration-none">T.V.C</a>
+                                        <span @click="scrollToView('tvc-video')"
+                                            class="text-white text-decoration-none">T.V.C</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="works-header">
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('showreel-block')"
-                                            class="text-white text-decoration-none">Showreel</a>
+                                        <span @click="scrollToView('showreel-block')"
+                                            class="text-white text-decoration-none">Showreel</span>
                                     </div>
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('podcast-highlight')"
-                                            class="text-white text-decoration-none">Podcast Highlights</a>
+                                        <span @click="scrollToView('podcast-highlight')"
+                                            class="text-white text-decoration-none">Podcast Highlights</span>
                                     </div>
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('kop-video')"
-                                            class="text-white text-decoration-none">K.O.P</a>
+                                        <span @click="scrollToView('kop-video')"
+                                            class="text-white text-decoration-none">K.O.P</span>
                                     </div>
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('short-video')"
-                                            class="text-white text-decoration-none">Short Movie</a>
+                                        <span @click="scrollToView('short-video')"
+                                            class="text-white text-decoration-none">Street Videography</span>
                                     </div>
                                 </div>
                             </div>

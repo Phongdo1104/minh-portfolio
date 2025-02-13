@@ -11,14 +11,19 @@ function closePopup() {
         behavior: 'instant'
     });
 }
+
+function scrollToView(refName: string) {
+    const element = document.getElementById(refName)
+    element?.scrollIntoView({ behavior: "smooth" });
+}
 </script>
 <template>
     <div class="d-block d-md-none header-sp fixed-header" id="fixedHeader">
-        <div class="position-absolute top-0 start-0 ms-3">
+        <!-- <div class="position-absolute top-0 start-0 ms-3">
             <RouterLink to="/">
                 <img id="logo-home-page" src="/images/Logo_LightIcon.png" alt="" />
             </RouterLink>
-        </div>
+        </div> -->
         <div class="position-absolute top-0 end-0 mt-3 me-3">
             <div href="#" @click="show = !show">
                 <img id="menu-icon" src="/svg/menu.svg" alt="" />
@@ -26,12 +31,12 @@ function closePopup() {
         </div>
     </div>
     <div class="container-sm d-none d-md-block">
-        <div class="row">
-            <div class="col-md">
+        <div class="header-router">
+            <!-- <div class="col-md">
                 <RouterLink to="/">
                     <img id="logo-home-page" src="/images/Logo_LightIcon.png" alt="" />
                 </RouterLink>
-            </div>
+            </div> -->
             <div class="col-auto row align-self-center">
                 <div class="d-none d-md-block" id="header-links">
                     <RouterLink to="/" class="header-btn text-decoration-none fw-bold text-center" id="home-page">
@@ -43,9 +48,9 @@ function closePopup() {
                     <RouterLink to="/my-works" class="header-btn text-decoration-none ms-5 fw-bold" id="my-projects">
                         My Projects
                     </RouterLink>
-                    <RouterLink to="/contact-me" class="text-decoration-none ms-5">
-                        <button type="button" id="get-in-touch" class="ps-5 pt-2 pb-2 pe-5 fw-bold border border-2 border-dark">Get In Touch</button>
-                    </RouterLink>
+                    <span class="text-decoration-none ms-5">
+                        <button type="button" id="get-in-touch" @click="scrollToView('footer-block')">Get In Touch</button>
+                    </span>
                 </div>
             </div>
         </div>
