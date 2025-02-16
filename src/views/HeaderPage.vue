@@ -26,7 +26,7 @@ function scrollToView(refName: string) {
         </div> -->
         <div class="position-absolute top-0 end-0 mt-3 me-3">
             <div href="#" @click="show = !show">
-                <img id="menu-icon" src="/svg/menu.svg" alt="" />
+                <img id="menu-icon" src="/svg/menu-btn.svg" alt="" />
             </div>
         </div>
     </div>

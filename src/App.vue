@@ -142,7 +142,7 @@ function onAfterEnter() {
         </div>
 
         <!-- body -->
-        <div class="before-header" id="body">
+        <div id="body">
             <router-view v-slot="{ Component }">
                 <transition :css="false" @before-enter="onBeforeEnter" @enter="onEnter" @after-enter="onAfterEnter"
                     mode="in-out">

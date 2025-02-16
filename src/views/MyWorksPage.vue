@@ -23,7 +23,7 @@ window.onscroll = () => {
     <div>
         <div class="workspace">
             <div class="container">
-                <div class="row">
+                <div class="row before-header">
                     <div class="text-white col-sm">
                         <div
                             v-motion

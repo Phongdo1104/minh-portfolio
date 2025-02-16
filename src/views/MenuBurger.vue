@@ -1,5 +1,5 @@
 <template>
-    <div class="menu-burger menu-burger-out" id="scrollTopBtn">
+    <div class="menu-burger menu-burger-out d-md-mobile" id="scrollTopBtn">
         <span class="d-flex" href="#" @click="scrollToTop()">
             <img class="img-fluid" src="/svg/menu-btn.svg" alt="ScrollTop">
         </span>

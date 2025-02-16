@@ -8,7 +8,7 @@ import FooterPage from '../components/FooterPage.vue'
     <div>
         <div class="desk-angle-1">
             <div class="container" id="about-me">
-                <div class="row">
+                <div class="row before-header">
                     <div class="col-md about-me-info-block"
                         v-motion
                         :initial="{ opacity: 0, y: 100 }"

@@ -2,7 +2,7 @@
     <div>
         <div class="profile-block">
             <div class="container-fluid p-0 m-0 profile-block-md">
-                <div class="row">
+                <div class="row before-header">
                     <div class="col-md-5 text-white d-flex align-items-center profile-parent-block">
                         <div v-motion :initial="{ opacity: 0, x: -100 }"
                             :visible-once="{ opacity: 1, x: 0 }" :delay="100" :duration="1000">
