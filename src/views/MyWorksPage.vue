@@ -1,29 +1,19 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
 import '../assets/my-works.css';
 import MyWorkCollection from '../components/MyWorkCollection.vue'
 import FooterPage from '../components/FooterPage.vue'
-
-let showCollection: any = reactive({
-    value: false
-});
 
 function scrollToView(refName: string) {
     const element = document.getElementById(refName)
     element?.scrollIntoView({ behavior: "smooth" });
 }
 
-window.onscroll = () => {
-    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-        showCollection.value = true;
-    }
-}
 </script>
 <template>
     <div>
         <div class="workspace">
             <div class="container">
-                <div class="row">
+                <div class="row before-header">
                     <div class="text-white col-sm">
                         <div
                             v-motion
@@ -58,36 +48,36 @@ window.onscroll = () => {
                             <div class="col">
                                 <div class="works-header">
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('tutorial-video')"
-                                            class="text-white text-decoration-none">Tutorial</a>
+                                        <span @click="scrollToView('tutorial-video')"
+                                            class="text-white text-decoration-none">Tutorial</span>
                                     </div>
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('documentary-block')"
-                                            class="text-white text-decoration-none">Documentary</a>
+                                        <span @click="scrollToView('documentary-block')"
+                                            class="text-white text-decoration-none">Event Recap</span>
                                     </div>
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('tvc-video')"
-                                            class="text-white text-decoration-none">T.V.C</a>
+                                        <span @click="scrollToView('tvc-video')"
+                                            class="text-white text-decoration-none">T.V.C</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="works-header">
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('showreel-block')"
-                                            class="text-white text-decoration-none">Showreel</a>
+                                        <span @click="scrollToView('showreel-block')"
+                                            class="text-white text-decoration-none">Showreel</span>
                                     </div>
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('podcast-highlight')"
-                                            class="text-white text-decoration-none">Podcast Highlights</a>
+                                        <span @click="scrollToView('podcast-highlight')"
+                                            class="text-white text-decoration-none">Podcast Highlights</span>
                                     </div>
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('kop-video')"
-                                            class="text-white text-decoration-none">K.O.P</a>
+                                        <span @click="scrollToView('kop-video')"
+                                            class="text-white text-decoration-none">K.O.P</span>
                                     </div>
                                     <div class="pt-4">
-                                        <a href="#" @click="scrollToView('short-video')"
-                                            class="text-white text-decoration-none">Short Movie</a>
+                                        <span @click="scrollToView('short-video')"
+                                            class="text-white text-decoration-none">Street Videography</span>
                                     </div>
                                 </div>
                             </div>

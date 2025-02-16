@@ -3,12 +3,22 @@
 }
 
 #menu-icon {
-  width: 45px;
+  width: 60px;
+}
+
+.d-md-mobile {
+  display: block;
+}
+
+.header-router {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
 }
 
 #header-links a {
   font-family: 'oswald_light';
-  color: #000000;
+  color: #ffffff;
 }
 
 @font-face {
@@ -17,20 +27,24 @@
 }
 
 #header-block {
-  background-color: #d9d9d9;
+  background-color: #1c1d20;
   width: 100%;
 }
 
 #get-in-touch {
   background: #e15735;
   color: #ffffff;
+  font-family: 'oswald_regular';
+  padding: 0.5rem 3rem;
+  font-weight: 700;
+  border: 2px #1c1d20 !important;
 }
 .w3-button {
   width: 100%;
 }
 .sidebar-navigation {
   overflow: auto;
-  background-color: #d9d9d9;
+  background-color: #f1f1f1;
   z-index: 3;
   width: 100%;
   height: 100%;
@@ -47,7 +61,7 @@
   align-items: center;
 }
 .menu-mobile-bg {
-  background: url('/images/Footer-resize.png');
+  background: url('/images/profile-bg-2.jpg');
   position: fixed;
   width: 50%;
   top: 0;
@@ -69,7 +83,7 @@
 }
 .fixed-header {
   position: fixed;
-  background-color: #d9d9d9;
+  background-color: transparent;
   height: 80px !important;
   width: 100%;
 }
@@ -83,8 +97,15 @@
   filter: invert();
   width: 15%;
 }
-.fixed-header-text a {
+.fixed-header-text a,
+.mobile-contact-me {
   font-family: 'oswald_regular';
   font-size: 20px;
-  color: #000000 !important;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .d-md-mobile {
+    display: none !important;
+  }
 }

@@ -7,9 +7,9 @@ import FooterPage from '../components/FooterPage.vue'
 <template>
     <div>
         <div class="desk-angle-1">
-            <div class="container pb-5" id="about-me">
-                <div class="row">
-                    <div class="col-md mb-5"
+            <div class="container" id="about-me">
+                <div class="row before-header">
+                    <div class="col-md about-me-info-block"
                         v-motion
                         :initial="{ opacity: 0, y: 100 }"
                         :visible-once="{ opacity: 1, y: 0 }"
@@ -17,23 +17,23 @@ import FooterPage from '../components/FooterPage.vue'
                         :duration="1000"
                     >
                         <div class="position-relative d-flex justify-content-center">
-                            <img class="avatar img-fluid" src="/images/minh2-edited.png" alt="MinhDarkBG" />
+                            <img class="avatar img-fluid" src="/images/minh2-edited-v2.png" alt="MinhDarkBG" />
                             <h1
                                 class="position-absolute text-white fw-bold display-1 text-overlay text-center text-uppercase">
                                 About me
                             </h1>
                         </div>
                     </div>
-                    <div class="col-md me-5"
+                    <div class="col-md"
                         v-motion
                         :initial="{ opacity: 0, y: 100 }"
                         :visible-once="{ opacity: 1, y: 0 }"
                         :delay="100"
                         :duration="1000"
                     >
-                        <div class="text-white">
-                            <div class="text-end" id="nameHeader">
-                                <span class="fw-bold" id="fullName">Minh Nguyen</span>
+                        <div class="about-me-info">
+                            <div class="text-start" id="nameHeader">
+                                <span class="fw-bold" id="fullName">Minh Ng.</span>
                             </div>
                             <div class="nav-bar mt-4 mb-5"></div>
                             <div class="mb-5">
@@ -41,28 +41,6 @@ import FooterPage from '../components/FooterPage.vue'
                                     Driven by a passion for digital branding, I am a 24-year-old self-taught social
                                     media video editor.
                                 </p>
-                            </div>
-                            <div class="mb-5">
-                                <p class="h5">
-                                    My focus is on enhancing digital brands with creative professionalism rooted in
-                                    clients' original stories.
-                                </p>
-                            </div>
-                            <div class="deprecated">[WILL BE CHANGED LATER]</div>
-                            <div class="mb-2 deprecated">
-                                <p class="h5">I am proficient in the following tools:</p>
-                            </div>
-                            <div class="row col-auto d-flex justify-content-start mb-5 deprecated" id="tools">
-                                <div class="col-auto">
-                                    <img class="logo-tools img-fluid" src="/images/PRIcons.png" alt="PremiereIcon" />
-                                </div>
-                                <div class="col-auto ms-3">
-                                    <img class="logo-tools img-fluid" src="/images/AFIcons.png" alt="PremiereIcon" />
-                                </div>
-                                <div class="col-auto ms-3">
-                                    <img class="logo-tools img-fluid" src="/images/CapCut_logoIcons.png"
-                                        alt="PremiereIcon" />
-                                </div>
                             </div>
                             <div class="mb-5 h5" id="experience">
                                 <p>Until 2024, I have gained 4 years of experience in the following areas:</p>

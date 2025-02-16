@@ -1,0 +1,62 @@
+/* Sidebar menu */
+#sidebar-block {
+  text-align: center;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  background-color: #d9d9d9;
+  overflow: hidden;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidenav a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000000;
+  transition: 0.3s;
+  font-family: 'oswald_regular';
+  text-align: center;
+}
+
+.sidenav a:hover {
+  color: #000000;
+}
+
+.sidenav .contact-me {
+  padding: 8px;
+  color: #000000;
+  font-family: 'oswald_regular';
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav .close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 30px;
+  font-size: 36px;
+  color: #000000;
+}
+
+.display-sidebar {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .display-sidebar {
+    display: none !important;
+  }
+}

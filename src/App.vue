@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import HeaderPage from './views/HeaderPage.vue'
-import ScrollTop from './views/ScrollTop.vue'
+import { RouterView } from 'vue-router';
+import HeaderPage from './views/HeaderPage.vue';
+import MenuBurger from './views/MenuBurger.vue';
+import SidebarMenu from './components/SidebarBlock.vue';
 import { gsap } from "gsap";
-import { computed, reactive } from 'vue';
+import { reactive } from 'vue';
 
 let transitionTitle = reactive({
     title: String(document.title)
@@ -14,7 +15,6 @@ const tl = gsap.timeline();
 
 function onBeforeEnter(el: any) {
     transitionTitle.title = String(document.title);
-    console.log("before enter");
     if (!firstEnter) {
         const transition = document.getElementById('transition');
         const transitionText = document.getElementById('content-transition');
@@ -26,7 +26,6 @@ function onBeforeEnter(el: any) {
         const headerLinks = document.getElementById('header-block');
         headerLinks?.setAttribute('style', 'pointer-events: none');
     } else {
-        console.log('first');
         const beginTransition = document.getElementById('begin-transition');
         const beginTextTransition = document.getElementById('begin-content-transition');
 
@@ -45,8 +44,6 @@ function onBeforeEnter(el: any) {
 }
 
 function onEnter(el: any, done: any) {
-    console.log('on enter');
-
     if (!firstEnter) {
         tl.to('#transition', {
             yPercent: 100,
@@ -82,7 +79,6 @@ function onEnter(el: any, done: any) {
 }
 
 function onAfterEnter() {
-    console.log('after enter');
     if (!firstEnter) {
         tl.to('#transition', {
             duration: 1,
@@ -90,7 +86,6 @@ function onAfterEnter() {
             ease: 'slow(0.7,0.7,false)',
             stagger: .1,
             onComplete: () => {
-                console.log('animation done 1');
                 const transition = document.getElementById('transition');
                 transition?.setAttribute('style', 'opacity:0; border-radius: 0 0 0 0');
             }
@@ -107,7 +102,6 @@ function onAfterEnter() {
                 ease: 'slow(0.7,0.7,false)',
                 stagger: .1,
                 onComplete: () => {
-                    console.log('animation done 2');
                     const headerLinks = document.getElementById('header-block');
                     headerLinks?.setAttribute('style', 'pointer-events: unset');
                 }
@@ -121,7 +115,6 @@ function onAfterEnter() {
             ease: 'slow(0.7,0.7,false)',
             stagger: .1,
             onComplete: () => {
-                console.log('animation done 2');
                 const beginTransition = document.getElementById('begin-transition');
                 beginTransition?.setAttribute('style', 'opacity:0; border-radius: 0 0 0 0; transform: translate(0%, -100%)');
             }
@@ -132,7 +125,6 @@ function onAfterEnter() {
                 duration: 1,
                 stagger: .1,
                 onComplete: () => {
-                    console.log('animation done 2');
                     const headerLinks = document.getElementById('header-block');
                     headerLinks?.setAttribute('style', 'pointer-events: unset');
                 }
@@ -142,22 +134,23 @@ function onAfterEnter() {
 </script>
 <template>
     <div>
+        <SidebarMenu />
         <div id="header-block">
             <!-- Header -->
             <HeaderPage />
         </div>
+        <div id="menu-burger">
+            <MenuBurger />
+        </div>
 
         <!-- body -->
-        <div class="before-header" id="body">
+        <div id="body">
             <router-view v-slot="{ Component }">
                 <transition :css="false" @before-enter="onBeforeEnter" @enter="onEnter" @after-enter="onAfterEnter"
                     mode="in-out">
                     <component :is="Component" />
                 </transition>
             </router-view>
-        </div>
-        <div id="scroll-top">
-            <ScrollTop />
         </div>
         <!-- Animation -->
         <div id="transition" class="transition-overlay">
