@@ -97,10 +97,11 @@
   filter: invert();
   width: 15%;
 }
-.fixed-header-text a {
+.fixed-header-text a,
+.mobile-contact-me {
   font-family: 'oswald_regular';
   font-size: 20px;
-  color: #000000 !important;
+  color: #000000;
 }
 
 @media (max-width: 768px) {

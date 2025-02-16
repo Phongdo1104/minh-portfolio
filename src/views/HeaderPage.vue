@@ -12,9 +12,13 @@ function closePopup() {
     });
 }
 
-function scrollToView(refName: string) {
+function scrollToView(refName: string, closePopupFlg: boolean = false) {
     const element = document.getElementById(refName)
     element?.scrollIntoView({ behavior: "smooth" });
+
+    if (closePopupFlg) {
+        show.value = false;
+    }
 }
 </script>
 <template>
@@ -63,19 +67,19 @@ function scrollToView(refName: string) {
                 </div>
                 <div class="sidebar-content">
                     <div class="fixed-header-text">
-                        <RouterLink to="/" @click="closePopup()" class="mb-3 text-white text-decoration-none text-center sidebar-item w-100">
+                        <RouterLink to="/" @click="closePopup()" class="mb-3 text-decoration-none text-center sidebar-item w-100">
                             Home
                         </RouterLink>
-                        <RouterLink to="/about-me" @click="closePopup()" class="mb-3 text-white text-decoration-none text-center sidebar-item w-100">
+                        <RouterLink to="/about-me" @click="closePopup()" class="mb-3 text-decoration-none text-center sidebar-item w-100">
                             About me
                         </RouterLink>
-                        <RouterLink to="/my-works" @click="closePopup()" class="mb-3 text-white text-decoration-none text-center sidebar-item w-100">
+                        <RouterLink to="/my-works" @click="closePopup()" class="mb-3 text-decoration-none text-center sidebar-item w-100">
                             My Projects
                         </RouterLink>
-                        <RouterLink to="/contact-me" @click="closePopup()"
-                            class="mb-3 text-white text-decoration-none text-center sidebar-item w-100">
+                        <span to="/contact-me" @click="scrollToView('footer-block', true)"
+                            class="mb-3 text-decoration-none text-center sidebar-item w-100 mobile-contact-me">
                             Get in touch
-                        </RouterLink>
+                        </span>
                     </div>
                 </div>
             </div>
