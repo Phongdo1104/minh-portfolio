@@ -45,7 +45,6 @@ function closeSideBar(skipScrollTop: boolean = false) {
 function scrollToContact() {
     const element = document.getElementById('footer-block')
     element?.scrollIntoView({ behavior: "smooth" });
-    console.log('start');
     closeSideBar(true);
 }
 </script>
