@@ -23,11 +23,6 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
 </script>
 <template>
     <div class="d-block d-md-none header-sp fixed-header" id="fixedHeader">
-        <!-- <div class="position-absolute top-0 start-0 ms-3">
-            <RouterLink to="/">
-                <img id="logo-home-page" src="/images/Logo_LightIcon.png" alt="" />
-            </RouterLink>
-        </div> -->
         <div class="position-absolute top-0 end-0 mt-3 me-3">
             <div href="#" @click="show = !show">
                 <img id="menu-icon" src="/svg/menu-btn.svg" alt="" />
@@ -36,11 +31,6 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
     </div>
     <div class="container-sm d-none d-md-block">
         <div class="header-router">
-            <!-- <div class="col-md">
-                <RouterLink to="/">
-                    <img id="logo-home-page" src="/images/Logo_LightIcon.png" alt="" />
-                </RouterLink>
-            </div> -->
             <div class="col-auto row align-self-center">
                 <div class="d-none d-md-block" id="header-links">
                     <RouterLink to="/" class="header-btn text-decoration-none fw-bold text-center" id="home-page">

@@ -34,11 +34,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="showreel-btn-parent d-none d-md-flex">
-                                <a href="#" class="w-100">
-                                    <img class="showreel-btn" src="/svg/Showreel.svg" alt="Showreel-btn">
-                                </a>
-                            </div> -->
                         </div>
                     </div>
                     <div class="col-md w-100 img-profile-block" v-motion :initial="{ opacity: 0, y: 100 }"
@@ -66,104 +61,9 @@
                         :visible-once="{ opacity: 1, y: 0 }" :delay="50" :duration="1000">
                         My Experience
                     </div>
-                    <!-- <div id="sub-description" v-motion :initial="{ opacity: 0, y: 100 }"
-                        :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="1000">
-                        The great mission comes with its unique stories
-                    </div> -->
                 </div>
             </div>
             <div class="container-fluid m-0 p-0 works-collection">
-                <!-- Pointer Click -->
-                <!-- <div class="overflow-hidden">
-                    <swiper :effect="'flip'" :grabCursor="true" :pagination="{
-                        dynamicBullets: true,
-                    }" :navigation="true" :modules="modules" class="swiper-wrapper-selected-project" v-motion
-                        :initial="{ opacity: 0, x: 100 }" :visible-once="{ opacity: 1, x: 0 }" :delay="100"
-                        :duration="1000">
-                        <swiper-slide>
-                            <div class="row m-0 h-100">
-                                <div class="col-sm p-0 d-md-none-max d-md-block-max">
-                                    <div class="bg-img-block">
-                                        <img class="img-fluid" src="/images/PointerClicker.png" alt="PointerClicker">
-                                    </div>
-                                </div>
-                                <div class="col-xl p-0 d-md-block-mobile d-none-block-mobile logo-project-mobile">
-                                    <img class="img-fluid w-100" src="/images/PointerClicker.png" alt="PointerClicker">
-                                </div>
-                                <div class="col-sm p-0 description-works">
-                                    <div class="pointer-clicker-info-project-block mobile-info-block">
-                                        <div class="text-uppercase display-3 pb-5 title-work">Pointer Clicker</div>
-                                        <div class="h4 genre-description-pointer">
-                                            <div class="text-uppercase">Visual Storytelling / Creative Direction / Video
-                                                Production
-                                            </div>
-                                        </div>
-                                        <div class="pt-5 sub-description-works h4">
-                                            Produce edutaining YouTube videos from website AV tech content
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="row m-0 h-100">
-                                <div class="col-sm-7 p-0 d-md-none-max d-md-block-max">
-                                    <div id="pointer-click-brief-info-block">
-                                        <img class="img-fluid" src="/images/PointerClicker_brief_1.75x.jpg"
-                                            alt="PointerClicker">
-                                    </div>
-                                </div>
-                                <div class="col-xl p-0 d-md-block-mobile d-none-block-mobile logo-project-mobile">
-                                    <img class="img-fluid w-100" src="/images/PointerClicker.png" alt="PointerClicker">
-                                </div>
-                                <div class="col-sm-5 p-0 description-works">
-                                    <div class="pointer-clicker-info-project-block mobile-info-block">
-                                        <div class="text-uppercase display-3 black-text-color-title">Brief</div>
-                                        <div class="pt-5 sub-description-works h4">
-                                            Effectively conveys blog content into the edutaining YouTube videos
-                                        </div>
-                                        <div class="pt-5 h4 genre-description-pointer">
-                                            <div>And this is how I execute it
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="row m-0 h-100">
-                                <div class="col-sm p-0 d-md-none-max d-md-block-max" id="pointer-review-info-bg">
-                                </div>
-                                <div class="col-xl p-0 d-md-block-mobile d-none-block-mobile logo-project-mobile">
-                                    <img class="img-fluid w-100" src="/images/PointerClicker.png" alt="PointerClicker">
-                                </div>
-                                <div class="col-sm p-0 description-works">
-                                    <div class="review-info-project-block mobile-info-block-review">
-                                        <div class="text-uppercase display-3 pb-5 black-text-color-title">Tutorial /
-                                            Review
-                                        </div>
-                                        <div class="h4 genre-description-pointer">
-                                            <span>Mood & Tone:</span> Energetic, Edutaining
-                                        </div>
-                                        <div class="h4 genre-description-pointer">
-                                            <span>Editing Style:</span> Fast-Paced, Montage-Driven
-                                        </div>
-                                        <div class="h4 genre-description-pointer">
-                                            <span>Channel:</span> YouTube
-                                        </div>
-                                    </div>
-                                    <div class="read-more-block">
-                                        <img class="img-fluid" src="/images/PointerClicker_Team.png"
-                                            alt="POINTER CLICKER TEAM">
-                                        <a href="#"
-                                            class="read-more-button read-more-button-left read-more-button-right-mobile">Read
-                                            More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                    </swiper>
-                </div> -->
                 <!-- TVL Media -->
                 <div class="overflow-hidden">
                     <div class="row m-0" v-motion :initial="{ opacity: 0, x: 100 }" :visible-once="{ opacity: 1, x: 0 }"
@@ -296,33 +196,14 @@
 import '../assets/home-page.css'
 import '../assets/show-reel.css'
 
-// Import Swiper Vue.js components
-// import { Swiper, SwiperSlide } from 'swiper/vue';
-
-// Import Swiper styles
-import 'swiper/css';
-
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
 import TestimonialBlock from '../components/TestimonialBlock.vue'
 import FooterPage from '../components/FooterPage.vue'
 
-// import required modules
-// import { Pagination, Navigation } from 'swiper/modules';
-
 export default {
     components: {
-        // Swiper,
-        // SwiperSlide,
         FooterPage,
         TestimonialBlock
     },
-    // setup() {
-    //     return {
-    //         modules: [Pagination, Navigation],
-    //     };
-    // },
     methods: {
         scrollTop() {
             window.scrollTo({ top: 0, left: 0, behavior: "instant" })
