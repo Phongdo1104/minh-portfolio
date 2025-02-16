@@ -1,23 +1,13 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
 import '../assets/my-works.css';
 import MyWorkCollection from '../components/MyWorkCollection.vue'
 import FooterPage from '../components/FooterPage.vue'
-
-let showCollection: any = reactive({
-    value: false
-});
 
 function scrollToView(refName: string) {
     const element = document.getElementById(refName)
     element?.scrollIntoView({ behavior: "smooth" });
 }
 
-window.onscroll = () => {
-    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-        showCollection.value = true;
-    }
-}
 </script>
 <template>
     <div>

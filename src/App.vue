@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import HeaderPage from './views/HeaderPage.vue'
-import MenuBurger from './views/MenuBurger.vue'
+import { RouterView } from 'vue-router';
+import HeaderPage from './views/HeaderPage.vue';
+import MenuBurger from './views/MenuBurger.vue';
+import SidebarMenu from './components/SidebarBlock.vue';
 import { gsap } from "gsap";
-import { computed, reactive } from 'vue';
+import { reactive } from 'vue';
 
 let transitionTitle = reactive({
     title: String(document.title)
@@ -133,6 +134,7 @@ function onAfterEnter() {
 </script>
 <template>
     <div>
+        <SidebarMenu />
         <div id="header-block">
             <!-- Header -->
             <HeaderPage />

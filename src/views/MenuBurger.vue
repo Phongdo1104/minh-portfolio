@@ -1,21 +1,26 @@
 <template>
-    <div class="menu-burger menu-burger-out d-md-mobile" id="scrollTopBtn">
-        <span class="d-flex" href="#" @click="scrollToTop()">
+    <div class="menu-burger menu-burger-out d-md-mobile" id="MenuBurger">
+        <span class="d-flex" href="#" @click="openSideBar()">
             <img class="img-fluid" src="/svg/menu-btn.svg" alt="ScrollTop">
         </span>
     </div>
 </template>
 <script lang="ts" setup>
-function scrollToTop() {
-    console.log("scroll");
-    // window.scrollTo(0, 0);
+
+function openSideBar() {
+    const sidebar = document.getElementById('sidebar-block');
+    if (!sidebar) {
+        return;
+    }
+
+    sidebar.style.width = "300px";
 }
 
 window.onscroll = () => {
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    const menuBurger = document.getElementById("MenuBurger");
     const headerBlock = document.getElementById('header-block')?.getBoundingClientRect();
 
-    if (!headerBlock) {
+    if (!headerBlock || !menuBurger) {
         return;
     }
 
@@ -25,11 +30,11 @@ window.onscroll = () => {
         headerBlock.right <= (window.innerWidth || document.documentElement.clientWidth)
 
     if (!headerVisible) {
-        scrollTopBtn?.classList.add("menu-burger-in");
-        scrollTopBtn?.classList.remove("menu-burger-out");
+        menuBurger.classList.add("menu-burger-in");
+        menuBurger.classList.remove("menu-burger-out");
     } else {
-        scrollTopBtn?.classList.add("menu-burger-out");
-        scrollTopBtn?.classList.remove("menu-burger-in");
+        menuBurger.classList.add("menu-burger-out");
+        menuBurger.classList.remove("menu-burger-in");
     }
 }
 </script>

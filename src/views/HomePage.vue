@@ -297,7 +297,7 @@ import '../assets/home-page.css'
 import '../assets/show-reel.css'
 
 // Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
+// import { Swiper, SwiperSlide } from 'swiper/vue';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -309,7 +309,7 @@ import TestimonialBlock from '../components/TestimonialBlock.vue'
 import FooterPage from '../components/FooterPage.vue'
 
 // import required modules
-import { Pagination, Navigation } from 'swiper/modules';
+// import { Pagination, Navigation } from 'swiper/modules';
 
 export default {
     components: {
@@ -318,11 +318,11 @@ export default {
         FooterPage,
         TestimonialBlock
     },
-    setup() {
-        return {
-            modules: [Pagination, Navigation],
-        };
-    },
+    // setup() {
+    //     return {
+    //         modules: [Pagination, Navigation],
+    //     };
+    // },
     methods: {
         scrollTop() {
             window.scrollTo({ top: 0, left: 0, behavior: "instant" })
