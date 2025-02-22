@@ -4,8 +4,8 @@
             <div class="container-fluid p-0 m-0 profile-block-md">
                 <div class="row before-header">
                     <div class="col-md-5 text-white d-flex align-items-center profile-parent-block">
-                        <div v-motion :initial="{ opacity: 0, x: -100 }"
-                            :visible-once="{ opacity: 1, x: 0 }" :delay="100" :duration="1000">
+                        <div v-motion :initial="{ opacity: 0, x: -100 }" :visible-once="{ opacity: 1, x: 0 }"
+                            :delay="100" :duration="1000">
                             <div class="info-profile">
                                 <div class="showreel-btn d-md-none-max">
                                     <a href="#">
@@ -13,7 +13,8 @@
                                     </a>
                                 </div>
                                 <div class="intro-line">
-                                    <p>I help tell your greatness through the lens of bold <br> and creative storytelling
+                                    <p>I help tell your greatness through the lens of bold <br> and creative
+                                        storytelling
                                         through videos.</p>
                                 </div>
                                 <div class="row col-sm-auto">
@@ -55,6 +56,11 @@
             </div>
         </div>
         <div id="selected-works-block">
+            <div id="view-btn-block">
+                <RouterLink to="/my-works" class="view-btn">
+                    View
+                </RouterLink>
+            </div>
             <div class="title d-none d-md-block">
                 <div class="text-center">
                     <div id="title-works-works" v-motion :initial="{ opacity: 0, y: 100 }"
@@ -65,7 +71,11 @@
             </div>
             <div class="container-fluid m-0 p-0 works-collection">
                 <!-- TVL Media -->
-                <div class="overflow-hidden">
+                <div class="overflow-hidden position-relative">
+                    <div class="preview" id="tvl-media-preview">
+                        <div class="tvl-preview-img preview-view-btn">
+                        </div>
+                    </div>
                     <div class="row m-0" v-motion :initial="{ opacity: 0, x: 100 }" :visible-once="{ opacity: 1, x: 0 }"
                         :delay="100" :duration="1000">
                         <div class="col-sm p-0 d-md-none-max d-md-block-max">
@@ -84,19 +94,26 @@
                                     <div class="border-line"></div>
                                 </div>
                                 <div class="pt-5 sub-description-works h4">
-                                    Produce video products of Shark Thai Van Linh - a Vietnamese KOL on career growth and self development
+                                    Produce video products of Shark Thai Van Linh - a Vietnamese KOL on career growth
+                                    and self development
                                 </div>
                             </div>
                             <div class="read-more-block">
                                 <img class="img-fluid" src="/images/Demonstrate_display.png" alt="TVL Media Info">
-                                <a href="#"
-                                    class="read-more-button read-more-button-left read-more-button-right-mobile">Read
-                                    More</a>
+                                <span class="read-more-button read-more-button-right read-more-button-right-mobile"
+                                    id="tvl-media-more" @mousemove="moveProjectTvl">Read
+                                    More</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Pointer Clicker -->
+                <div class="position-relative">
+                    <div class="preview" id="pointer-clicker-preview">
+                        <div class="pointer-clicker-preview-img preview-view-btn">
+                        </div>
+                    </div>
+                </div>
                 <div class="row m-0" v-motion :initial="{ opacity: 0, x: -100 }" :visible-once="{ opacity: 1, x: 0 }"
                     :delay="100" :duration="1000">
                     <div class="col-xl p-0 d-md-block-mobile d-none-block-mobile logo-project-mobile">
@@ -115,9 +132,9 @@
                         </div>
                         <div class="read-more-block">
                             <img class="img-fluid" src="/images/Demonstrate_display.png" alt="Pointer Clicker Info">
-                            <a href="#"
-                                class="read-more-button read-more-button-center read-more-button-right-mobile">Read
-                                More</a>
+                            <span class="read-more-button read-more-button-center read-more-button-right-mobile"
+                                id="pointer-clicker-more" @mousemove="moveProjectPointerClicker">Read
+                                More</span>
                         </div>
                     </div>
                     <div class="col-sm p-0 d-md-none-max d-md-block-max">
@@ -128,6 +145,10 @@
                 </div>
                 <!-- ARCHES -->
                 <div class="overflow-hidden">
+                    <div class="preview" id="arches-preview">
+                        <div class="arches-preview-img preview-view-btn">
+                        </div>
+                    </div>
                     <div class="row m-0" v-motion :initial="{ opacity: 0, x: 100 }" :visible-once="{ opacity: 1, x: 0 }"
                         :delay="100" :duration="1000">
                         <div class="col-sm p-0 d-md-none-max d-md-block-max">
@@ -151,9 +172,9 @@
                             </div>
                             <div class="read-more-block">
                                 <img class="img-fluid" src="/images/Demonstrate_display.png" alt="JHGO Channel Info">
-                                <a href="#"
-                                    class="read-more-button read-more-button-left read-more-button-right-mobile">Read
-                                    More</a>
+                                <span class="read-more-button read-more-button-right read-more-button-right-mobile"
+                                    id="arches-preview-more" @mousemove="moveProjectArches">Read
+                                    More</span>
                             </div>
                         </div>
                     </div>
@@ -192,22 +213,138 @@
     display: none !important;
 }
 </style>
-<script lang="ts">
-import '../assets/home-page.css'
-import '../assets/show-reel.css'
+<script lang="ts" setup>
+import '../assets/home-page.css';
+import '../assets/show-reel.css';
+import { gsap } from "gsap";
 
-import TestimonialBlock from '../components/TestimonialBlock.vue'
-import FooterPage from '../components/FooterPage.vue'
+import TestimonialBlock from '../components/TestimonialBlock.vue';
+import FooterPage from '../components/FooterPage.vue';
+import { truncateSync } from 'fs';
 
-export default {
-    components: {
-        FooterPage,
-        TestimonialBlock
-    },
-    methods: {
-        scrollTop() {
-            window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+function scrollTop() {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+}
+
+let isInside = false;
+
+const moveStuff = (e: any, targetStr: any, containerStr: any) => {
+    const targetElement = document.getElementById(targetStr);
+    const containerElement = document.getElementById(containerStr);
+    const viewBtn = document.getElementById('view-btn-block');
+
+    if (!containerElement || !targetElement || !viewBtn) return;
+
+    let insideContainer = containerElement.matches(':hover');
+
+    if (insideContainer !== isInside) {
+        isInside = insideContainer;
+        if (isInside) {
+            gsap.to(targetElement, {
+                scale: 1
+            });
+            gsap.to(viewBtn, {
+                scale: 1
+            });
+        } else {
+            gsap.to(targetElement, {
+                scale: 0
+            })
+            gsap.to(viewBtn, {
+                scale: 0
+            });
         }
     }
-};
+}
+
+const moveProject = (e: any, containerStr: any) => {
+    const previewTarget = document.getElementById(containerStr);
+    if (!previewTarget) return;
+
+    const previewRect = previewTarget.getBoundingClientRect();
+    const offsetX = previewRect.width / 2;
+    const offsetY = previewRect.height / 2;
+
+    previewTarget.style.left = e.clientX - offsetX + "px";
+    previewTarget.style.top = e.clientY - offsetY + "px";
+}
+
+const moveViewButton = (e: any, url: string) => {
+    const viewBtn = document.getElementById('view-btn-block');
+    if (!viewBtn) return;
+
+    const viewBtnRect = viewBtn.getBoundingClientRect();
+    const offsetX = viewBtnRect.width / 2;
+    const offsetY = viewBtnRect.height / 2;
+
+    viewBtn.style.left = e.clientX + "px";
+    viewBtn.style.top = e.clientY + "px";
+    console.log(viewBtn.style.left, viewBtn.style.top);
+}
+
+const displayPreviewImg = (e: any) => {
+    let id = e.srcElement.id;
+    switch (id) {
+        case 'tvl-media-more':
+            moveStuff(e, 'tvl-media-preview', 'tvl-media-more');
+            break;
+
+        case 'pointer-clicker-more':
+            moveStuff(e, 'pointer-clicker-preview', 'pointer-clicker-more');
+            break;
+
+        case 'arches-preview-more':
+            moveStuff(e, 'arches-preview', 'arches-preview-more');
+            break;
+
+        default:
+            handleHidePreviewImg();
+            break;
+    }
+}
+
+const handleHidePreviewImg = () => {
+    const tvlMediaPreview = document.getElementById('tvl-media-preview');
+    const pointerClickerPreview = document.getElementById('pointer-clicker-preview');
+    const archesPreview = document.getElementById('arches-preview');
+    const viewBtn = document.getElementById('view-btn-block');
+
+    if (tvlMediaPreview && tvlMediaPreview.style.scale !== '0') {
+        gsap.to(tvlMediaPreview, {
+            scale: 0
+        })
+    }
+
+    if (pointerClickerPreview && pointerClickerPreview.style.scale !== '0') {
+        gsap.to(pointerClickerPreview, {
+            scale: 0
+        })
+    }
+
+    if (archesPreview && archesPreview.style.scale !== '0') {
+        gsap.to(archesPreview, {
+            scale: 0
+        })
+    }
+
+    if (viewBtn && viewBtn.style.scale !== '0') {
+        gsap.to(viewBtn, {
+            scale: 0
+        })
+    }
+    isInside = false;
+}
+
+const moveProjectTvl = (e: any) => {
+    moveProject(e, 'tvl-media-preview');
+    // moveViewButton(e, '');
+}
+const moveProjectPointerClicker = (e: any) => {
+    moveProject(e, 'pointer-clicker-preview');
+}
+const moveProjectArches = (e: any) => {
+    moveProject(e, 'arches-preview');
+}
+
+window.addEventListener('mousemove', displayPreviewImg);
 </script>

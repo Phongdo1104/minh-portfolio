@@ -5,38 +5,20 @@
         }" :navigation="true" :modules="modules" :id="id" class="swiper-wrapper">
             <swiper-slide :class="roleBgClass">
                 <div class="h-100">
-                    <div class="container title-works"
-                        v-motion
-                        :initial="{ opacity: 0, y: 100 }"
-                        :visible-once="{ opacity: 1, y: 0 }"
-                        :delay="100"
-                        :duration="1000"
-                    >
+                    <div class="container title-works" v-motion :initial="{ opacity: 0, y: 100 }"
+                        :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="1000">
                         <span v-html="workTitle"></span>
                     </div>
-                    <div class="description-work"
-                        v-motion
-                        :initial="{ opacity: 0, y: 100 }"
-                        :visible-once="{ opacity: 1, y: 0 }"
-                        :delay="100"
-                        :duration="1000"
-                    >
+                    <div class="description-work" v-motion :initial="{ opacity: 0, y: 100 }"
+                        :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="1000">
                         <div class="container showreel-work">
-                            <div class="row justify-content-between">
-                                <div class="col-sm my-background-block">
+                            <div class="justify-content-start">
+                                <div>
                                     <div class="my-background-title">
-                                        <span>Background</span>
+                                        <span>Description</span>
                                     </div>
                                     <div class="my-background-description">
                                         <span v-html="myBgDescription"></span>
-                                    </div>
-                                </div>
-                                <div class="col-sm my-role-block">
-                                    <div class="my-role-title">
-                                        <span>My Role</span>
-                                    </div>
-                                    <div>
-                                        <span v-html="myRoleDescription"></span>
                                     </div>
                                 </div>
                             </div>
@@ -51,12 +33,20 @@
                 <div class="challenge-objective-block">
                     <div class="container">
                         <div class="row my-role-description">
-                            <div class="col-auto">
-                                <div class="my-role-title">
-                                    <span>Business Objective</span>
+                            <div class="col-sm my-background-block">
+                                <div class="my-background-title">
+                                    <span>My Role</span>
                                 </div>
-                                <div class="text-end">
-                                    <span v-html="businessObj"></span>
+                                <div class="my-background-description">
+                                    <span v-html="myRoleDescription"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm my-role-block">
+                                <div class="my-role-title">
+                                    <span>Editing Style</span>
+                                </div>
+                                <div class="my-background-description">
+                                    <span v-html="editingStyleDesc"></span>
                                 </div>
                             </div>
                         </div>
@@ -65,40 +55,6 @@
             </swiper-slide>
             <swiper-slide :class="workInfoBgClass">
                 <div class="editing-work-block">
-                    <div class="description-work-last">
-                        <div class="container">
-                            <div class="row justify-content-around">
-                                <div class="col-auto my-background-block">
-                                    <div class="video-type">
-                                        <span>Video Type</span>
-                                    </div>
-                                    <div class="my-background-description">
-                                        <span v-html="videoTypeDesc"></span>
-                                    </div>
-                                    <div class="mood-tone">
-                                        <span>Mood & Tone</span>
-                                    </div>
-                                    <div class="my-background-description">
-                                        <span v-html="moodToneDesc"></span>
-                                    </div>
-                                </div>
-                                <div class="col-auto my-role-block">
-                                    <div class="editing-style">
-                                        <span>Editing style</span>
-                                    </div>
-                                    <div class="my-background-description">
-                                        <span v-html="editingStyleDesc"></span>
-                                    </div>
-                                    <div class="platform">
-                                        <span>Platform</span>
-                                    </div>
-                                    <div class="my-background-description">
-                                        <span v-html="platformDesc"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </swiper-slide>
         </swiper>
@@ -160,11 +116,11 @@ export default {
         'id',
         'myBgDescription',
         'myRoleDescription',
-        'businessObj',
-        'videoTypeDesc',
-        'moodToneDesc',
         'editingStyleDesc',
-        'platformDesc',
+        // 'videoTypeDesc',
+        // 'moodToneDesc',
+        // 'businessObj',
+        // 'platformDesc',
     ]
 };
 </script>

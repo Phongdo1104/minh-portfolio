@@ -13,7 +13,8 @@ function openSideBar() {
         return;
     }
 
-    sidebar.style.width = "300px";
+    sidebar.style.width = "400px";
+    sidebar.style.opacity = "100";
 }
 
 window.onscroll = () => {
