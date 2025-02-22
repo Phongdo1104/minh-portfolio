@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <!-- Pointer Clicker -->
-                <div class="position-relative">
+                <div>
                     <div class="preview" id="pointer-clicker-preview">
                         <div class="pointer-clicker-preview-img preview-view-btn">
                         </div>
