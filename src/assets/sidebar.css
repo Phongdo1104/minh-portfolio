@@ -1,6 +1,7 @@
 /* Sidebar menu */
 #sidebar-block {
   text-align: center;
+  white-space: nowrap;
 }
 
 .sidenav {
@@ -49,6 +50,7 @@
   padding-right: 30px;
   font-size: 36px;
   color: #000000;
+  cursor: pointer;
 }
 
 .display-sidebar {

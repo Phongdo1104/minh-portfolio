@@ -26,6 +26,7 @@ function closeSideBar(skipScrollTop: boolean = false) {
     }
 
     sidebar.style.width = "0";
+    sidebar.style.opacity = "0";
 
     if (!skipScrollTop) {
         window.scrollTo({

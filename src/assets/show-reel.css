@@ -113,7 +113,7 @@
 
 .my-background-title span,
 .my-role-title span {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .description-work-last,
@@ -131,6 +131,10 @@
   color: #ffffff;
   text-decoration: none;
   font-family: 'teachers_extra_bold';
+}
+
+.my-background-description {
+  width: 50%;
 }
 
 .my-background-description span,
@@ -170,6 +174,12 @@
 
 .my-role-description {
   justify-content: end;
+}
+
+@media (max-width: 1000px) {
+  .my-background-description {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 900px) {
