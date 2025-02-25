@@ -40,7 +40,7 @@ function scrollToView(refName: string) {
                                             class="text-white text-decoration-none">Tutorial</span>
                                     </div>
                                     <div class="pt-4">
-                                        <span @click="scrollToView('documentary-block')"
+                                        <span @click="scrollToView('event-recap')"
                                             class="text-white text-decoration-none">Event Recap</span>
                                     </div>
                                     <div class="pt-4">
@@ -64,7 +64,7 @@ function scrollToView(refName: string) {
                                             class="text-white text-decoration-none">K.O.P</span>
                                     </div>
                                     <div class="pt-4">
-                                        <span @click="scrollToView('short-video')"
+                                        <span @click="scrollToView('street-video')"
                                             class="text-white text-decoration-none">Street Videography</span>
                                     </div>
                                 </div>

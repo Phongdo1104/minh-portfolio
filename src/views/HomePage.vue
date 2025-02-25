@@ -215,7 +215,7 @@
 </style>
 <script lang="ts" setup>
 import '../assets/home-page.css';
-import '../assets/show-reel.css';
+import '../assets/my-work-partials.css';
 import { gsap } from "gsap";
 
 import TestimonialBlock from '../components/TestimonialBlock.vue';

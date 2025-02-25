@@ -1,0 +1,247 @@
+/* Showreel */
+.showreel {
+  background-image: url('/images/MyWorks/Showreel/showreelThumb1.png');
+  background-color: #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loop-showreel-gif {
+  background-image: url('/images/mediaHolder.png');
+  background-color: #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Tutorial */
+.tech-guide-bg {
+  background-image: url('/images/MyWorks/TechGuide/techThumb2.png');
+  background-color: #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Tutorial */
+.event-highlight-bg {
+  background-image: url('/images/MyWorks/EventRecap/eventThumb1.png');
+  background-color: #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Documentary */
+.motion-tvc-bg {
+  background-image: url('/images/MyWorks/TVC/tvcThumb1.png');
+  background-color: #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* TVC Video */
+.podcast-bg {
+  background-image: url('/images/MyWorks/Podcast/podcastThumb2.png');
+  background-color: #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* K.O.P Video */
+.kop-bg {
+  background-image: url('/images/MyWorks/KOP/kopThumb1.png');
+  background-color: #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Short Video */
+.street-video-bg {
+  background-image: url('/images/mediaHolder.png');
+  background-color: #000000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.work-block {
+  padding: 6vw 0 0;
+}
+
+.title-works {
+  height: 60%;
+  align-items: end;
+  display: flex;
+}
+
+.title-works span {
+  color: #ffffff;
+  font-size: 80px !important;
+}
+
+.title-works span,
+.my-background-title span,
+.video-type span,
+.editing-style span,
+.mood-tone span,
+.platform span,
+.my-role-title span {
+  font-family: 'oswald_bold';
+  font-size: 50px !important;
+}
+
+.my-background-title span,
+.my-role-title span {
+  text-transform: capitalize;
+}
+
+.description-work-last,
+.description-work {
+  background-color: #e15735;
+  color: white;
+  padding: 6vw 0 6vw;
+  height: 40%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.my-background-block div span a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'teachers_extra_bold';
+}
+
+.my-background-description {
+  width: 50%;
+}
+
+.my-background-description span,
+.my-role-description span {
+  font-size: 20px;
+}
+
+.challenge-objective-block {
+  color: white;
+  padding: 6vw 0 6vw;
+  height: 40%;
+  display: grid;
+  align-items: center;
+}
+
+.editing-work-block {
+  height: 100%;
+  align-items: end;
+  display: grid;
+}
+
+.video-showreel-block {
+  height: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-showreel-block img {
+  margin-top: 50px;
+}
+
+.business-obj-img-size {
+  width: 70%;
+}
+
+.my-role-description {
+  justify-content: end;
+}
+
+.enable-dark-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+@media (max-width: 1000px) {
+  .my-background-description {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 900px) {
+  #title-works span {
+    font-size: 50px !important;
+  }
+  .my-background-title span,
+  .video-type span,
+  .editing-style span,
+  .mood-tone span,
+  .platform span,
+  .my-role-title span {
+    font-size: 30px !important;
+  }
+  .my-background-description span,
+  .my-role-description span {
+    font-size: 15px;
+  }
+  .podcast-bg {
+    background-position: center;
+  }
+  .my-role-description div {
+    text-align: start !important;
+  }
+}
+
+@media (max-width: 646px) {
+  .showreel-work {
+    padding: 20vh 2vh 20vh;
+  }
+  .challenge-objective-block {
+    display: grid;
+    align-items: start !important;
+  }
+  .description-work-last {
+    display: grid;
+    align-items: start !important;
+  }
+  .my-role-block {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .my-role-description {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 450px) {
+  #video-showreel-block {
+    height: 60%;
+    display: grid;
+    align-items: center;
+  }
+  .tutorial-challenge-editing {
+    background-position: center;
+  }
+  .business-obj-img-size {
+    width: 100%;
+  }
+  .podcast-bg {
+    background-position: bottom;
+  }
+  .documentary-bg {
+    background-position: top 0% right 30%;
+  }
+  .my-role-description {
+    justify-content: start !important;
+  }
+}
