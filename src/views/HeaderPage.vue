@@ -43,31 +43,46 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
                         My Projects
                     </RouterLink>
                     <span class="text-decoration-none ms-5">
-                        <button type="button" id="get-in-touch" @click="scrollToView('footer-block')">Get In Touch</button>
+                        <button type="button" id="get-in-touch" @click="scrollToView('footer-block')">Get In
+                            Touch</button>
                     </span>
                 </div>
             </div>
         </div>
     </div>
     <div class="header-bg-mobile">
-        <transition :duration="450" name="nested">
-            <div v-if="show" class="d-block d-md-none h1 sidebar-navigation sidebar-block fixed-header-text"
+        <transition name="fade">
+            <div v-if="show" class="hide-header d-block d-md-none h1 sidebar-navigation sidebar-block fixed-header-text"
                 id="fixedSidebar" data-toggle="animation" data-animation-reset="true" data-animation="slide-right">
                 <div class="menu-mobile-bg">
                 </div>
                 <div class="sidebar-content">
                     <div class="fixed-header-text">
-                        <RouterLink to="/" @click="closePopup()" class="mb-3 text-decoration-none text-center sidebar-item w-100">
+                        <RouterLink to="/" @click="closePopup()"
+                            class="mb-3 text-decoration-none text-center sidebar-item w-100" v-motion
+                            :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }"
+                            :duration="500">
                             Home
                         </RouterLink>
-                        <RouterLink to="/about-me" @click="closePopup()" class="mb-3 text-decoration-none text-center sidebar-item w-100">
+                        <RouterLink to="/about-me" @click="closePopup()"
+                            class="mb-3 text-decoration-none text-center sidebar-item w-100"
+                            v-motion
+                            :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :delay="50"
+                            :duration="500">
                             About me
                         </RouterLink>
-                        <RouterLink to="/my-works" @click="closePopup()" class="mb-3 text-decoration-none text-center sidebar-item w-100">
+                        <RouterLink to="/my-works" @click="closePopup()"
+                            class="mb-3 text-decoration-none text-center sidebar-item w-100"
+                            v-motion
+                            :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :delay="100"
+                            :duration="500">
                             My Projects
                         </RouterLink>
                         <span to="/contact-me" @click="scrollToView('footer-block', true)"
-                            class="mb-3 text-decoration-none text-center sidebar-item w-100 mobile-contact-me">
+                            class="mb-3 text-decoration-none text-center sidebar-item w-100 mobile-contact-me"
+                            v-motion
+                            :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :delay="150"
+                            :duration="500">
                             Get in touch
                         </span>
                     </div>
@@ -88,6 +103,7 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
     background: #ccc;
 }
 
+/* Nested transition effect */
 .nested-enter-active,
 .nested-leave-active {
     transition: all 0.15s ease-in-out;
@@ -124,5 +140,20 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
     has been fixed.
   */
     opacity: 0.001;
+}
+
+/* Slide fade Transition effect */
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateX(20px);
+    opacity: 0;
 }
 </style>

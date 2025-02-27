@@ -4,7 +4,8 @@
             dynamicBullets: true,
         }" :navigation="true" :modules="modules" :id="id" class="swiper-wrapper">
             <swiper-slide :class="roleBgClass">
-                <div class="h-100">
+                <div :class="darkenLayerFlg"></div>
+                <div class="content h-100">
                     <div class="container title-works" v-motion :initial="{ opacity: 0, y: 100 }"
                         :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="1000">
                         <span v-html="workTitle"></span>
@@ -26,27 +27,30 @@
                     </div>
                 </div>
             </swiper-slide>
-            <swiper-slide class="challenge-objective">
-                <div class="video-showreel-block container text-center">
-                    <img class="img-fluid business-obj-img-size" :src="businessObjBgSrc" alt="showreel-video">
-                </div>
-                <div class="challenge-objective-block">
-                    <div class="container">
-                        <div class="row my-role-description">
-                            <div class="col-sm my-background-block">
-                                <div class="my-background-title">
-                                    <span>My Role</span>
+            <swiper-slide :class="embeddedThumbnail">
+                <div class="darken-layer"></div>
+                <div class="content">
+                    <div class="video-showreel-block container text-center">
+                        <img class="img-fluid business-obj-img-size" :src="businessObjBgSrc" alt="showreel-video">
+                    </div>
+                    <div class="challenge-objective-block">
+                        <div class="container">
+                            <div class="row my-role-description">
+                                <div class="col-sm my-background-block">
+                                    <div class="my-background-title">
+                                        <span>My Role</span>
+                                    </div>
+                                    <div class="my-background-description">
+                                        <span v-html="myRoleDescription"></span>
+                                    </div>
                                 </div>
-                                <div class="my-background-description">
-                                    <span v-html="myRoleDescription"></span>
-                                </div>
-                            </div>
-                            <div class="col-sm my-role-block">
-                                <div class="my-role-title">
-                                    <span>Editing Style</span>
-                                </div>
-                                <div class="my-background-description">
-                                    <span v-html="editingStyleDesc"></span>
+                                <div class="col-sm my-role-block">
+                                    <div class="my-role-title">
+                                        <span>Editing Style</span>
+                                    </div>
+                                    <div class="my-background-description">
+                                        <span v-html="editingStyleDesc"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -74,6 +78,21 @@
     display: none !important;
 }
 
+.darken-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+.content {
+    z-index: 2;
+    position: sticky;
+}
+
 @media (max-width: 646px) {
 
     .swiper-wrapper .swiper-button-prev,
@@ -84,7 +103,7 @@
 }
 </style>
 <script lang="ts">
-import '../assets/show-reel.css'
+import '../assets/my-work-partials.css'
 
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -117,6 +136,8 @@ export default {
         'myBgDescription',
         'myRoleDescription',
         'editingStyleDesc',
+        'embeddedThumbnail',
+        'darkenLayerFlg'
         // 'videoTypeDesc',
         // 'moodToneDesc',
         // 'businessObj',
