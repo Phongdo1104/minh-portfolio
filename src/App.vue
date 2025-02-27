@@ -5,6 +5,10 @@ import MenuBurger from './views/MenuBurger.vue';
 import SidebarMenu from './components/SidebarBlock.vue';
 import { gsap } from "gsap";
 import { reactive } from 'vue';
+import { scrollToView, scrollTop } from './utils/utils';
+import { useScrollInto } from './stores/scrollInto';
+
+const store = useScrollInto();
 
 let transitionTitle = reactive({
     title: String(document.title)
@@ -60,6 +64,9 @@ function onEnter(el: any, done: any) {
             opacity: 1,
             ease: 'slow(0.7,0.7,false)',
             onComplete: () => {
+                if (store.label !== "" && store.label !== null) {
+                    scrollTop();
+                }
                 firstEnter = false;
                 done();
             }
@@ -88,6 +95,8 @@ function onAfterEnter() {
             onComplete: () => {
                 const transition = document.getElementById('transition');
                 transition?.setAttribute('style', 'opacity:0; border-radius: 0 0 0 0');
+                console.log(store.label);
+                scrollToWorks(store.label);
             }
         })
             .to('#transition', {
@@ -130,6 +139,13 @@ function onAfterEnter() {
                 }
             }, '<5%')
     }
+}
+
+function scrollToWorks(scrollToStr: string) {
+    if (document.title.toLowerCase() === 'my works' && scrollToStr !== "" && scrollToStr !== null) {
+        scrollToView(store.label);
+    }
+    store.setNewLabel("");
 }
 </script>
 <template>

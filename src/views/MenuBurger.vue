@@ -1,7 +1,7 @@
 <template>
     <div class="menu-burger menu-burger-out d-md-mobile" id="MenuBurger">
         <span class="d-flex" href="#" @click="openSideBar()">
-            <img class="img-fluid" src="/svg/menu-btn.svg" alt="ScrollTop">
+            <img class="img-fluid" src="/svg/menu-btn.svg" alt="MenuBurger">
         </span>
     </div>
 </template>

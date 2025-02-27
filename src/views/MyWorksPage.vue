@@ -2,11 +2,7 @@
 import '../assets/my-works.css';
 import MyWorkCollection from '../components/MyWorkCollection.vue'
 import FooterPage from '../components/FooterPage.vue'
-
-function scrollToView(refName: string) {
-    const element = document.getElementById(refName)
-    element?.scrollIntoView({ behavior: "smooth" });
-}
+import { scrollToView } from './../utils/utils';
 
 </script>
 <template>

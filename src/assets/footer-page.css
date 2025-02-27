@@ -33,7 +33,7 @@
   }
 }
 
-@media (min-width: 325px) {
+@media (min-width: 350px) {
   .responsive-icon-white {
     display: none !important;
   }
