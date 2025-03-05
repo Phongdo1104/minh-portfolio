@@ -155,8 +155,10 @@ window.addEventListener('resize', () => {
     if (document.body.clientWidth <= 767) {
         headerMobile.style.opacity = '1';
         headerMobile.style.removeProperty('opacity');
+        headerMobile.style.removeProperty('pointer-events');
     } else {
         headerMobile.style.opacity = '0';
+        headerMobile.style.pointerEvents = "none";
     }
 });
 </script>
