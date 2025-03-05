@@ -51,10 +51,15 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
         </div>
     </div>
     <div class="header-bg-mobile">
-        <transition name="fade">
-            <div v-if="show" class="hide-header d-block d-md-none h1 sidebar-navigation sidebar-block fixed-header-text"
+        <transition appear name="fade">
+            <div v-if="show" class="hide-header h1 sidebar-navigation sidebar-block fixed-header-text"
                 id="fixedSidebar" data-toggle="animation" data-animation-reset="true" data-animation="slide-right">
-                <div class="menu-mobile-bg">
+                <div
+                    class="menu-mobile-bg"
+                    v-motion
+                    :initial="{ opacity: 0, x: -100 }" :enter="{ opacity: 1, x: 0 }" :delay="150"
+                    :duration="500"
+                >
                 </div>
                 <div class="sidebar-content">
                     <div class="fixed-header-text">

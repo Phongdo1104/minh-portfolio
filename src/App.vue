@@ -95,7 +95,6 @@ function onAfterEnter() {
             onComplete: () => {
                 const transition = document.getElementById('transition');
                 transition?.setAttribute('style', 'opacity:0; border-radius: 0 0 0 0');
-                console.log(store.label);
                 scrollToWorks(store.label);
             }
         })
@@ -147,6 +146,19 @@ function scrollToWorks(scrollToStr: string) {
     }
     store.setNewLabel("");
 }
+
+window.addEventListener('resize', () => {
+    const headerMobile = document.getElementById('fixedSidebar');
+
+    if (!headerMobile) return;
+
+    if (document.body.clientWidth <= 767) {
+        headerMobile.style.opacity = '1';
+        headerMobile.style.removeProperty('opacity');
+    } else {
+        headerMobile.style.opacity = '0';
+    }
+});
 </script>
 <template>
     <div>

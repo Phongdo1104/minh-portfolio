@@ -2,7 +2,7 @@
     <div>
         <swiper :effect="'flip'" :grabCursor="true" :pagination="{
             dynamicBullets: true,
-        }" :navigation="true" :modules="modules" :id="id" class="swiper-wrapper">
+        }" :navigation="true" :modules="modules" :id="id" class="swiper-wrapper my-works-blocks">
             <swiper-slide :class="roleBgClass">
                 <div :class="darkenLayerFlg"></div>
                 <div class="content h-100">
@@ -91,6 +91,7 @@
 .content {
     z-index: 2;
     position: sticky;
+    height: 100%;
 }
 
 @media (max-width: 646px) {

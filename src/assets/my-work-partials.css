@@ -73,6 +73,10 @@
   padding: 6vw 0 0;
 }
 
+.my-works-blocks {
+  height: 100vh;
+}
+
 .title-works {
   height: 60%;
   align-items: end;
