@@ -1,6 +1,5 @@
 const scrollToView = (refName: string) => {
     const element = document.getElementById(refName)
-    console.log(element);
     element?.scrollIntoView({ behavior: "smooth" });
 }
 
