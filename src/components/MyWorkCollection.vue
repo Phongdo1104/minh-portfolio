@@ -37,7 +37,7 @@ import MyWorkBlock from '../components/MyWorkBlock.vue';
         <div v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="0" :duration="600">
             <MyWorkBlock workTitle="Motion T.V.C." roleBgClass="motion-tvc-bg"
                 businessObjBgSrc="/images/mediaHolder.png" workInfoBgClass="loop-showreel-gif" id="tvc-video"
-                embeddedLinks='<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1042747953?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="TVC Livwell x S100T - Sống Khỏe Chủ Động Bằng Quét Khuôn Mặt"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>'
+                embeddedLinks='<iframe width="560" height="315" src="https://player.vimeo.com/video/1042747953?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
                 myBgDescription="A video ad showcasing LivWell's face scan feature - a wellness and insurance mobile app, in collaboration with Shark Thai Van Linh, a Vietnamese KOL in business, career, and wellness"
                 myRoleDescription='Photography Direction / Graphic Motion Design / Video Editing'
                 editingStyleDesc='Modern / Vibrant / Data Visualization' embeddedThumbnail='motion-tvc-bg'
@@ -46,7 +46,7 @@ import MyWorkBlock from '../components/MyWorkBlock.vue';
         <div v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="0" :duration="600">
             <MyWorkBlock workTitle="Podcast Highlights" roleBgClass="podcast-bg"
                 businessObjBgSrc="/images/mediaHolder.png" workInfoBgClass="loop-showreel-gif" id="podcast-highlight"
-                embeddedLinks='<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1042747953?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="TVC Livwell x S100T - Sống Khỏe Chủ Động Bằng Quét Khuôn Mặt"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>'
+                embeddedLinks='<iframe width="560" height="315" src="https://player.vimeo.com/video/1042747953?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
                 myBgDescription='A series showcasing the stories of employees at Arches - a business consulting service, reflecting its dynamic, multinational work environmentt'
                 myRoleDescription='Videography / Editing'
                 editingStyleDesc='Professionalism / Dynamic / Energetic / Fast-paced.' embeddedThumbnail='podcast-bg'
@@ -63,7 +63,7 @@ import MyWorkBlock from '../components/MyWorkBlock.vue';
         <div v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="0" :duration="600">
             <MyWorkBlock workTitle="Street Videography" roleBgClass="street-video-bg"
                 businessObjBgSrc="/images/mediaHolder.png" workInfoBgClass="loop-showreel-gif" id="street-video"
-                embeddedLinks='<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1042747953?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="TVC Livwell x S100T - Sống Khỏe Chủ Động Bằng Quét Khuôn Mặt"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>'
+                embeddedLinks='<iframe width="560" height="315" src="https://player.vimeo.com/video/1042747953?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
                 myBgDescription='-' myRoleDescription='Photography Direction / Video Editing / Motion Graphics Design'
                 editingStyleDesc='Modern / Vibrant / Elegant' embeddedThumbnail='street-video-bg'
                 darkenLayerFlg='enable-dark-layer' />

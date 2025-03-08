@@ -32,7 +32,7 @@
                 <div class="content">
                     <div class="video-showreel-block container text-center">
                         <!-- <img class="img-fluid business-obj-img-size" :src="businessObjBgSrc" alt="showreel-video"> -->
-                        <div v-html="embeddedLinks"></div>
+                        <span v-html="embeddedLinks"></span>
                     </div>
                     <div class="challenge-objective-block container">
                         <div class="row my-role-description">
