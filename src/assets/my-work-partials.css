@@ -81,6 +81,9 @@
   height: 60%;
   align-items: end;
   display: flex;
+  text-shadow:
+    2px 2px 5px rgba(0, 0, 0, 0.8),
+    0px 0px 2px rgba(0, 0, 0, 1);
 }
 
 .title-works span {
@@ -102,6 +105,7 @@
 .my-background-title span,
 .my-role-title span {
   text-transform: capitalize;
+  text-shadow: unset !important;
 }
 
 .description-work-last,
@@ -113,6 +117,14 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+}
+
+.my-background-block {
+  padding-left: 1.5rem;
+}
+
+.my-role-block {
+  padding-left: 1.5rem;
 }
 
 .my-background-block div span a {
@@ -132,10 +144,13 @@
 
 .challenge-objective-block {
   color: white;
-  padding: 6vw 0 6vw;
-  height: 40%;
+  /* padding: 6vw 0 6vw; */
+  height: 30%;
   display: grid;
   align-items: center;
+  text-shadow:
+    2px 2px 5px rgba(0, 0, 0, 0.8),
+    0px 0px 2px rgba(0, 0, 0, 1);
 }
 
 .editing-work-block {
@@ -145,15 +160,26 @@
 }
 
 .video-showreel-block {
-  height: 60%;
+  height: 70%;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 }
 
-.video-showreel-block img {
+/* .video-showreel-block img {
   margin-top: 50px;
+} */
+
+.video-showreel-block span {
+  padding-top: 2rem;
+  height: 100%;
+  width: 100%;
+}
+
+.video-showreel-block iframe {
+  height: 100%;
+  width: 100%;
 }
 
 .business-obj-img-size {
@@ -184,18 +210,18 @@
   #title-works span {
     font-size: 50px !important;
   }
-  .my-background-title span,
+  /* .my-background-title span,
   .video-type span,
   .editing-style span,
   .mood-tone span,
   .platform span,
   .my-role-title span {
     font-size: 30px !important;
-  }
-  .my-background-description span,
+  } */
+  /* .my-background-description span,
   .my-role-description span {
     font-size: 15px;
-  }
+  } */
   .podcast-bg {
     background-position: center;
   }

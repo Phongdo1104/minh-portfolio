@@ -20,14 +20,14 @@
                                 <div class="row col-sm-auto">
                                     <div class="col">
                                         <RouterLink to="/about-me" class="text-decoration-none">
-                                            <button id="about-me-btn" class="pt-2 pb-2 w-100 fw-bold border border-2">
+                                            <button id="about-me-btn" class="pt-2 pb-2 w-100 border border-2">
                                                 About Me
                                             </button>
                                         </RouterLink>
                                     </div>
                                     <div class="col">
                                         <button id="contact-btn-profile"
-                                            class="pt-2 pb-2 w-100 fw-bold border border-2 border-dark"
+                                            class="pt-2 pb-2 w-100 border border-2 border-dark"
                                             @click="scrollToView('footer-block')">
                                             Get In Touch
                                         </button>

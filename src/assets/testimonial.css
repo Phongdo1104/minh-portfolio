@@ -8,8 +8,7 @@
 }
 
 .testimonial-block-text {
-  /* font-family: 'redditsans_regular'; */
-  font-family: 'teachers_regular';
+  /* font-family: 'teachers_regular'; */
   font-size: calc(12px + 0.5vw);
   padding: 0 calc(10px + 10vw);
 }
