@@ -55,11 +55,15 @@
 #contact-btn-profile {
   background: #e15735;
   color: #ffffff;
+  font-family: 'oswald_regular';
+  font-size: 20px;
 }
 
 #about-me-btn {
   background: transparent;
   color: #ffffff;
+  font-family: 'oswald_regular';
+  font-size: 20px;
 }
 
 .showreel-btn-parent {
@@ -76,7 +80,7 @@
 }
 
 .text-center #sub-description {
-  font-family: 'teachers_regular';
+  /* font-family: 'teachers_regular'; */
   font-size: 25px;
 }
 
@@ -323,14 +327,12 @@
   }
 }
 
-@media (max-width: 761px) {
+@media (max-width: 767px) {
   .profile-parent-block {
     flex-direction: unset;
     justify-content: center;
   }
-}
 
-@media (max-width: 767px) {
   .mobile-introduction-block {
     padding-top: 5rem;
   }

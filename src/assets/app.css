@@ -3,18 +3,6 @@ img {
 }
 
 @font-face {
-  font-family: 'teachers_regular';
-
-  src: url('/fonts/Teachers-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'teachers_extra_bold';
-
-  src: url('/fonts/Teachers-ExtraBold.ttf');
-}
-
-@font-face {
   font-family: 'oswald_bold';
 
   src: url('/fonts/Oswald-Bold.ttf');
@@ -27,12 +15,6 @@ img {
 }
 
 @font-face {
-  font-family: 'redditsans_regular';
-
-  src: url('/fonts/RedditSans-Regular.ttf');
-}
-
-@font-face {
   font-family: 'roboto_regular';
   src: url('/fonts/Roboto-Regular.ttf');
 }
@@ -40,7 +22,7 @@ img {
 * {
   padding: 0;
   margin: 0;
-  font-family: 'teachers_regular';
+  font-family: 'roboto_regular';
 }
 
 .avatar-shadow {

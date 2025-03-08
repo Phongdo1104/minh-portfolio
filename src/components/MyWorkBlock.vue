@@ -31,26 +31,25 @@
                 <div class="darken-layer"></div>
                 <div class="content">
                     <div class="video-showreel-block container text-center">
-                        <img class="img-fluid business-obj-img-size" :src="businessObjBgSrc" alt="showreel-video">
+                        <!-- <img class="img-fluid business-obj-img-size" :src="businessObjBgSrc" alt="showreel-video"> -->
+                        <div v-html="embeddedLinks"></div>
                     </div>
-                    <div class="challenge-objective-block">
-                        <div class="container">
-                            <div class="row my-role-description">
-                                <div class="col-sm my-background-block">
-                                    <div class="my-background-title">
-                                        <span>My Role</span>
-                                    </div>
-                                    <div class="my-background-description">
-                                        <span v-html="myRoleDescription"></span>
-                                    </div>
+                    <div class="challenge-objective-block container">
+                        <div class="row my-role-description">
+                            <div class="col-sm my-background-block">
+                                <div class="my-background-title">
+                                    <span>My Role</span>
                                 </div>
-                                <div class="col-sm my-role-block">
-                                    <div class="my-role-title">
-                                        <span>Editing Style</span>
-                                    </div>
-                                    <div class="my-background-description">
-                                        <span v-html="editingStyleDesc"></span>
-                                    </div>
+                                <div class="my-background-description">
+                                    <span v-html="myRoleDescription"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm my-role-block">
+                                <div class="my-role-title">
+                                    <span>Editing Style</span>
+                                </div>
+                                <div class="my-background-description">
+                                    <span v-html="editingStyleDesc"></span>
                                 </div>
                             </div>
                         </div>
@@ -138,7 +137,8 @@ export default {
         'myRoleDescription',
         'editingStyleDesc',
         'embeddedThumbnail',
-        'darkenLayerFlg'
+        'darkenLayerFlg',
+        'embeddedLinks'
         // 'videoTypeDesc',
         // 'moodToneDesc',
         // 'businessObj',
