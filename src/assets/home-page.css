@@ -37,10 +37,15 @@
   opacity: 50%;
   padding-bottom: 2rem;
   filter: invert(7%) sepia(9%) saturate(570%) hue-rotate(180deg) brightness(95%) contrast(98%);
+  transition: filter 0.2s ease;
 }
 
 .showreel-btn:hover {
   filter: invert(39%) sepia(69%) saturate(595%) hue-rotate(334deg) brightness(97%) contrast(90%);
+}
+
+.showreel-btn span {
+  cursor: pointer;
 }
 
 .intro-line {

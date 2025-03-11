@@ -126,6 +126,10 @@
   opacity: 0.5;
 }
 
+#showreel-btn-svg {
+  cursor: pointer;
+}
+
 @media (max-width: 1199px) {
   .text-overlay {
     font-size: calc(5vw + 2.5vh) !important;

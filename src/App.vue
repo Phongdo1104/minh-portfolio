@@ -3,12 +3,25 @@ import { RouterView } from 'vue-router';
 import HeaderPage from './views/HeaderPage.vue';
 import MenuBurger from './views/MenuBurger.vue';
 import SidebarMenu from './components/SidebarBlock.vue';
+import ShowReelVideo from './components/ShowReelVideo.vue';
+
 import { gsap } from "gsap";
-import { reactive } from 'vue';
+import { reactive, watch, ref } from 'vue';
+import { useRoute } from 'vue-router';
 import { scrollToView, scrollTop } from './utils/utils';
 import { useScrollInto } from './stores/scrollInto';
 
 const store = useScrollInto();
+
+const route = useRoute();
+
+const displayShowreel = ref(false);
+
+watch(() => route.name, () => {
+    let currentRouteName = route.name;
+    const display = ['home', 'about-me'].includes(String(currentRouteName));
+    displayShowreel.value = display;
+});
 
 let transitionTitle = reactive({
     title: String(document.title)
@@ -164,6 +177,7 @@ window.addEventListener('resize', () => {
 </script>
 <template>
     <div>
+        <ShowReelVideo v-if="displayShowreel" />
         <SidebarMenu />
         <div id="header-block">
             <!-- Header -->

@@ -56,9 +56,8 @@
                     </div>
                 </div>
             </swiper-slide>
-            <swiper-slide :class="workInfoBgClass">
-                <div class="editing-work-block">
-                </div>
+            <swiper-slide>
+                <ThumbnailVideo :videoPath="thumbnailUrl" />
             </swiper-slide>
         </swiper>
     </div>
@@ -101,6 +100,10 @@
         height: 60%;
     }
 }
+
+.video-block-container {
+    pointer-events: none;
+}
 </style>
 <script lang="ts">
 import '../assets/my-work-partials.css'
@@ -117,10 +120,13 @@ import 'swiper/css/navigation';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 
+import ThumbnailVideo from './ThumbnailVideo.vue';
+
 export default {
     components: {
         Swiper,
         SwiperSlide,
+        ThumbnailVideo
     },
     setup() {
         return {
@@ -138,11 +144,8 @@ export default {
         'editingStyleDesc',
         'embeddedThumbnail',
         'darkenLayerFlg',
-        'embeddedLinks'
-        // 'videoTypeDesc',
-        // 'moodToneDesc',
-        // 'businessObj',
-        // 'platformDesc',
+        'embeddedLinks',
+        'thumbnailUrl'
     ]
 };
 </script>
