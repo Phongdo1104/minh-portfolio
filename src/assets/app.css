@@ -53,6 +53,22 @@ img {
   width: 100%;
 }
 
+.showreel-view {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.showreel-hide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-js .vjs-control-bar {
+  display: none !important;
+}
+
 .menu-burger {
   position: fixed;
   top: 20px;

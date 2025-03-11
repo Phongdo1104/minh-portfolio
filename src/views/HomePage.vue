@@ -8,9 +8,9 @@
                             :delay="100" :duration="1000">
                             <div class="info-profile">
                                 <div class="showreel-btn d-md-none-max">
-                                    <a href="#">
+                                    <span @click="displayShowreelVideo('showreel-container')">
                                         <img class="img-fluid" src="/svg/Vector.svg" alt="Showreel-btn">
-                                    </a>
+                                    </span>
                                 </div>
                                 <div class="intro-line">
                                     <p>I help tell your greatness through the lens of bold <br> and creative
@@ -220,6 +220,7 @@ import '../assets/home-page.css';
 import '../assets/my-work-partials.css';
 import { useScrollInto } from '@/stores/scrollInto';
 import { scrollTop, scrollToView } from '@/utils/utils';
+import { displayShowreelVideo } from './../utils/showreelVideo';
 
 import TestimonialBlock from '../components/TestimonialBlock.vue';
 import FooterPage from '../components/FooterPage.vue';

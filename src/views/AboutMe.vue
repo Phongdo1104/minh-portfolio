@@ -2,6 +2,8 @@
 import '../assets/about-me.css'
 import TestimonialBlock from '../components/TestimonialBlock.vue'
 import FooterPage from '../components/FooterPage.vue'
+
+import { displayShowreelVideo } from './../utils/showreelVideo';
 </script>
 
 <template>
@@ -70,9 +72,9 @@ import FooterPage from '../components/FooterPage.vue'
                             documentaries, K.O.P., and TVCs.</div>
                     </div>
                     <div class="col-sm text-white d-flex align-items-center justify-content-center p-5">
-                        <a href="#">
+                        <span href="#" id="showreel-btn-svg" @click="displayShowreelVideo('showreel-container')">
                             <img class="show-reel img-fluid" src="/svg/Showreel.svg" alt="showReelButton">
-                        </a>
+                        </span>
                     </div>
                     <div class="col-sm text-center text-white marketing-block ps-5 pe-5">
                         <div class="text-uppercase title-achievements h2">
