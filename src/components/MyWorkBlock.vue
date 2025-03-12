@@ -30,12 +30,20 @@
             <swiper-slide :class="embeddedThumbnail">
                 <div class="darken-layer"></div>
                 <div class="content">
-                    <div class="video-showreel-block container text-center">
-                        <!-- <img class="img-fluid business-obj-img-size" :src="businessObjBgSrc" alt="showreel-video"> -->
-                        <span v-html="embeddedLinks"></span>
-                    </div>
                     <div class="challenge-objective-block container">
-                        <div class="row my-role-description">
+                        <div v-if="embeddedLinksMobile !== ''">
+                            <div class="embedded-link-wrapper embedded-desktop-hide embedded-desktop-block">
+                                <div v-html="embeddedLinks"></div>
+                            </div>
+                            <div class="embedded-mobile-hide embedded-link-mobile-block" v-html="embeddedLinksMobile">
+                            </div>
+                        </div>
+                        <div v-else>
+                            <div class="embedded-link-wrapper">
+                                <div v-html="embeddedLinks"></div>
+                            </div>
+                        </div>
+                        <div class="row embedded-info">
                             <div class="col-sm my-background-block">
                                 <div class="my-background-title">
                                     <span>My Role</span>
@@ -105,7 +113,7 @@
     pointer-events: none;
 }
 </style>
-<script lang="ts">
+<script lang="ts" setup>
 import '../assets/my-work-partials.css'
 
 // Import Swiper Vue.js components
@@ -122,30 +130,21 @@ import { Pagination, Navigation } from 'swiper/modules';
 
 import ThumbnailVideo from './ThumbnailVideo.vue';
 
-export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-        ThumbnailVideo
-    },
-    setup() {
-        return {
-            modules: [Pagination, Navigation],
-        };
-    },
-    props: [
-        'workTitle',
-        'roleBgClass',
-        'workInfoBgClass',
-        'businessObjBgSrc',
-        'id',
-        'myBgDescription',
-        'myRoleDescription',
-        'editingStyleDesc',
-        'embeddedThumbnail',
-        'darkenLayerFlg',
-        'embeddedLinks',
-        'thumbnailUrl'
-    ]
-};
+const props = defineProps([
+    'workTitle',
+    'roleBgClass',
+    'workInfoBgClass',
+    'businessObjBgSrc',
+    'id',
+    'myBgDescription',
+    'myRoleDescription',
+    'editingStyleDesc',
+    'embeddedThumbnail',
+    'darkenLayerFlg',
+    'embeddedLinks',
+    'thumbnailUrl',
+    'embeddedLinksMobile'
+]);
+
+const modules = [Pagination, Navigation];
 </script>
