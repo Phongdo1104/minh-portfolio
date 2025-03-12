@@ -14,7 +14,8 @@ import MyWorkBlock from '../components/MyWorkBlock.vue';
                 myRoleDescription='Creative Direction /Video Editing / Sound Design'
                 editingStyleDesc='Cinematic / Fast-paced / Text Overlays' embeddedThumbnail='showreel'
                 darkenLayerFlg=''
-                thumbnailUrl="/images/MyWorks/Showreel/Showreel.mp4"/>
+                thumbnailUrl="/images/MyWorks/Showreel/Showreel.mp4"
+                embeddedLinksMobile="" />
         </div>
         <div v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="0" :duration="600">
             <MyWorkBlock workTitle="Tech Guide" roleBgClass="tech-guide-bg" businessObjBgSrc="/images/mediaHolder.png"
@@ -24,13 +25,15 @@ import MyWorkBlock from '../components/MyWorkBlock.vue';
                 myRoleDescription='Videography / Video Production / Scriptwriting'
                 editingStyleDesc='Tech Guide / Product Showcase / Tutorial B-Roll' embeddedThumbnail='tech-guide-bg'
                 darkenLayerFlg=''
-                thumbnailUrl="/images/MyWorks/TechGuide/Tech.mp4" />
+                thumbnailUrl="/images/MyWorks/TechGuide/Tech.mp4"
+                embeddedLinksMobile="" />
         </div>
         <!-- embeddedLinks='<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flinhthaiofficial%2Fvideos%2F604544468898831%2F%3Frdid%3DX22N0c9R9eNsqzJ5%23&width=560&show_text=false&height=996&appId" width="560" height="996" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>' -->
         <div v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="0" :duration="600">
             <MyWorkBlock workTitle="Event Highlights" roleBgClass="event-highlight-bg"
                 businessObjBgSrc="/images/mediaHolder.png" workInfoBgClass="loop-showreel-gif" id="event-recap"
-                embeddedLinks='<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flinhthaiofficial%2Fvideos%2F604544468898831%2F&width=620&show_text=false&height=1102&appId" width="620" height="1102" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>'
+                embeddedLinks='<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flinhthaiofficial%2Fvideos%2F604544468898831%2F&width=2320&show_text=false&height=1305&appId" width="2320" height="1305" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>'
+                embeddedLinksMobile='<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flinhthaiofficial%2Fvideos%2F604544468898831%2F&width=300&show_text=false&height=533&appId" width="300" height="533" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>'
                 myBgDescription='Event highlights featuring Shark Thai Van Linh - a KOL in career growth and self-development, as guest speaker at the Huawei MatePad Pro launch'
                 myRoleDescription='Photography Direction / Videography / Video Editing'
                 editingStyleDesc='Modern / Vibrant / Elegant' embeddedThumbnail='event-highlight-bg'
@@ -45,7 +48,8 @@ import MyWorkBlock from '../components/MyWorkBlock.vue';
                 myRoleDescription='Photography Direction / Graphic Motion Design / Video Editing'
                 editingStyleDesc='Modern / Vibrant / Data Visualization' embeddedThumbnail='motion-tvc-bg'
                 darkenLayerFlg=''
-                thumbnailUrl="/images/MyWorks/TVC/TVC.mp4" />
+                thumbnailUrl="/images/MyWorks/TVC/TVC.mp4"
+                embeddedLinksMobile="" />
         </div>
         <div v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="0" :duration="600">
             <MyWorkBlock workTitle="Podcast Highlights" roleBgClass="podcast-bg"
@@ -55,7 +59,8 @@ import MyWorkBlock from '../components/MyWorkBlock.vue';
                 myRoleDescription='Videography / Editing'
                 editingStyleDesc='Professionalism / Dynamic / Energetic / Fast-paced.' embeddedThumbnail='podcast-bg'
                 darkenLayerFlg='enable-dark-layer'
-                thumbnailUrl="/images/MyWorks/Podcast/Podcast.mp4" />
+                thumbnailUrl="/images/MyWorks/Podcast/Podcast.mp4"
+                embeddedLinksMobile="" />
         </div>
         <div v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="0" :duration="600">
             <MyWorkBlock workTitle="K.O.P / Talking Head" roleBgClass="kop-bg"
@@ -64,7 +69,8 @@ import MyWorkBlock from '../components/MyWorkBlock.vue';
                 myBgDescription='Handy tips with Huawei MatePad Pro 12.2” shared by Shark Thai Van Linh - a KOL on career growth and self development'
                 myRoleDescription='Photography Direction / Video Editing / Motion Graphics Design'
                 editingStyleDesc='Modern / Vibrant / Elegant' embeddedThumbnail='kop-bg' darkenLayerFlg=''
-                thumbnailUrl="/images/MyWorks/KOP/KOP.mp4" />
+                thumbnailUrl="/images/MyWorks/KOP/KOP.mp4"
+                embeddedLinksMobile="" />
         </div>
         <div v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="0" :duration="600">
             <MyWorkBlock workTitle="Street Videography" roleBgClass="street-video-bg"
@@ -73,7 +79,8 @@ import MyWorkBlock from '../components/MyWorkBlock.vue';
                 myBgDescription='-' myRoleDescription='Photography Direction / Video Editing / Motion Graphics Design'
                 editingStyleDesc='Modern / Vibrant / Elegant' embeddedThumbnail='street-video-bg'
                 darkenLayerFlg='enable-dark-layer'
-                thumbnailUrl="/images/MyWorks/Showreel/Showreel.mp4" />
+                thumbnailUrl="/images/MyWorks/Showreel/Showreel.mp4"
+                embeddedLinksMobile="" />
         </div>
     </div>
 </template>

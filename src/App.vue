@@ -3,7 +3,7 @@ import { RouterView } from 'vue-router';
 import HeaderPage from './views/HeaderPage.vue';
 import MenuBurger from './views/MenuBurger.vue';
 import SidebarMenu from './components/SidebarBlock.vue';
-import ShowReelVideo from './components/ShowReelVideo.vue';
+// import ShowReelVideo from './components/ShowReelVideo.vue';
 
 import { gsap } from "gsap";
 import { reactive, watch, ref } from 'vue';
@@ -177,7 +177,7 @@ window.addEventListener('resize', () => {
 </script>
 <template>
     <div>
-        <ShowReelVideo v-if="displayShowreel" />
+        <!-- <ShowReelVideo v-if="displayShowreel" /> -->
         <SidebarMenu />
         <div id="header-block">
             <!-- Header -->
