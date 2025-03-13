@@ -94,9 +94,6 @@ img {
 /* Animation */
 .transition-overlay-begin {
   opacity: 0;
-  --radiusTopLeft: 0;
-  --radiusTopRight: 0;
-  border-radius: var(--radiusTopLeft) var(--radiusTopRight) 0 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -111,12 +108,6 @@ img {
 
 .transition-overlay {
   opacity: 0;
-  --radiusTopLeft: 0;
-  --radiusTopRight: 0;
-  --radiusBottomLeft: 90%;
-  --radiusBottomRight: 90%;
-  border-radius: var(--radiusTopLeft) var(--radiusTopRight) var(--radiusBottomRight)
-    var(--radiusBottomLeft);
   position: fixed;
   top: 0;
   left: 0;
@@ -126,7 +117,7 @@ img {
   background-color: #e15735;
   opacity: 1;
   pointer-events: unset;
-  transform: translate(0%, -100%);
+  transform: translate(0%, 100%);
 }
 
 .text-transition {
@@ -136,6 +127,11 @@ img {
   justify-content: center;
   align-items: center;
   color: #fff;
+}
+
+#content-transition {
+  transform: translateY(60px);
+  opacity: 0;
 }
 
 .router-link-exact-active {

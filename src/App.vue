@@ -34,11 +34,9 @@ function onBeforeEnter(el: any) {
     transitionTitle.title = String(document.title);
     if (!firstEnter) {
         const transition = document.getElementById('transition');
-        const transitionText = document.getElementById('content-transition');
 
         transition?.setAttribute('style', 'opacity:1');
         transition?.setAttribute('style', 'opacity: 1')
-        transitionText?.setAttribute('style', 'opacity:0');
 
         const headerLinks = document.getElementById('header-block');
         headerLinks?.setAttribute('style', 'pointer-events: none');
@@ -46,7 +44,7 @@ function onBeforeEnter(el: any) {
         const beginTransition = document.getElementById('begin-transition');
         const beginTextTransition = document.getElementById('begin-content-transition');
 
-        beginTextTransition?.setAttribute('style', 'opacity: 0; transform: translateY(-60px)');
+        beginTextTransition?.setAttribute('style', 'opacity: 0; transform: translateY(60px)');
         tl.to(beginTransition, {
             duration: 2,
             opacity: 1,
@@ -62,94 +60,81 @@ function onBeforeEnter(el: any) {
 
 function onEnter(el: any, done: any) {
     if (!firstEnter) {
-        tl.to('#transition', {
+        tl.from('#transition', {
             yPercent: 100,
-            duration: 1,
-            ease: 'power4.out',
-            stagger: .5,
+            ease: "expoScale(0.5,7,none)",
         }).to('#transition', {
-            '--radiusBottomLeft': '0%',
-            '--radiusBottomRight': '0%',
+            yPercent: -100,
             duration: .5,
-            stagger: .1
-        }, '<15%').to('#content-transition', {
-            duration: .5,
-            opacity: 1,
-            ease: 'slow(0.7,0.7,false)',
+            ease: "expoScale(0.5,7,none)",
             onComplete: () => {
                 if (store.label !== "" && store.label !== null) {
                     scrollTop();
                 }
                 firstEnter = false;
-                done();
             }
-        }, '<25%')
+        }).to('#content-transition', {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "expoScale(0.5,7,none)",
+            onComplete: done
+        }, '<5%');
     } else {
         tl.to('#begin-transition', {
-            duration: 1,
-            ease: 'power4.out',
+            duration: .5,
+            ease: "expoScale(0.5,7,none)",
             stagger: .5,
         }, '<15%').to('#begin-content-transition', {
             duration: .5,
             opacity: 1,
-            ease: 'slow(0.7,0.7,false)',
+            ease: "expoScale(0.5,7,none)",
             onComplete: done
-        }, '<25%')
+        }, '<25%');
     }
 }
 
 function onAfterEnter() {
     if (!firstEnter) {
-        tl.to('#transition', {
-            duration: 1,
-            yPercent: 200,
-            ease: 'slow(0.7,0.7,false)',
-            stagger: .1,
+        tl.from('#transition', {
+            yPercent: -100,
+            duration: 0.25,
+            ease: "expoScale(0.5,7,none)",
+            onComplete: () => {
+                const headerLinks = document.getElementById('header-block');
+                headerLinks?.setAttribute('style', 'pointer-events: unset');
+            }
+
+        }).to('#transition', {
+            duration: .5,
+            yPercent: -200,
+            ease: "expoScale(0.5,7,none)",
             onComplete: () => {
                 const transition = document.getElementById('transition');
-                transition?.setAttribute('style', 'opacity:0; border-radius: 0 0 0 0');
+                transition?.setAttribute('style', 'opacity:0');
+
+                tl.to('#content-transition', {
+                    opacity: 0,
+                    translateY: '60px',
+                    duration: .5,
+                    ease: "expoScale(0.5,7,none)",
+                })
                 scrollToWorks(store.label);
             }
         })
-            .to('#transition', {
-                '--radiusTopLeft': '70%',
-                '--radiusTopRight': '70%',
-                duration: .75,
-                stagger: .1
-            }, '<15%')
-            .to('#transition', {
-                duration: .5,
-                yPercent: -100,
-                ease: 'slow(0.7,0.7,false)',
-                stagger: .1,
-                onComplete: () => {
-                    const headerLinks = document.getElementById('header-block');
-                    headerLinks?.setAttribute('style', 'pointer-events: unset');
-                }
-            })
     } else {
         firstEnter = false;
 
         tl.to('#begin-transition', {
-            duration: 2,
-            yPercent: 200,
-            ease: 'slow(0.7,0.7,false)',
-            stagger: .1,
+            duration: .5,
+            yPercent: -100,
+            ease: "expoScale(0.5,7,none)",
+            stagger: .05,
             onComplete: () => {
-                const beginTransition = document.getElementById('begin-transition');
-                beginTransition?.setAttribute('style', 'opacity:0; border-radius: 0 0 0 0; transform: translate(0%, -100%)');
+                const headerLinks = document.getElementById('header-block');
+                headerLinks?.setAttribute('style', 'pointer-events: unset');
             }
-        })
-            .to('#begin-transition', {
-                '--radiusTopLeft': '80%',
-                '--radiusTopRight': '80%',
-                duration: 1,
-                stagger: .1,
-                onComplete: () => {
-                    const headerLinks = document.getElementById('header-block');
-                    headerLinks?.setAttribute('style', 'pointer-events: unset');
-                }
-            }, '<5%')
+        });
     }
 }
 
