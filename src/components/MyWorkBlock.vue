@@ -31,17 +31,8 @@
                 <div class="darken-layer"></div>
                 <div class="content">
                     <div class="challenge-objective-block container">
-                        <div v-if="embeddedLinksMobile !== ''">
-                            <div class="embedded-link-wrapper embedded-desktop-hide embedded-desktop-block">
-                                <div v-html="embeddedLinks"></div>
-                            </div>
-                            <div class="embedded-mobile-hide embedded-link-mobile-block" v-html="embeddedLinksMobile">
-                            </div>
-                        </div>
-                        <div v-else>
-                            <div class="embedded-link-wrapper">
-                                <div v-html="embeddedLinks"></div>
-                            </div>
+                        <div :class="embeddedClass">
+                            <div v-html="embeddedLinks"></div>
                         </div>
                         <div class="row embedded-info">
                             <div class="col-sm my-background-block">
@@ -143,7 +134,7 @@ const props = defineProps([
     'darkenLayerFlg',
     'embeddedLinks',
     'thumbnailUrl',
-    'embeddedLinksMobile'
+    'embeddedClass'
 ]);
 
 const modules = [Pagination, Navigation];
