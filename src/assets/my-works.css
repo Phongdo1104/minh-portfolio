@@ -8,7 +8,14 @@
 
 .my-works {
   font-family: 'oswald_bold';
-  font-size: 110px;
+}
+
+.works-header {
+  display: inline-block;
+}
+
+#scroll-text p {
+  font-size: 40px;
 }
 
 .works-header span {
@@ -20,14 +27,43 @@
   padding: calc(12vw + 5vh) 2rem;
 }
 
-@media (max-width: 768px) {
+.gap-between {
+  gap: 5rem;
+}
+
+.gap-between-container {
+  gap: 2rem;
+}
+
+@media (max-width: 1399px) {
   .my-works {
-    font-size: 50px;
+    font-size: 120px !important;
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1279px) {
   .my-works {
-    font-size: 70px;
+    font-size: 70px !important;
+  }
+}
+@media (max-width: 768px) {
+  .my-works {
+    font-size: 50px !important;
+  }
+
+  .gap-between-container {
+    gap: unset;
+  }
+}
+
+@media (max-width: 767px) {
+  .select-projects {
+    padding-top: 2rem;
+    width: 100% !important;
+  }
+
+  .gap-between {
+    gap: 2rem;
+    justify-content: end;
   }
 }

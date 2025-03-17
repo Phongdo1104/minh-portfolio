@@ -45,7 +45,6 @@
 
 #fullName {
   font-family: 'oswald_bold';
-  font-size: 80px !important;
 }
 
 .image-container {
@@ -60,8 +59,12 @@
 .text-overlay {
   bottom: 0;
   width: 100%;
-  font-size: 120px;
+  font-size: 140px;
   font-family: 'oswald_bold';
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 #scroll-text {
@@ -113,7 +116,8 @@
 .achievements-count {
   font-family: 'oswald_bold';
   color: #e15735;
-  font-size: 200px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .show-reel {
   opacity: 50%;
@@ -130,18 +134,22 @@
   cursor: pointer;
 }
 
-@media (max-width: 1199px) {
+.show-reel-display-btn {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1400px) {
   .text-overlay {
-    font-size: calc(5vw + 2.5vh) !important;
-  }
-  .achievements-count {
-    font-size: calc(10vw + 10vh);
+    font-size: 120px;
   }
 }
 
-@media (max-width: 991px) {
-  #fullName {
-    font-size: calc(3vw + 2.5vh) !important;
+@media (max-width: 1199px) {
+  .text-overlay {
+    font-size: calc(5vw + 2.5vh) !important;
   }
 }
 
@@ -157,13 +165,16 @@
     width: 100%;
     font-size: calc(11vw + 2.5vh) !important;
   }
-  #fullName {
-    font-size: calc(10vw + 2.5vh) !important;
-  }
   .achievements-description {
     margin-bottom: 10vw;
   }
   .show-reel {
     margin-bottom: 10vw;
+  }
+  .marketing-block {
+    padding-top: 1rem;
+  }
+  .show-reel-display-btn {
+    padding-top: 1rem;
   }
 }

@@ -6,7 +6,7 @@
             <swiper-slide :class="roleBgClass">
                 <div :class="darkenLayerFlg"></div>
                 <div class="content h-100">
-                    <div class="container title-works" v-motion :initial="{ opacity: 0, y: 100 }"
+                    <div class="container title-works h1 mobile-h1" v-motion :initial="{ opacity: 0, y: 100 }"
                         :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="1000">
                         <span v-html="workTitle"></span>
                     </div>
@@ -15,10 +15,10 @@
                         <div class="container showreel-work">
                             <div class="justify-content-start">
                                 <div>
-                                    <div class="my-background-title">
+                                    <div class="my-background-title h3 mobile-h2">
                                         <span>Description</span>
                                     </div>
-                                    <div class="my-background-description">
+                                    <div class="my-background-description body mobile-body">
                                         <span v-html="myBgDescription"></span>
                                     </div>
                                 </div>
@@ -36,18 +36,18 @@
                         </div>
                         <div class="row embedded-info">
                             <div class="col-sm my-background-block">
-                                <div class="my-background-title">
+                                <div class="my-background-title h3 mobile-h2">
                                     <span>My Role</span>
                                 </div>
-                                <div class="my-background-description">
+                                <div class="my-background-description body mobile-body">
                                     <span v-html="myRoleDescription"></span>
                                 </div>
                             </div>
                             <div class="col-sm my-role-block">
-                                <div class="my-role-title">
+                                <div class="my-role-title h3 mobile-h2">
                                     <span>Editing Style</span>
                                 </div>
-                                <div class="my-background-description">
+                                <div class="my-background-description body mobile-body">
                                     <span v-html="editingStyleDesc"></span>
                                 </div>
                             </div>

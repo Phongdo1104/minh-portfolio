@@ -9,15 +9,15 @@ import { scrollToView } from './../utils/utils';
     <div>
         <div class="workspace">
             <div class="container">
-                <div class="row before-header">
+                <div class="row before-header gap-between-container">
                     <div class="text-white col-sm">
                         <div v-motion :initial="{ opacity: 0, y: 50 }" :visible-once="{ opacity: 1, y: 0 }" :delay="50"
                             :duration="1000">
-                            <p class="text-uppercase my-works">My Works</p>
+                            <p class="text-uppercase my-works title mobile-title">My Works</p>
                         </div>
                         <div v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
                             :delay="100" :duration="1000">
-                            <p class="h5">
+                            <p class="body mobile-body">
                                 <strong>Since 2022</strong>, I've experienced <strong>planning, shooting, and
                                     editing</strong> a range of <strong>small and medium
                                     video projects</strong>, including long-and-short formed YouTube videos, TVCs, and
@@ -26,10 +26,10 @@ import { scrollToView } from './../utils/utils';
                             </p>
                         </div>
                     </div>
-                    <div class="col-sm text-end h4" v-motion :initial="{ opacity: 0, y: 100 }"
+                    <div class="col-auto text-end nav-link-txt select-projects" v-motion :initial="{ opacity: 0, y: 100 }"
                         :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="1000">
-                        <div class="row">
-                            <div class="col">
+                        <div class="row gap-between">
+                            <div class="col-auto">
                                 <div class="works-header">
                                     <div class="pt-4">
                                         <span @click="scrollToView('tutorial-video')"
@@ -45,7 +45,7 @@ import { scrollToView } from './../utils/utils';
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-auto">
                                 <div class="works-header">
                                     <div class="pt-4">
                                         <span @click="scrollToView('showreel-block')"
@@ -72,9 +72,9 @@ import { scrollToView } from './../utils/utils';
             <div id="scroll-text">
                 <div class="marquee branding-text text-center text-uppercase" v-motion :initial="{ opacity: 0, x: 10 }"
                     :enter="{ opacity: 1, x: 0 }" :delay="100" :duration="1000">
-                    <p class="h1 me-3">Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
+                    <p class="me-3">Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
                         Backstage Professionalism Premiere Pro After Effects Cap Cut</p>
-                    <p class="h1">Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
+                    <p>Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
                         Backstage Professionalism Premiere Pro After Effects Cap Cut</p>
                 </div>
             </div>
