@@ -33,16 +33,16 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
         <div class="header-router">
             <div class="col-auto row align-self-center">
                 <div class="d-none d-md-block" id="header-links">
-                    <RouterLink to="/" class="header-btn text-decoration-none fw-bold text-center" id="home-page">
+                    <RouterLink to="/" class="nav-link-txt text-decoration-none fw-bold text-center" id="home-page">
                         Home
                     </RouterLink>
-                    <RouterLink to="/about-me" class="header-btn text-decoration-none ms-5 fw-bold" id="about-me">
+                    <RouterLink to="/about-me" class="nav-link-txt text-decoration-none ms-5 fw-bold" id="about-me">
                         About Me
                     </RouterLink>
-                    <RouterLink to="/my-works" class="header-btn text-decoration-none ms-5 fw-bold" id="my-projects">
+                    <RouterLink to="/my-works" class="nav-link-txt text-decoration-none ms-5 fw-bold" id="my-projects">
                         My Projects
                     </RouterLink>
-                    <span class="text-decoration-none ms-5">
+                    <span class="text-decoration-none ms-5 nav-link-txt">
                         <button type="button" id="get-in-touch" @click="scrollToView('footer-block')">Get In
                             Touch</button>
                     </span>

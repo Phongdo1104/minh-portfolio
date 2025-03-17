@@ -21,7 +21,7 @@ import { displayShowreelVideo } from './../utils/showreelVideo';
                         <div class="position-relative d-flex justify-content-center">
                             <img class="avatar img-fluid" src="/images/minh2-edited-v2.png" alt="MinhDarkBG" />
                             <h1
-                                class="position-absolute text-white fw-bold display-1 text-overlay text-center text-uppercase">
+                                class="fw-bold display-1 text-overlay">
                                 About me
                             </h1>
                         </div>
@@ -35,16 +35,16 @@ import { displayShowreelVideo } from './../utils/showreelVideo';
                     >
                         <div class="about-me-info">
                             <div class="text-start" id="nameHeader">
-                                <span class="fw-bold" id="fullName">Minh Ng.</span>
+                                <span class="fw-bold h1 mobile-h1-ex" id="fullName">Minh Ng.</span>
                             </div>
                             <div class="nav-bar mt-4 mb-5"></div>
-                            <div class="mb-5">
-                                <p class="h5 fw-bold">
+                            <div class="mb-5 body mobile-body">
+                                <p>
                                     Driven by a passion for digital branding, I am a 24-year-old self-taught social
                                     media video editor.
                                 </p>
                             </div>
-                            <div class="mb-5 h5" id="experience">
+                            <div class="mb-5 body mobile-body" id="experience">
                                 <p>Until 2024, I have gained 4 years of experience in the following areas:</p>
                                 <ul class="fw-bold">
                                     <li class="mb-2">Video production & editing</li>
@@ -62,26 +62,26 @@ import { displayShowreelVideo } from './../utils/showreelVideo';
                     :delay="100"
                     :duration="1000"
                 >
-                    <div class="col-sm text-center text-white video-editing-block ps-5 pe-5">
-                        <div class="text-uppercase title-achievements h2">
+                    <div class="col-sm text-center text-white video-editing-block">
+                        <div class="title-achievements h3">
                             Video Editing
                         </div>
-                        <div class="achievements-count">4</div>
-                        <div class="achievements-description h5">
+                        <div class="achievements-count h1">4</div>
+                        <div class="achievements-description body mobile-body">
                             Since 2020, I've self-taught and edited a range of videos, including tutorials,
                             documentaries, K.O.P., and TVCs.</div>
                     </div>
-                    <div class="col-sm text-white d-flex align-items-center justify-content-center p-5">
+                    <div class="col-sm show-reel-display-btn">
                         <span href="#" id="showreel-btn-svg" @click="displayShowreelVideo('showreel-container')">
                             <img class="show-reel img-fluid" src="/svg/Showreel.svg" alt="showReelButton">
                         </span>
                     </div>
-                    <div class="col-sm text-center text-white marketing-block ps-5 pe-5">
-                        <div class="text-uppercase title-achievements h2">
+                    <div class="col-sm text-center text-white marketing-block">
+                        <div class="title-achievements h3">
                             Social Media Marketing
                         </div>
-                        <div class="achievements-count">2</div>
-                        <div class="achievements-description h5">
+                        <div class="achievements-count h1">2</div>
+                        <div class="achievements-description body mobile-body">
                             In 2022, I started as a SM marketer and centered my creativity based on understanding SNS
                             platforms
                         </div>
@@ -96,9 +96,9 @@ import { displayShowreelVideo } from './../utils/showreelVideo';
                     :delay="100"
                     :duration="1000"
                 >
-                    <p class="h1 me-3">Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
+                    <p class="me-3">Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
                         Backstage Professionalism Premiere Pro After Effects Cap Cut</p>
-                    <p class="h1">Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
+                    <p>Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
                         Backstage Professionalism Premiere Pro After Effects Cap Cut</p>
                 </div>
             </div>

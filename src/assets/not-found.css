@@ -11,15 +11,17 @@
 }
 .rect {
   width: calc(30vw + 20vh);
-  padding-top: 3vw;
 }
-
+.body-info-contact {
+  padding-bottom: 10rem;
+  padding-top: 10rem;
+}
 .btn-return {
   font-family: 'oswald_regular';
   color: #ffffff;
   background: #e15735;
   padding: 0.5rem 3rem;
-  font-size: 16px;
+  border: unset;
 }
 
 @media (max-width: 767px) {
@@ -32,5 +34,8 @@
   .rect {
     width: calc(40vw + 20vh);
     padding-top: 2rem;
+  }
+  .before-header-page {
+    padding-top: 5rem;
   }
 }

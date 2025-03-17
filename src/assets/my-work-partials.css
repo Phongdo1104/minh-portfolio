@@ -88,7 +88,6 @@
 
 .title-works span {
   color: #ffffff;
-  font-size: 80px !important;
 }
 
 .my-background-title,
@@ -98,13 +97,8 @@
 
 .title-works span,
 .my-background-title span,
-.video-type span,
-.editing-style span,
-.mood-tone span,
-.platform span,
 .my-role-title span {
   font-family: 'oswald_bold';
-  font-size: 50px !important;
 }
 
 .my-background-title span,
@@ -140,11 +134,6 @@
 
 .my-background-description {
   width: 50%;
-}
-
-.my-background-description span,
-.my-role-description span {
-  font-size: 20px;
 }
 
 .challenge-objective-block {
@@ -206,10 +195,6 @@
   width: 70%;
 }
 
-.my-role-description {
-  justify-content: end;
-}
-
 .enable-dark-layer {
   position: absolute;
   top: 0;
@@ -250,23 +235,8 @@
   #title-works span {
     font-size: 50px !important;
   }
-  /* .my-background-title span,
-  .video-type span,
-  .editing-style span,
-  .mood-tone span,
-  .platform span,
-  .my-role-title span {
-    font-size: 30px !important;
-  } */
-  /* .my-background-description span,
-  .my-role-description span {
-    font-size: 15px;
-  } */
   .podcast-bg {
     background-position: center;
-  }
-  .my-role-description div {
-    text-align: start !important;
   }
 }
 
@@ -287,9 +257,6 @@
 }
 
 @media (max-width: 575px) {
-  .my-role-description {
-    justify-content: space-around;
-  }
   .my-works-blocks {
     height: 100vh;
   }
@@ -315,8 +282,5 @@
   }
   .documentary-bg {
     background-position: top 0% right 30%;
-  }
-  .my-role-description {
-    justify-content: start !important;
   }
 }

@@ -184,12 +184,12 @@ window.addEventListener('resize', () => {
         <!-- Animation -->
         <div id="transition" class="transition-overlay">
             <div class="text-transition">
-                <h1 id="content-transition">{{ transitionTitle.title }}</h1>
+                <p id="content-transition" class="h2 mobile-h2">{{ transitionTitle.title }}</p>
             </div>
         </div>
         <div id="begin-transition" class="transition-overlay-begin">
             <div class="text-transition">
-                <h1 id="begin-content-transition">{{ transitionTitle.title }}</h1>
+                <p id="begin-content-transition" class="h2 mobile-h2">{{ transitionTitle.title }}</p>
             </div>
         </div>
     </div>

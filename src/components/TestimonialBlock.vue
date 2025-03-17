@@ -10,13 +10,13 @@
                     outstanding.”
                 </p>
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="testimonial-avatar-container">
                 <img class="rounded-circle testimonial-avatar img-fluid" src="/images/Huu_Van.png"
                     alt="Mr. Tran Huu Van">
             </div>
             <div class="text-center mt-4">
-                <a href="#" class="author h5">Mr. Tran Huu Van</a>
-                <p class="mt-3 h5">Founder of Pointer Clicker</p>
+                <a href="#" class="author">Mr. Tran Huu Van</a>
+                <p class="author-info">Founder of Pointer Clicker</p>
             </div>
         </swiper-slide>
         <swiper-slide class="testimonial-block">
@@ -26,13 +26,13 @@
                     animation. His dedication and problem-solving skills are commendable.”
                 </p>
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="testimonial-avatar-container">
                 <img class="rounded-circle testimonial-avatar img-fluid" src="/images/Hung_Z.png"
                     alt="Mr. Hoang Mach Hung (Hung Z)">
             </div>
             <div class="text-center mt-4">
                 <a href="#" class="author h5">Mr. Hoang Mach Hung (Hung Z)</a>
-                <p class="mt-3 h5">Founder of JHGO Channel</p>
+                <p class="author-info">Founder of JHGO Channel</p>
             </div>
         </swiper-slide>
         <swiper-slide class="testimonial-block">
@@ -42,13 +42,13 @@
                     is ideal for lead generation. His dynamic and supportive approach was invaluable.”
                 </p>
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="testimonial-avatar-container">
                 <img class="rounded-circle testimonial-avatar img-fluid" src="/images/Ngoc_Minh.png"
                     alt="Mr. Doan Ngoc Minh">
             </div>
             <div class="text-center mt-4">
                 <a href="#" class="author h5">Mr. Doan Ngoc Minh</a>
-                <p class="mt-3 h5">Founder of Pointer Clicker</p>
+                <p class="author-info">Founder of Pointer Clicker</p>
             </div>
         </swiper-slide>
     </swiper>
