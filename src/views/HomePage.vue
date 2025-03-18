@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div id="show-reel-video-block">
+            <ShowReelVideo />
+        </div>
         <div class="profile-block">
             <div>
                 <div class="background-profile-container background-profile-color">
@@ -232,6 +235,7 @@ import '../assets/my-work-partials.css';
 import { useScrollInto } from '@/stores/scrollInto';
 import { scrollTopSmooth, scrollToView } from '@/utils/utils';
 import { displayShowreelVideo } from './../utils/showreelVideo';
+import ShowReelVideo from './../components/ShowReelVideo.vue';
 
 import TestimonialBlock from '../components/TestimonialBlock.vue';
 import FooterPage from '../components/FooterPage.vue';

@@ -15,13 +15,13 @@
 import videojs from "video.js";
 import 'video.js/dist/video-js.css';
 import './../assets/showreel.css'
-import { onMounted, onBeforeUnmount, useTemplateRef } from "vue";
+import { onMounted, onBeforeUnmount } from "vue";
 
 let player: any = null;
 const videoOptions = {
     autoplay: false,
     controls: true,
-    preload: true,
+    preload: "none",
     sources: [
         {
             src:
@@ -33,9 +33,8 @@ const videoOptions = {
 
 onMounted(() => {
     player = videojs(
-        document.getElementById('showreel-video') || "",
-        {
-            ...videoOptions,
+        document.getElementById('showreel-video') || "", { ...videoOptions, }, () => {
+            player.tech({ IWillNotUseThisInPlugins: true });
         },
     );
     player.on('touchstart', (e: any) => {

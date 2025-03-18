@@ -2,12 +2,16 @@
 import '../assets/about-me.css'
 import TestimonialBlock from '../components/TestimonialBlock.vue'
 import FooterPage from '../components/FooterPage.vue'
+import ShowReelVideo from '../components/ShowReelVideo.vue';
 
 import { displayShowreelVideo } from './../utils/showreelVideo';
 </script>
 
 <template>
     <div>
+        <div id="show-reel-video-block">
+            <ShowReelVideo />
+        </div>
         <div class="desk-angle-1">
             <div class="container" id="about-me">
                 <div class="row before-header">
