@@ -1,6 +1,18 @@
 <template>
     <div>
         <div class="profile-block">
+            <div>
+                <div class="background-profile-container background-profile-color">
+                </div>
+                <div class="background-profile-video" >
+                    <video
+                        width="100%"
+                        autoplay
+                        muted
+                        loop
+                        src="/videos/showreel-cut-1.mp4"></video>
+                </div>
+            </div>
             <div class="container-fluid p-0 m-0 profile-block-md">
                 <div class="row before-header">
                     <div class="col-md-5 text-white d-flex align-items-center profile-parent-block">
@@ -41,7 +53,6 @@
                         <img class="img-fluid profile-image" src="/images/profile-trim-remove-bg.png" alt="">
                     </div>
                 </div>
-
             </div>
             <div class="marquee-profile-block" v-motion :initial="{ opacity: 0, x: 10 }" :enter="{ opacity: 1, x: 0 }"
                 :delay="100" :duration="1000">
