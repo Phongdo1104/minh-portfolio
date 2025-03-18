@@ -13,6 +13,7 @@
                         autoplay
                         muted
                         loop
+                        preload="none"
                         src="/videos/showreel-cut-1.mp4"></video>
                 </div>
             </div>
