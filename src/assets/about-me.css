@@ -141,6 +141,11 @@
   justify-content: center;
 }
 
+#showreel-btn-svg:hover {
+  filter: invert(39%) sepia(69%) saturate(595%) hue-rotate(334deg) brightness(97%) contrast(90%);
+  transition: filter 0.2s ease;
+}
+
 @media (max-width: 1400px) {
   .text-overlay {
     font-size: 120px;
@@ -153,7 +158,7 @@
   }
 }
 
-@media (max-width: 766px) {
+@media (max-width: 767px) {
   .about-me-info {
     padding-left: unset;
   }

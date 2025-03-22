@@ -12,7 +12,7 @@ import { displayShowreelVideo } from './../utils/showreelVideo';
         <div id="show-reel-video-block">
             <ShowReelVideo />
         </div>
-        <div class="desk-angle-1">
+        <div class="desk-angle-1" id="enter-animation">
             <div class="container" id="about-me">
                 <div class="row before-header">
                     <div class="col-md about-me-info-block"
@@ -66,7 +66,7 @@ import { displayShowreelVideo } from './../utils/showreelVideo';
                     :delay="100"
                     :duration="1000"
                 >
-                    <div class="col-sm text-center text-white video-editing-block">
+                    <div class="col-md text-center text-white video-editing-block">
                         <div class="title-achievements h3">
                             Video Editing
                         </div>
@@ -75,12 +75,12 @@ import { displayShowreelVideo } from './../utils/showreelVideo';
                             Since 2020, I've self-taught and edited a range of videos, including tutorials,
                             documentaries, K.O.P., and TVCs.</div>
                     </div>
-                    <div class="col-sm show-reel-display-btn">
+                    <div class="col-md show-reel-display-btn">
                         <span href="#" id="showreel-btn-svg" @click="displayShowreelVideo('showreel-container')">
-                            <img class="show-reel img-fluid" src="/svg/Showreel.svg" alt="showReelButton">
+                            <img class="show-reel img-fluid" src="/svg/Vector.svg" alt="showReelButton">
                         </span>
                     </div>
-                    <div class="col-sm text-center text-white marketing-block">
+                    <div class="col-md text-center text-white marketing-block">
                         <div class="title-achievements h3">
                             Social Media Marketing
                         </div>

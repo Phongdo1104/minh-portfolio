@@ -7,7 +7,7 @@ import { scrollToView } from './../utils/utils';
 </script>
 <template>
     <div>
-        <div class="workspace">
+        <div class="workspace" id="enter-animation">
             <div class="container">
                 <div class="row before-header gap-between-container">
                     <div class="text-white col-sm">

@@ -1,6 +1,11 @@
-const scrollToView = (refName: string) => {
+const scrollToView = (refName: string, smoothness: boolean = true) => {
     const element = document.getElementById(refName)
-    element?.scrollIntoView({ behavior: "smooth" });
+
+    if (smoothness) {
+        element?.scrollIntoView({ behavior: "smooth" });
+    } else {
+        element?.scrollIntoView({ behavior: "instant" });
+    }
 }
 
 const scrollTop = () => {

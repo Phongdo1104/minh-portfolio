@@ -3,7 +3,6 @@ import { RouterView } from 'vue-router';
 import HeaderPage from './views/HeaderPage.vue';
 import MenuBurger from './views/MenuBurger.vue';
 import SidebarMenu from './components/SidebarBlock.vue';
-// import ShowReelVideo from './components/ShowReelVideo.vue';
 
 import { gsap } from "gsap";
 import { reactive, watch, ref } from 'vue';
@@ -78,7 +77,14 @@ function onEnter(el: any, done: any) {
             y: 0,
             duration: 1,
             ease: "expoScale(0.5,7,none)",
-            onComplete: done
+            onComplete: () => {
+                if (store.label) {
+                    scrollToWorks(store.label);
+                } else {
+                    scrollTop();
+                }
+                done();
+            }
         }, '<5%');
     } else {
         tl.to('#begin-transition', {
@@ -119,28 +125,39 @@ function onAfterEnter() {
                     duration: .5,
                     ease: "expoScale(0.5,7,none)",
                 })
-                scrollToWorks(store.label);
             }
-        })
+        }).to('#enter-animation', {
+            paddingTop: 0,
+            duration: .1,
+            ease: "expoScale(0.5,7,none)"
+        }, '<15%');
     } else {
         firstEnter = false;
 
-        tl.to('#begin-transition', {
-            duration: .5,
-            yPercent: -100,
+        tl.from('#begin-transition', {
+            yPercent: 0,
+            duration: 0.25,
             ease: "expoScale(0.5,7,none)",
-            stagger: .05,
             onComplete: () => {
                 const headerLinks = document.getElementById('header-block');
                 headerLinks?.setAttribute('style', 'pointer-events: unset');
             }
-        });
+
+        }).to('#begin-transition', {
+            duration: .5,
+            yPercent: -100,
+            ease: "expoScale(0.5,7,none)",
+        }).to('#enter-animation', {
+            paddingTop: 0,
+            duration: .1,
+            ease: "expoScale(0.5,7,none)"
+        }, '<15%');
     }
 }
 
 function scrollToWorks(scrollToStr: string) {
     if (document.title.toLowerCase() === 'my works' && scrollToStr !== "" && scrollToStr !== null) {
-        scrollToView(store.label);
+        scrollToView(store.label, false);
     }
     store.setNewLabel("");
 }
@@ -161,26 +178,7 @@ window.addEventListener('resize', () => {
 });
 </script>
 <template>
-    <div>
-        <!-- <ShowReelVideo v-if="displayShowreel" /> -->
-        <SidebarMenu />
-        <div id="header-block">
-            <!-- Header -->
-            <HeaderPage />
-        </div>
-        <div id="menu-burger">
-            <MenuBurger />
-        </div>
-
-        <!-- body -->
-        <div id="body">
-            <router-view v-slot="{ Component }">
-                <transition :css="false" @before-enter="onBeforeEnter" @enter="onEnter" @after-enter="onAfterEnter"
-                    mode="in-out">
-                    <component :is="Component" />
-                </transition>
-            </router-view>
-        </div>
+    <div id="animation-block">
         <!-- Animation -->
         <div id="transition" class="transition-overlay">
             <div class="text-transition">
@@ -191,6 +189,26 @@ window.addEventListener('resize', () => {
             <div class="text-transition">
                 <p id="begin-content-transition" class="h2 mobile-h2">{{ transitionTitle.title }}</p>
             </div>
+        </div>
+    </div>
+    <div id="page">
+        <SidebarMenu />
+        <div id="header-block">
+            <!-- Header -->
+            <HeaderPage />
+        </div>
+        <div id="menu-burger">
+            <MenuBurger />
+        </div>
+
+        <!-- body -->
+        <div id="content-page">
+            <router-view v-slot="{ Component }">
+                <transition :css="false" @before-enter="onBeforeEnter" @enter="onEnter" @after-enter="onAfterEnter"
+                    mode="in-out">
+                    <component :is="Component" />
+                </transition>
+            </router-view>
         </div>
     </div>
 </template>

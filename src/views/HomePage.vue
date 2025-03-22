@@ -3,18 +3,12 @@
         <div id="show-reel-video-block">
             <ShowReelVideo />
         </div>
-        <div class="profile-block">
+        <div class="profile-block" id="enter-animation">
             <div>
                 <div class="background-profile-container background-profile-color">
                 </div>
-                <div class="background-profile-video" >
-                    <video
-                        width="100%"
-                        autoplay
-                        muted
-                        loop
-                        preload="none"
-                        src="/videos/showreel-cut-1.mp4"></video>
+                <div class="background-profile-video">
+                    <video width="100%" autoplay muted loop preload="none" src="/videos/showreel-cut-1.mp4"></video>
                 </div>
             </div>
             <div class="container-fluid p-0 m-0 profile-block-md">
@@ -29,9 +23,10 @@
                                     </span>
                                 </div>
                                 <div class="intro-line">
-                                    <p class="body mobile-body">I help tell your greatness through the lens of bold <br> and creative
-                                        storytelling
-                                        through videos.</p>
+                                    <p class="body mobile-body">
+                                        I help tell your greatness through the lens of <strong>bold</strong> and
+                                        <i>creative</i> touch.
+                                    </p>
                                 </div>
                                 <div class="row col-sm-auto">
                                     <div class="col">
@@ -114,9 +109,9 @@
                             </div>
                             <div class="read-more-block">
                                 <img class="img-fluid" src="/images/Demonstrate_display.png" alt="TVL Media Info">
-                                <RouterLink to="/my-works" class="read-more-button read-more-button-right read-more-button-right-mobile"
-                                    id="tvl-media-more"
-                                    @click="setScrollIntoWork('kop-video')">Read
+                                <RouterLink to="/my-works"
+                                    class="read-more-button read-more-button-right read-more-button-right-mobile"
+                                    id="tvl-media-more" @click="setScrollIntoWork('kop-video')">Read
                                     More</RouterLink>
                             </div>
                         </div>
@@ -147,9 +142,9 @@
                         </div>
                         <div class="read-more-block">
                             <img class="img-fluid" src="/images/Demonstrate_display.png" alt="Pointer Clicker Info">
-                            <RouterLink to="/my-works" class="read-more-button read-more-button-center read-more-button-right-mobile"
-                                id="pointer-clicker-more"
-                                @click="setScrollIntoWork('tutorial-video')">Read
+                            <RouterLink to="/my-works"
+                                class="read-more-button read-more-button-center read-more-button-right-mobile"
+                                id="pointer-clicker-more" @click="setScrollIntoWork('tutorial-video')">Read
                                 More</RouterLink>
                         </div>
                     </div>
@@ -188,9 +183,9 @@
                             </div>
                             <div class="read-more-block">
                                 <img class="img-fluid" src="/images/Demonstrate_display.png" alt="JHGO Channel Info">
-                                <RouterLink to="/my-works" class="read-more-button read-more-button-right read-more-button-right-mobile"
-                                    id="arches-preview-more"
-                                    @click="setScrollIntoWork('podcast-highlight')">Read
+                                <RouterLink to="/my-works"
+                                    class="read-more-button read-more-button-right read-more-button-right-mobile"
+                                    id="arches-preview-more" @click="setScrollIntoWork('podcast-highlight')">Read
                                     More</RouterLink>
                             </div>
                         </div>

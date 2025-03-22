@@ -15,7 +15,7 @@
             </div>
             <div
                 class="position-absolute h1 d-flex border-bottom border-dark border-3 justify-content-between d-none slogan-bottom">
-                <div>
+                <div class="d-flex">
                     <img class="gif-slogan img-fluid" src="/images/YouTube_videos_edited.gif" alt="">
                 </div>
                 <div class="slogan-text">together!</div>

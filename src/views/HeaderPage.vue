@@ -6,10 +6,6 @@ let show = ref(false);
 
 function closePopup() {
     show.value = false;
-    window.scrollTo({
-        top: 0,
-        behavior: 'instant'
-    });
 }
 
 function scrollToView(refName: string, closePopupFlg: boolean = false) {
@@ -40,7 +36,7 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
                         About Me
                     </RouterLink>
                     <RouterLink to="/my-works" class="nav-link-txt text-decoration-none ms-5 fw-bold" id="my-projects">
-                        My Projects
+                        My Works
                     </RouterLink>
                     <span class="text-decoration-none ms-5 nav-link-txt">
                         <button type="button" id="get-in-touch" @click="scrollToView('footer-block')">Get In
@@ -81,7 +77,7 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
                             v-motion
                             :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :delay="100"
                             :duration="500">
-                            My Projects
+                            My Works
                         </RouterLink>
                         <span to="/contact-me" @click="scrollToView('footer-block', true)"
                             class="mb-3 text-decoration-none text-center sidebar-item w-100 mobile-contact-me"
