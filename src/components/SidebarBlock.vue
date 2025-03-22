@@ -1,6 +1,6 @@
 <template>
     <div id="sidebar-block" class="sidenav display-sidebar">
-        <span class="close-btn" @click="closeSideBar(true)">&times;</span>
+        <span class="close-btn" @click="closeSideBar()">&times;</span>
         <RouterLink to="/" class="nav-link-txt" @click="closeSideBar()">
             Home
         </RouterLink>
@@ -19,7 +19,7 @@
 <script lang="ts" setup>
 import './../assets/sidebar.css';
 
-function closeSideBar(skipScrollTop: boolean = false) {
+function closeSideBar() {
     const sidebar = document.getElementById('sidebar-block');
     if (!sidebar) {
         return;
@@ -27,13 +27,6 @@ function closeSideBar(skipScrollTop: boolean = false) {
 
     sidebar.style.width = "0";
     sidebar.style.opacity = "0";
-
-    if (!skipScrollTop) {
-        window.scrollTo({
-            top: 0,
-            behavior: 'instant'
-        });
-    }
 
     const menuBurger = document.getElementById('MenuBurger');
     if (!menuBurger) {
@@ -46,6 +39,6 @@ function closeSideBar(skipScrollTop: boolean = false) {
 function scrollToContact() {
     const element = document.getElementById('footer-block')
     element?.scrollIntoView({ behavior: "smooth" });
-    closeSideBar(true);
+    closeSideBar();
 }
 </script>

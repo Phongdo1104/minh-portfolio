@@ -119,7 +119,7 @@
 }
 
 .my-background-block {
-  padding-left: 1.5rem;
+  padding-left: 5rem;
 }
 
 .my-role-block {
@@ -211,24 +211,24 @@
   height: 0;
 }
 
+.embedded-link-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+.embedded-link-wrapper iframe
+,.embedded-link-wrapper-facebook iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 @media (max-width: 1000px) {
   .my-background-description {
     width: 100% !important;
   }
-}
-
-.embedded-link-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-}
-.embedded-link-wrapper iframe
-,.embedded-link-wrapper-facebook iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 @media (max-width: 900px) {
@@ -238,6 +238,12 @@
   .podcast-bg {
     background-position: center;
   }
+}
+
+@media (max-width: 767px) {
+    .my-background-block {
+        padding-left: 1.5rem;
+    }
 }
 
 @media (max-width: 646px) {

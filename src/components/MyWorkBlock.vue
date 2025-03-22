@@ -7,14 +7,15 @@
                 <div :class="darkenLayerFlg"></div>
                 <div class="content h-100">
                     <div class="container title-works h1 mobile-h1" v-motion :initial="{ opacity: 0, y: 100 }"
-                        :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="1000">
+                    :visible-once="{ opacity: 1, y: 0 }" :delay="500" :duration="800">
                         <span v-html="workTitle"></span>
                     </div>
                     <div class="description-work" v-motion :initial="{ opacity: 0, y: 100 }"
-                        :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="1000">
+                    :visible-once="{ opacity: 1, y: 0 }" :duration="800">
                         <div class="container showreel-work">
                             <div class="justify-content-start">
-                                <div>
+                                <div v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
+                                    :delay="500" :duration="800">
                                     <div class="my-background-title h3 mobile-h2">
                                         <span>Description</span>
                                     </div>
@@ -68,6 +69,31 @@
 
 .swiper-wrapper .swiper-button-prev,
 .swiper-wrapper .swiper-button-next {
+    top: 80%;
+    background-color: transparent;
+    /* remove background if needed */
+    border: none;
+    width: 50px;
+    /* adjust as needed */
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.swiper-wrapper .swiper-button-next {
+    margin-right: 1rem;
+    background-image: url('/svg/next-prev.svg');
+}
+
+.swiper-wrapper .swiper-button-prev {
+    margin-left: 1rem;
+    background-image: url('/svg/next-prev.svg');
+    transform: scaleX(-1)
+}
+
+.swiper-wrapper .swiper-button-next::after,
+.swiper-wrapper .swiper-button-prev::after {
     display: none;
 }
 
@@ -91,12 +117,20 @@
     height: 100%;
 }
 
-@media (max-width: 646px) {
+@media (max-width: 1280px) {
 
     .swiper-wrapper .swiper-button-prev,
     .swiper-wrapper .swiper-button-next {
-        bottom: 0;
-        height: 60%;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .swiper-wrapper .swiper-button-prev,
+    .swiper-wrapper .swiper-button-next {
+        display: none;
     }
 }
 
