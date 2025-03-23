@@ -58,14 +58,15 @@
 .showreel-btn {
   display: flex;
   width: 50% !important;
-  opacity: 50%;
+  opacity: 0.5;
   padding-bottom: 2rem;
   filter: invert(7%) sepia(9%) saturate(570%) hue-rotate(180deg) brightness(95%) contrast(98%);
   transition: filter 0.2s ease;
 }
 
 .showreel-btn:hover {
-  filter: invert(39%) sepia(69%) saturate(595%) hue-rotate(334deg) brightness(97%) contrast(90%);
+  opacity: 1;
+  filter: invert(39%) sepia(69%) saturate(595%) hue-rotate(334deg) brightness(95%) contrast(90%);
 }
 
 .showreel-btn span {
