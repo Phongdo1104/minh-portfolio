@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="position-absolute bottom-0 text-white copyright">
-                <p>© Design by Minh Nguyen 2024</p>
+                <p>© Design by Minh Nguyen {{ new Date().getFullYear() }}</p>
             </div>
         </div>
     </div>
