@@ -3,6 +3,8 @@ import AboutMe from '../views/AboutMe.vue'
 import HomePage from '../views/HomePage.vue'
 import MyWorks from '../views/MyWorksPage.vue'
 import NotFoundPage from '../components/NotFoundPage.vue'
+import HighLightsReel from '../views/MyProjects/HighLightsReel.vue'
+import ShowReel from '../views/MyProjects/ShowReel.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -18,9 +20,12 @@ const router = createRouter({
             component: AboutMe,
         },
         {
-            path: '/my-works',
-            name: 'my-works',
-            component: MyWorks,
+            path: '/my-projects',
+            children: [
+                { path: '', name: 'my-projects', component: MyWorks },
+                { path: 'highlight-reel', name: 'highlight-reel', component: HighLightsReel },
+                { path: 'showreel', name: '2024-showreel', component: ShowReel },
+            ]
         },
         {
             path: '/:pathMatch(.*)*',
@@ -32,6 +37,9 @@ const router = createRouter({
 
 router.beforeEach((to: any, from, next) => {
     let title = to.name;
+    if (to.children) {
+        title = to.children.name;
+    }
     title = title.replace("-", " ");
     title = title.toLowerCase()
         .split(' ')

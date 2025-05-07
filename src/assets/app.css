@@ -19,6 +19,14 @@ img {
   src: url('/fonts/Roboto-Regular.ttf');
 }
 
+.font-oswald-bold {
+  font-family: 'oswald_bold';
+}
+
+.font-oswald-regular {
+  font-family: 'oswald_regular';
+}
+
 * {
   padding: 0;
   margin: 0;

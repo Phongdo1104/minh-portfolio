@@ -29,78 +29,48 @@ let transitionTitle = reactive({
 let firstEnter: boolean = true;
 const tl = gsap.timeline();
 
-function onBeforeEnter(el: any) {
+function onBeforeLeave() {
     transitionTitle.title = String(document.title);
-    if (!firstEnter) {
-        const transition = document.getElementById('transition');
+    const transition = document.getElementById('transition');
 
-        transition?.setAttribute('style', 'opacity:1');
-        transition?.setAttribute('style', 'opacity: 1')
+    transition?.setAttribute('style', 'opacity:1');
+    transition?.setAttribute('style', 'opacity: 1')
 
-        const headerLinks = document.getElementById('header-block');
-        headerLinks?.setAttribute('style', 'pointer-events: none');
-    } else {
-        const beginTransition = document.getElementById('begin-transition');
-        const beginTextTransition = document.getElementById('begin-content-transition');
-
-        beginTextTransition?.setAttribute('style', 'opacity: 0; transform: translateY(60px)');
-        tl.to(beginTransition, {
-            duration: 2,
-            opacity: 1,
-            ease: 'slow(0.7,0.7,false)',
-        }).to(beginTextTransition, {
-            duration: .75,
-            opacity: 1,
-            y: 0,
-            ease: 'slow(0.7,0.7,false)'
-        }, '<25%')
-    }
+    const headerLinks = document.getElementById('header-block');
+    headerLinks?.setAttribute('style', 'pointer-events: none');
 }
 
-function onEnter(el: any, done: any) {
-    if (!firstEnter) {
-        tl.from('#transition', {
-            yPercent: 100,
-            ease: "expoScale(0.5,7,none)",
-        }).to('#transition', {
-            yPercent: -100,
-            duration: .5,
-            ease: "expoScale(0.5,7,none)",
-            onComplete: () => {
-                if (store.label !== "" && store.label !== null) {
-                    scrollTop();
-                }
-                firstEnter = false;
+function onLeave(el: any, done: any) {
+    tl.from('#transition', {
+        yPercent: 100,
+        ease: "expoScale(0.5,7,none)",
+    }).to('#transition', {
+        yPercent: -100,
+        duration: .5,
+        ease: "expoScale(0.5,7,none)",
+        onComplete: () => {
+            if (store.label !== "" && store.label !== null) {
+                scrollTop();
             }
-        }).to('#content-transition', {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "expoScale(0.5,7,none)",
-            onComplete: () => {
-                if (store.label) {
-                    scrollToWorks(store.label);
-                } else {
-                    scrollTop();
-                }
-                done();
+            firstEnter = false;
+        }
+    }).to('#content-transition', {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "expoScale(0.5,7,none)",
+        onComplete: () => {
+            if (store.label) {
+                scrollToWorks(store.label);
+            } else {
+                scrollTop();
             }
-        }, '<5%');
-    } else {
-        tl.to('#begin-transition', {
-            duration: .5,
-            ease: "expoScale(0.5,7,none)",
-            stagger: .5,
-        }, '<15%').to('#begin-content-transition', {
-            duration: .5,
-            opacity: 1,
-            ease: "expoScale(0.5,7,none)",
-            onComplete: done
-        }, '<25%');
-    }
+            done();
+        }
+    }, '<5%');
 }
 
-function onAfterEnter() {
+function onBeforeEnter() {
     if (!firstEnter) {
         tl.from('#transition', {
             yPercent: -100,
@@ -126,17 +96,33 @@ function onAfterEnter() {
                     ease: "expoScale(0.5,7,none)",
                 })
             }
-        }).to('#enter-animation', {
-            paddingTop: 0,
-            duration: .1,
-            ease: "expoScale(0.5,7,none)"
-        }, '<15%');
+        })
     } else {
+        transitionTitle.title = String(document.title);
+        const beginTextTransition = document.getElementById('begin-content-transition');
+
+        beginTextTransition?.setAttribute('style', 'opacity: 0; transform: translateY(60px)');
+        tl.to('#begin-transition', {
+            duration: 1,
+            opacity: 1,
+            ease: 'slow(0.7,0.7,false)',
+        }).to(beginTextTransition, {
+            duration: .75,
+            opacity: 1,
+            y: 0,
+            ease: 'slow(0.7,0.7,false)'
+        }, '<25%')
+    }
+}
+
+function onEnter(el: any, done: any) {
+    if (firstEnter) {
+        console.log("First enter 1");
         firstEnter = false;
 
         tl.from('#begin-transition', {
             yPercent: 0,
-            duration: 0.25,
+            duration: 0.75,
             ease: "expoScale(0.5,7,none)",
             onComplete: () => {
                 const headerLinks = document.getElementById('header-block');
@@ -152,7 +138,15 @@ function onAfterEnter() {
             duration: .1,
             ease: "expoScale(0.5,7,none)"
         }, '<15%');
+    } else {
+        console.log("on enter");
+        tl.to('#enter-animation', {
+            paddingTop: 0,
+            duration: .1,
+            ease: "expoScale(0.5,7,none)"
+        }, '<25%');
     }
+    done();
 }
 
 function scrollToWorks(scrollToStr: string) {
@@ -204,8 +198,8 @@ window.addEventListener('resize', () => {
         <!-- body -->
         <div id="content-page">
             <router-view v-slot="{ Component }">
-                <transition :css="false" @before-enter="onBeforeEnter" @enter="onEnter" @after-enter="onAfterEnter"
-                    mode="in-out">
+                <transition @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave"
+                    @before-leave="onBeforeLeave" mode="out-in">
                     <component :is="Component" />
                 </transition>
             </router-view>

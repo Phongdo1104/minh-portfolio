@@ -24,7 +24,8 @@
 }
 
 .workspace .container {
-  padding: calc(12vw + 5vh) 2rem;
+  padding-top: 15rem;
+  padding-bottom: 10rem;
 }
 
 .gap-between {
@@ -33,6 +34,50 @@
 
 .gap-between-container {
   gap: 2rem;
+}
+
+.under-border {
+  border-bottom: 2px solid #fff;
+}
+
+.under-border #my-works-desc {
+  padding-bottom: 3rem;
+}
+
+#my-works-collection {
+  padding-top: 5rem;
+}
+
+#my-works-collection a {
+  font-family: 'oswald_bold';
+  text-decoration: none;
+  color: #fff;
+}
+
+#my-works-collection p {
+  color: #fff;
+}
+
+.work-block-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.flex-works-block {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.flex-block-parent {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+}
+
+.desc-work-display {
+  display: inline-block;
 }
 
 @media (max-width: 1399px) {
@@ -57,6 +102,9 @@
 }
 
 @media (max-width: 767px) {
+  .workspace .container {
+    padding: 8rem 2rem;
+  }
   .select-projects {
     padding-top: 2rem;
     width: 100% !important;
@@ -65,5 +113,20 @@
   .gap-between {
     gap: 2rem;
     justify-content: end;
+  }
+
+  .flex-block-parent {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+
+  .flex-works-block {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .desc-work-display {
+    display: none;
   }
 }

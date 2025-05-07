@@ -1,19 +1,17 @@
 <script setup lang="ts">
 import '../assets/my-works.css';
-import MyWorkCollection from '../components/MyWorkCollection.vue'
 import FooterPage from '../components/FooterPage.vue'
-import { scrollToView } from './../utils/utils';
 
 </script>
 <template>
     <div>
         <div class="workspace" id="enter-animation">
             <div class="container">
-                <div class="row before-header gap-between-container">
-                    <div class="text-white col-sm">
+                <div class="before-header under-border">
+                    <div class="text-white col-sm" id="my-works-desc">
                         <div v-motion :initial="{ opacity: 0, y: 50 }" :visible-once="{ opacity: 1, y: 0 }" :delay="50"
                             :duration="1000">
-                            <p class="text-uppercase my-works title mobile-title">My Works</p>
+                            <h1 class="text-uppercase my-works title mobile-title">My Works</h1>
                         </div>
                         <div v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
                             :delay="100" :duration="1000">
@@ -26,60 +24,56 @@ import { scrollToView } from './../utils/utils';
                             </p>
                         </div>
                     </div>
-                    <div class="col-auto text-end nav-link-txt select-projects" v-motion :initial="{ opacity: 0, y: 100 }"
-                        :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="1000">
-                        <div class="row gap-between">
-                            <div class="col-auto">
-                                <div class="works-header">
-                                    <div class="pt-4">
-                                        <span @click="scrollToView('tutorial-video')"
-                                            class="text-white text-decoration-none">Tutorial</span>
-                                    </div>
-                                    <div class="pt-4">
-                                        <span @click="scrollToView('event-recap')"
-                                            class="text-white text-decoration-none">Event Recap</span>
-                                    </div>
-                                    <div class="pt-4">
-                                        <span @click="scrollToView('tvc-video')"
-                                            class="text-white text-decoration-none">T.V.C</span>
-                                    </div>
-                                </div>
+                </div>
+                <div id="my-works-collection">
+                    <div class="flex-block-parent">
+                        <div class="flex-works-block">
+                            <div id="showreel-block" class="work-block-content" v-motion
+                                :initial="{ opacity: 0, y: 50 }" :visible-once="{ opacity: 1, y: 0 }" :delay="50"
+                                :duration="800">
+                                <RouterLink to="/my-projects/showreel" class="text-uppercase h2 mobile-h2">
+                                    Showreel
+                                </RouterLink>
+                                <p class="body mobile-body desc-work-display">The trailer capturing my edited videos in 2024</p>
                             </div>
-                            <div class="col-auto">
-                                <div class="works-header">
-                                    <div class="pt-4">
-                                        <span @click="scrollToView('showreel-block')"
-                                            class="text-white text-decoration-none">Showreel</span>
-                                    </div>
-                                    <div class="pt-4">
-                                        <span @click="scrollToView('podcast-highlight')"
-                                            class="text-white text-decoration-none">Podcast Highlights</span>
-                                    </div>
-                                    <div class="pt-4">
-                                        <span @click="scrollToView('kop-video')"
-                                            class="text-white text-decoration-none">K.O.P</span>
-                                    </div>
-                                    <div class="pt-4">
-                                        <span @click="scrollToView('street-video')"
-                                            class="text-white text-decoration-none">Street Videography</span>
-                                    </div>
-                                </div>
+                            <div id="tvc-block" class="work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
+                                :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="800">
+                                <a href="#" class="text-uppercase h2 mobile-h2">T.V.C</a>
+                                <p class="body mobile-body desc-work-display">The motion graphics TVC marked the collaboration of LivWell
+                                    and TVL Media</p>
+                            </div>
+                            <div id="talking-head" class="work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
+                                :visible-once="{ opacity: 1, y: 0 }" :delay="150" :duration="800">
+                                <a href="#" class="text-uppercase h2 mobile-h2">Talking head</a>
+                                <p class="body mobile-body desc-work-display">The video on the career development in the collaboration
+                                    between Huawei and TVL Media </p>
+                            </div>
+                        </div>
+                        <div class="flex-works-block">
+                            <div id="tech-guide" class="work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
+                                :visible-once="{ opacity: 1, y: 0 }" :delay="50" :duration="800">
+                                <a href="#" class="text-uppercase h2 mobile-h2">Tech guide</a>
+                                <p class="body mobile-body desc-work-display">The case of an AV Tech YouTube channel I had built</p>
+                            </div>
+                            <div id="event-recap" class="work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
+                                :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="800">
+                                <a href="#" class="text-uppercase h2 mobile-h2">Event recap</a>
+                                <p class="body mobile-body desc-work-display">The recap video of a KOL in Huawei's product launching </p>
+                            </div>
+                            <div id="highlight-reel" class="work-block-content" v-motion
+                                :initial="{ opacity: 0, y: 50 }" :visible-once="{ opacity: 1, y: 0 }" :delay="150"
+                                :duration="800">
+                                <RouterLink to="/my-projects/highlight-reel" class="text-uppercase h2 mobile-h2">
+                                    Highlight reel
+                                </RouterLink>
+                                <p class="body mobile-body desc-work-display">A campaign highlights marked 15-year anniversary of FPT's
+                                    community fund</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="scroll-text">
-                <div class="marquee branding-text text-center text-uppercase" v-motion :initial="{ opacity: 0, x: 10 }"
-                    :enter="{ opacity: 1, x: 0 }" :delay="100" :duration="1000">
-                    <p class="me-3">Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
-                        Backstage Professionalism Premiere Pro After Effects Cap Cut</p>
-                    <p>Content Creation Visual Storytelling Flimmaking Video Editing Digital Branding
-                        Backstage Professionalism Premiere Pro After Effects Cap Cut</p>
-                </div>
-            </div>
         </div>
-        <MyWorkCollection />
         <!-- Footer -->
         <div id="footer-block">
             <FooterPage />

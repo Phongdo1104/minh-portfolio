@@ -66,7 +66,7 @@
         </div>
         <div id="selected-works-block">
             <div id="view-btn-block">
-                <RouterLink to="/my-works" class="view-btn">
+                <RouterLink to="/my-projects" class="view-btn">
                     View
                 </RouterLink>
             </div>
@@ -109,7 +109,7 @@
                             </div>
                             <div class="read-more-block">
                                 <img class="img-fluid" src="/images/Demonstrate_display.png" alt="TVL Media Info">
-                                <RouterLink to="/my-works"
+                                <RouterLink to="/my-projects"
                                     class="read-more-button read-more-button-right read-more-button-right-mobile"
                                     id="tvl-media-more" @click="setScrollIntoWork('kop-video')">Read
                                     More</RouterLink>
@@ -142,7 +142,7 @@
                         </div>
                         <div class="read-more-block">
                             <img class="img-fluid" src="/images/Demonstrate_display.png" alt="Pointer Clicker Info">
-                            <RouterLink to="/my-works"
+                            <RouterLink to="/my-projects"
                                 class="read-more-button read-more-button-center read-more-button-right-mobile"
                                 id="pointer-clicker-more" @click="setScrollIntoWork('tutorial-video')">Read
                                 More</RouterLink>
@@ -183,7 +183,7 @@
                             </div>
                             <div class="read-more-block">
                                 <img class="img-fluid" src="/images/Demonstrate_display.png" alt="JHGO Channel Info">
-                                <RouterLink to="/my-works"
+                                <RouterLink to="/my-projects"
                                     class="read-more-button read-more-button-right read-more-button-right-mobile"
                                     id="arches-preview-more" @click="setScrollIntoWork('podcast-highlight')">Read
                                     More</RouterLink>
@@ -195,7 +195,7 @@
             <!-- All My Projects -->
             <div class="all-my-works" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
                 :delay="100" :duration="1000">
-                <RouterLink to="/my-works" class="nav-link-txt-2 text-decoration-none" @click="scrollTopSmooth()">
+                <RouterLink to="/my-projects" class="nav-link-txt-2 text-decoration-none" @click="scrollTopSmooth()">
                     <span>See My Works</span>
                 </RouterLink>
             </div>
