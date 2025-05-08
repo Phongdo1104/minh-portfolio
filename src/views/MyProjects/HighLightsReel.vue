@@ -12,6 +12,8 @@ import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
             editStyleContent="This project stands out for its blend of campaign tradition, heartfelt social mission, and compelling storytelling — all captured in the soundtrack 'Điều Tử Tế Bay Xa.' The core editing task was to not to amplify the campaign message, but to elevate the soundtrack's emotion while telling the story through the given footage as well."
             editStyleImg="/images/place-holder-my-projects.png" imgProject2="/images/place-holder-my-projects.png"
             intersectImg="/images/place-holder-my-projects.png" imgProject3="/images/place-holder-my-projects.png"
-            endImg="/images/place-holder-my-projects.png" />
+            endImg="/images/place-holder-my-projects.png"
+            prevProject='/my-projects/talking-head'
+            nextProject='/my-projects/showreel' />
     </div>
 </template>

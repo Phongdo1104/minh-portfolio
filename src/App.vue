@@ -103,7 +103,7 @@ function onBeforeEnter() {
 
         beginTextTransition?.setAttribute('style', 'opacity: 0; transform: translateY(60px)');
         tl.to('#begin-transition', {
-            duration: 1,
+            duration: 1.5,
             opacity: 1,
             ease: 'slow(0.7,0.7,false)',
         }).to(beginTextTransition, {
@@ -117,7 +117,6 @@ function onBeforeEnter() {
 
 function onEnter(el: any, done: any) {
     if (firstEnter) {
-        console.log("First enter 1");
         firstEnter = false;
 
         tl.from('#begin-transition', {
@@ -139,7 +138,6 @@ function onEnter(el: any, done: any) {
             ease: "expoScale(0.5,7,none)"
         }, '<15%');
     } else {
-        console.log("on enter");
         tl.to('#enter-animation', {
             paddingTop: 0,
             duration: .1,
@@ -176,12 +174,16 @@ window.addEventListener('resize', () => {
         <!-- Animation -->
         <div id="transition" class="transition-overlay">
             <div class="text-transition">
-                <p id="content-transition" class="h2 mobile-h2">{{ transitionTitle.title }}</p>
+                <p id="content-transition" class="h1_5 mobile-h1_5 font-oswald-regular">
+                    {{ transitionTitle.title }}
+                </p>
             </div>
         </div>
         <div id="begin-transition" class="transition-overlay-begin">
             <div class="text-transition">
-                <p id="begin-content-transition" class="h2 mobile-h2">{{ transitionTitle.title }}</p>
+                <p id="begin-content-transition" class="h1_5 mobile-h1_5 font-oswald-regular">
+                    {{ transitionTitle.title }}
+                </p>
             </div>
         </div>
     </div>

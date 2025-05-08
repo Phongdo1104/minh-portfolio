@@ -25,7 +25,11 @@
 .intro-block {
   background: #1c1d20;
   color: #fff;
-  height: 100vh;
+}
+
+.pre-next {
+  text-decoration: none;
+  color: #000;
 }
 
 .second-img-block {

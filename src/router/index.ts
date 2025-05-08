@@ -5,6 +5,10 @@ import MyWorks from '../views/MyWorksPage.vue'
 import NotFoundPage from '../components/NotFoundPage.vue'
 import HighLightsReel from '../views/MyProjects/HighLightsReel.vue'
 import ShowReel from '../views/MyProjects/ShowReel.vue'
+import EventRecap from '@/views/MyProjects/EventRecap.vue'
+import TechGuide from '@/views/MyProjects/TechGuide.vue'
+import KopTalkingHead from '@/views/MyProjects/KopTalkingHead.vue'
+import TvcPage from '@/views/MyProjects/TvcPage.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -25,6 +29,10 @@ const router = createRouter({
                 { path: '', name: 'my-projects', component: MyWorks },
                 { path: 'highlight-reel', name: 'highlight-reel', component: HighLightsReel },
                 { path: 'showreel', name: '2024-showreel', component: ShowReel },
+                { path: 'event-recap', name: 'event-recap', component: EventRecap },
+                { path: 'tech-guide', name: 'tech-guide', component: TechGuide },
+                { path: 'tvc', name: 't.v.c', component: TvcPage },
+                { path: 'talking-head', name: 'talking-head', component: KopTalkingHead },
             ]
         },
         {

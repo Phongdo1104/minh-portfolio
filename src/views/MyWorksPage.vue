@@ -38,13 +38,17 @@ import FooterPage from '../components/FooterPage.vue'
                             </div>
                             <div id="tvc-block" class="work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
                                 :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="800">
-                                <a href="#" class="text-uppercase h2 mobile-h2">T.V.C</a>
+                                <RouterLink to="/my-projects/tvc" class="text-uppercase h2 mobile-h2">
+                                    T.V.C
+                                </RouterLink>
                                 <p class="body mobile-body desc-work-display">The motion graphics TVC marked the collaboration of LivWell
                                     and TVL Media</p>
                             </div>
                             <div id="talking-head" class="work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
                                 :visible-once="{ opacity: 1, y: 0 }" :delay="150" :duration="800">
-                                <a href="#" class="text-uppercase h2 mobile-h2">Talking head</a>
+                                <RouterLink to="/my-projects/talking-head" class="text-uppercase h2 mobile-h2">
+                                    Talking head
+                                </RouterLink>
                                 <p class="body mobile-body desc-work-display">The video on the career development in the collaboration
                                     between Huawei and TVL Media </p>
                             </div>
@@ -52,12 +56,16 @@ import FooterPage from '../components/FooterPage.vue'
                         <div class="flex-works-block">
                             <div id="tech-guide" class="work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
                                 :visible-once="{ opacity: 1, y: 0 }" :delay="50" :duration="800">
-                                <a href="#" class="text-uppercase h2 mobile-h2">Tech guide</a>
+                                <RouterLink to="/my-projects/tech-guide" class="text-uppercase h2 mobile-h2">
+                                    Tech guide
+                                </RouterLink>
                                 <p class="body mobile-body desc-work-display">The case of an AV Tech YouTube channel I had built</p>
                             </div>
                             <div id="event-recap" class="work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
                                 :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="800">
-                                <a href="#" class="text-uppercase h2 mobile-h2">Event recap</a>
+                                <RouterLink to="/my-projects/event-recap" class="text-uppercase h2 mobile-h2">
+                                    Event recap
+                                </RouterLink>
                                 <p class="body mobile-body desc-work-display">The recap video of a KOL in Huawei's product launching </p>
                             </div>
                             <div id="highlight-reel" class="work-block-content" v-motion

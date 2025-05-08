@@ -116,11 +116,15 @@
             <div class="row text-center">
                 <div class="col-sm" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
                     :delay="200" :duration="800">
-                    <span class="font-oswald-bold nav-link-txt-2 mobile-nav-link-txt-2">The Previous</span>
+                    <RouterLink :to="prevProject" class="pre-next font-oswald-bold nav-link-txt-2 mobile-nav-link-txt-2">
+                        The Previous
+                    </RouterLink>
                 </div>
-                <div class="col-sm" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
+                <div class="col-sm d-md-none d-md-inline" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
                     :delay="200" :duration="800">
-                    <span class="font-oswald-bold nav-link-txt-2 mobile-nav-link-txt-2">The Next Project</span>
+                    <RouterLink :to="nextProject" class="pre-next font-oswald-bold nav-link-txt-2 mobile-nav-link-txt-2">
+                        The Next Project
+                    </RouterLink>
                 </div>
             </div>
         </div>
@@ -151,14 +155,16 @@ const props = defineProps([
     'imgProject2',
     'intersectImg',
     'imgProject3',
-    'endImg'
+    'endImg',
+    'prevProject',
+    'nextProject'
 ]);
 
 function assignScrollTriggerToElement(elementName: string, startVal: any, endVal: any, startScale: any, endScale: any) {
     let tl = gsap.timeline({
         scrollTrigger: {
             trigger: elementName,
-            scrub: true,
+            scrub: 0.25,
             start: startVal + " center",
             end: endVal,
         }
@@ -202,7 +208,7 @@ function goToIntroBlock() {
 
 onMounted(() => {
     assignScrollTriggerToElement('#first-project-block', "-4000px", "center", 3, 1);
-    assignScrollTriggerToElement('#second-project-block', "-450px", "+=100%", 0.75, 1);
+    assignScrollTriggerToElement('#second-project-block', "-450px", "+=100%", 0.75, 1.25);
     assignScrollTriggerToElement('#third-project-block', "-2500px", "center", 3, 1);
 })
 </script>
