@@ -9,7 +9,7 @@ import EventRecap from '@/views/MyProjects/EventRecap.vue'
 import TechGuide from '@/views/MyProjects/TechGuide.vue'
 import KopTalkingHead from '@/views/MyProjects/KopTalkingHead.vue'
 import TvcPage from '@/views/MyProjects/TvcPage.vue'
-import PodCastHighlight from '@/views/MyProjects/PodCastHighlight.vue'
+import PodCastHighlight from '@/views/MyProjects/PodcastHighlight.vue'
 
 const router = createRouter({
     history: createWebHistory(),
