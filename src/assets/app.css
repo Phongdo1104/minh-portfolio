@@ -19,6 +19,14 @@ img {
   src: url('/fonts/Roboto-Regular.ttf');
 }
 
+.font-oswald-bold {
+  font-family: 'oswald_bold';
+}
+
+.font-oswald-regular {
+  font-family: 'oswald_regular';
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -44,6 +52,10 @@ img {
 
 .h1 {
   font-size: 105.9px !important;
+}
+
+.h1_5 {
+  font-size: 90px !important;
 }
 
 .h2 {
@@ -186,6 +198,10 @@ img {
 @media (max-width: 1280px) {
   .mobile-h1 {
     font-size: 60px !important;
+  }
+
+  .mobile-h1_5 {
+    font-size: 50px !important;
   }
 
   .mobile-h2 {

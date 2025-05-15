@@ -1,292 +1,48 @@
-/* Showreel */
-.showreel {
-  background-image: url('/images/MyWorks/Showreel/showreelThumb1.png');
-  background-color: #000000;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.loop-showreel-gif {
-  background-image: url('/images/mediaHolder.png');
-  background-color: #000000;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Tutorial */
-.tech-guide-bg {
-  background-image: url('/images/MyWorks/TechGuide/techThumb2.png');
-  background-color: #000000;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Tutorial */
-.event-highlight-bg {
-  background-image: url('/images/MyWorks/EventRecap/eventThumb1.png');
-  background-color: #000000;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Documentary */
-.motion-tvc-bg {
-  background-image: url('/images/MyWorks/TVC/tvcThumb1.png');
-  background-color: #000000;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* TVC Video */
-.podcast-bg {
-  background-image: url('/images/MyWorks/Podcast/podcastThumb2.png');
-  background-color: #000000;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* K.O.P Video */
-.kop-bg {
-  background-image: url('/images/MyWorks/KOP/kopThumb1.png');
-  background-color: #000000;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Short Video */
-.street-video-bg {
-  background-image: url('/images/mediaHolder.png');
-  background-color: #000000;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.work-block {
-  padding: 6vw 0 0;
-}
-
-.my-works-blocks {
-  height: 100%;
-}
-
-.title-works {
-  height: 60%;
-  align-items: end;
+.flex-embedded-reverse {
   display: flex;
-  text-shadow:
-    2px 2px 5px rgba(0, 0, 0, 0.8),
-    0px 0px 2px rgba(0, 0, 0, 1);
+  gap: 5rem;
+  flex-wrap: wrap-reverse;
 }
 
-.title-works span {
-  color: #ffffff;
+.editing-style-title {
+  padding-top: 1rem;
 }
 
-.my-background-title,
-.my-role-title {
-  display: inline-block;
+.fb-embedded-element {
+  position: relative;
+  padding-bottom: 177.8%;
+  height: 0;
+  margin: 0 !important;
 }
 
-.title-works span,
-.my-background-title span,
-.my-role-title span {
-  font-family: 'oswald_bold';
-}
-
-.my-background-title span,
-.my-role-title span {
-  text-transform: capitalize;
-  text-shadow: unset !important;
-}
-
-.description-work-last,
-.description-work {
-  background-color: #e15735;
-  color: white;
-  padding: 6vw 0 6vw;
-  height: 40%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.my-background-block {
-  padding-left: 5rem;
-}
-
-.my-role-block {
-  padding-left: 1.5rem;
-}
-
-.my-background-block div span a {
-  color: #ffffff;
-  text-decoration: none;
-  font-family: 'teachers_extra_bold';
-}
-
-.my-background-description {
-  width: 50%;
-}
-
-.challenge-objective-block {
-  color: white;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-shadow:
-    2px 2px 5px rgba(0, 0, 0, 0.8),
-    0px 0px 2px rgba(0, 0, 0, 1);
-}
-
-.embedded-link {
-  height: 100%;
-  width: 100%;
-}
-
-.embedded-link iframe {
-  height: 100%;
-  width: 100%;
-}
-
-.embedded-info {
-  padding-top: 2rem;
-  padding-bottom: 4rem;
-}
-
-.editing-work-block {
-  height: 100%;
-  align-items: end;
-  display: grid;
-}
-
-.video-showreel-block {
-  height: 70%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* .video-showreel-block img {
-  margin-top: 50px;
-} */
-
-.video-showreel-block span {
-  padding-top: 2rem;
-  height: 100%;
-  width: 100%;
-}
-
-.video-showreel-block iframe {
-  height: 100%;
-  width: 100%;
-}
-
-.business-obj-img-size {
-  width: 70%;
-}
-
-.enable-dark-layer {
+.fb-embedded-element iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
 }
 
-.embedded-link-wrapper-facebook {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-}
-
-.embedded-link-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-}
-.embedded-link-wrapper iframe
-,.embedded-link-wrapper-facebook iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-@media (max-width: 1000px) {
-  .my-background-description {
-    width: 100% !important;
-  }
-}
-
-@media (max-width: 900px) {
-  #title-works span {
-    font-size: 50px !important;
-  }
-  .podcast-bg {
-    background-position: center;
-  }
-}
-
-@media (max-width: 767px) {
-    .my-background-block {
-        padding-left: 1.5rem;
-    }
-}
-
-@media (max-width: 646px) {
-  .showreel-work {
-    padding: 20vh 2vh 20vh;
-  }
-  .challenge-objective-block {
-    display: flex;
-  }
-  .description-work-last {
-    display: grid;
-    align-items: start !important;
-  }
-  .my-role-block {
-    padding-top: 20px;
-  }
+.editing-style {
+  padding-top: 3rem;
 }
 
 @media (max-width: 575px) {
-  .my-works-blocks {
-    height: 100vh;
+  .editing-style-first {
+    padding-top: 0 !important;
   }
-  .embedded-link-wrapper {
-    padding-bottom: 100%;
+  .flex-content-reverse {
+    display: flex;
+    flex-direction: column-reverse;
   }
-}
-
-@media (max-width: 450px) {
-  #video-showreel-block {
-    height: 60%;
-    display: grid;
-    align-items: center;
+  .flex-content-reverse .editing-style-title {
+    padding-top: 0.5rem;
+    font-weight: bold;
   }
-  .tutorial-challenge-editing {
-    background-position: center;
+  .flex-embedded-reverse {
+    gap: 2rem;
   }
-  .business-obj-img-size {
-    width: 100%;
-  }
-  .podcast-bg {
-    background-position: bottom;
-  }
-  .documentary-bg {
-    background-position: top 0% right 30%;
+  .editing-style {
+    padding-top: 2rem;
   }
 }

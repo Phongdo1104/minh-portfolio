@@ -35,8 +35,8 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
                     <RouterLink to="/about-me" class="nav-link-txt text-decoration-none ms-5 fw-bold" id="about-me">
                         About Me
                     </RouterLink>
-                    <RouterLink to="/my-works" class="nav-link-txt text-decoration-none ms-5 fw-bold" id="my-projects">
-                        My Works
+                    <RouterLink to="/my-projects" class="nav-link-txt text-decoration-none ms-5 fw-bold" id="my-projects">
+                        My Projects
                     </RouterLink>
                     <span class="text-decoration-none ms-5 nav-link-txt">
                         <button type="button" id="get-in-touch" @click="scrollToView('footer-block')">Get In
@@ -72,12 +72,12 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
                             :duration="500">
                             About me
                         </RouterLink>
-                        <RouterLink to="/my-works" @click="closePopup()"
+                        <RouterLink to="/my-projects" @click="closePopup()"
                             class="mb-3 text-decoration-none text-center sidebar-item w-100"
                             v-motion
                             :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :delay="100"
                             :duration="500">
-                            My Works
+                            My Projects
                         </RouterLink>
                         <span to="/contact-me" @click="scrollToView('footer-block', true)"
                             class="mb-3 text-decoration-none text-center sidebar-item w-100 mobile-contact-me"

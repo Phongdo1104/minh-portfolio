@@ -7,7 +7,7 @@
         <RouterLink to="/about-me" class="nav-link-txt" @click="closeSideBar()">
             About me
         </RouterLink>
-        <RouterLink to="/my-works" class="nav-link-txt" @click="closeSideBar()">
+        <RouterLink to="/my-projects" class="nav-link-txt" @click="closeSideBar()">
             My Projects
         </RouterLink>
         <span @click="scrollToContact()" class="contact-me nav-link-txt">
