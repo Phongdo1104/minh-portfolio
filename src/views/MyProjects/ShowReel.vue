@@ -6,13 +6,20 @@ import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
         <MyWorkBlockHorizontal
             projectTitle="2024 Showreel"
             categoryDesc="CREATIVE DIRECTION / VIDEO EDITING / MOTION GRAPHICS DESIGN / SOUND DESIGN"
-            contentDesc="An engaging showcase of past projects woven together under a storyline. This showreel highlights editing skills while ensuring clear and impactful message delivery through supers."
-            imgProject1="/images/place-holder-my-projects.png"
-            editStyleCategory="Grid Mosaic Montage / Documentary Highlights / Typography Overlay"
-            editStyleContent='Event highlight featuring Shark Thai Van Linh, a KOL in career growth and self-development, as guest speaker at the Huawei MatePad Pro launch, showcasing her insights and the event’s remarks.'
-            editStyleImg="/images/place-holder-my-projects.png" imgProject2="/images/place-holder-my-projects.png"
-            intersectImg="/images/place-holder-my-projects.png" imgProject3="/images/place-holder-my-projects.png"
-            endImg="/images/place-holder-my-projects.png"
+            contentDesc="An engaging showcase of past projects woven together under a story line. This showreel highlights editing skills while ensuring clear and impact message delivery through supers."
+            videoProject1="/images/MyWorksAssets/Showreel/block-01.mp4"
+            imgProject1=""
+            editStyleCategory="Multi-Frame Montage / Fast-paced / Typography Overlays"
+            editStyleContent='The biggest challenge in this project was finding the right starting point: "How should I begin the story, and what key message do I want to convey in the final product?" I traced the concept back to the original meaning of “reels” — the film reel that carries storytelling frame by frame. This idea, paired with a cinematic and impact  soundtrack, became the foundation of the creative direction.'
+            editStyleVideo="/images/MyWorksAssets/Showreel/block-02.mp4"
+            editStyleImg="" skipMiddle="true"
+            embeddedAsset=""
+            imgProject2="" videoProject2=""
+            intersectImg="" intersectVideo=""
+            imgProject3=""
+            videoProject3="/images/MyWorksAssets/Showreel/block-03.mp4"
+            endImg=""
+            endVideo="/images/MyWorksAssets/Showreel/block-04.mp4"
             prevProject='/my-projects/highlight-reel'
             nextProject='/my-projects/tech-guide' />
     </div>

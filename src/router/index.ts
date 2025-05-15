@@ -9,6 +9,7 @@ import EventRecap from '@/views/MyProjects/EventRecap.vue'
 import TechGuide from '@/views/MyProjects/TechGuide.vue'
 import KopTalkingHead from '@/views/MyProjects/KopTalkingHead.vue'
 import TvcPage from '@/views/MyProjects/TvcPage.vue'
+import PodCastHighlight from '@/views/MyProjects/PodCastHighlight.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -33,6 +34,7 @@ const router = createRouter({
                 { path: 'tech-guide', name: 'tech-guide', component: TechGuide },
                 { path: 'tvc', name: 't.v.c', component: TvcPage },
                 { path: 'talking-head', name: 'talking-head', component: KopTalkingHead },
+                { path: 'podcast-highlight', name: 'podcast-highlight', component: PodCastHighlight },
             ]
         },
         {

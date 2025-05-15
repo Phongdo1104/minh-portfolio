@@ -7,14 +7,21 @@ const styleContent = 'After experiencing ' + "Huawei's" + 'MatePad Pro and its k
     <div>
         <MyWorkBlockHorizontal
             projectTitle="Talking Head"
-            categoryDesc="Photography Direction, Editing, Motion Graphics "
+            categoryDesc="VIDEOGRAPHY / VIDEO EDITING / MOTION GRAPHICS DESIGN"
             contentDesc="A hands-on review video produced in collaboration with Huawei and Shark Thai Van Linh - a KOL on career growth and self development, showcasing workplace efficiency tips through the practical application of the Huawei MatePad Pro."
-            imgProject1="/images/place-holder-my-projects.png"
-            editStyleCategory="Modern, Vibrant, Data Visualization."
-            editStyleContent="After experiencing Huawei&apos;s MatePad Pro and its key features during the launch phase, my first impression was: &quot;It feels like taking notes on paper, yet functions like a laptop — a handcrafted digital experience.&quot; That inspired the motion design, which mimics note-taking animations and blends modern, elegant visuals to bring the product&apos;s versatility to life."
-            editStyleImg="/images/place-holder-my-projects.png" imgProject2="/images/place-holder-my-projects.png"
-            intersectImg="/images/place-holder-my-projects.png" imgProject3="/images/place-holder-my-projects.png"
-            endImg="/images/place-holder-my-projects.png"
+            videoProject1="/images/MyWorksAssets/TalkingHead/block-01.mp4"
+            imgProject1=""
+            editStyleCategory="Modern / Vibrant / Elegant"
+            editStyleContent="After experiencing Huawei&apos;s MatePad Pro and its key features during the launch phase, my first impression was: &quot;It feels like taking notes on paper, yet functions like a laptop — a handcrafted digital experience.&quot; That inspired the motion design, which mimics note-taking animations and blends modern, elegant visuals to bring the product’s versatility to life."
+            editStyleVideo=""
+            embeddedAsset='<iframe width="560" height="315" src="https://www.youtube.com/embed/PJ8X0krx-9E?si=w8oKcnNGRfjuzQ2r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+            editStyleImg="" skipMiddle="true"
+            imgProject2="" videoProject2=""
+            intersectImg="" intersectVideo=""
+            imgProject3=""
+            videoProject3="/images/MyWorksAssets/TalkingHead/block-03.mp4"
+            endImg=""
+            endVideo="/images/MyWorksAssets/TalkingHead/block-04.mp4"
             prevProject='/my-projects/event-recap'
             nextProject='/my-projects/highlight-reel' />
     </div>

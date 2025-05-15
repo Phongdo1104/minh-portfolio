@@ -1,18 +1,20 @@
 <script lang="ts" setup>
-import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
+import MyWorkBlockVertical from '@/components/MyWorkBlockVertical.vue';
 </script>
 <template>
     <div>
-        <MyWorkBlockHorizontal
+        <MyWorkBlockVertical
             projectTitle="Event Recap"
-            categoryDesc="VIDEOGRAPHY / VIDEO EDITING / COLOR GRADING "
+            categoryDesc="VIDEOGRAPHY / VIDEO EDITING / COLOR GRADING"
             contentDesc="These are two event highlight videos produced as part of the KOL partnership scope of work for Thai Van Linh — a prominent influencer in business, finance, and personal development — in collaboration with Huawei and La Roche-Posay"
-            imgProject1="/images/place-holder-my-projects.png"
-            editStyleCategory="Multi-Frame Montage, Fast-paced, Typography Overlays."
-            editStyleContent='The biggest challenge in this project was finding the right starting point: "How should I begin the story, and what key message do I want to convey in the final product?" After exploring various references, I traced the concept back to the original meaning of “reels” — the film reel — a medium that carries storytelling frame by frame. This idea, paired with a cinematic and impactful orchestral soundtrack, became the foundation of the creative direction.'
-            editStyleImg="/images/place-holder-my-projects.png" imgProject2="/images/place-holder-my-projects.png"
-            intersectImg="/images/place-holder-my-projects.png" imgProject3="/images/place-holder-my-projects.png"
-            endImg="/images/place-holder-my-projects.png"
+            videoProject1=""
+            imgProject1="/images/MyWorksAssets/EventRecap/block-01.png"
+            editStyleCategory="Grid Mosaic Montage / Documentary Highlights / Typography Overlay"
+            editStyleContent='Event highlight of Shark Thai Van Linh attending to La Roche-Posay 50th anniversary hosted in Ho Chi Minh City. The video recaptures the markable numbers of LRP achievements and interesting activities throughout the event.'
+            embeddedAsset1='<iframe width="100%" height="915" src="https://www.tiktok.com/embed/v3/7493483877428776209" frameborder="0" allowfullscreen></iframe>'
+            embeddedAsset2='<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flinhthaiofficial%2Fvideos%2F604544468898831%2F%3Frdid%3DeoYQR6Asf7tynypo%23&width=500&show_text=false&height=889&appId" width="500" height="889" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>'
+            imgProject2="/images/MyWorksAssets/EventRecap/block-03.png"
+            videoProject2=""
             prevProject='/my-projects/tvc'
             nextProject='/my-projects/talking-head' />
     </div>
