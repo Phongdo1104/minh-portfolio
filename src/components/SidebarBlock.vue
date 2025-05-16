@@ -18,23 +18,7 @@
 
 <script lang="ts" setup>
 import './../assets/sidebar.css';
-
-function closeSideBar() {
-    const sidebar = document.getElementById('sidebar-block');
-    if (!sidebar) {
-        return;
-    }
-
-    sidebar.style.width = "0";
-    sidebar.style.opacity = "0";
-
-    const menuBurger = document.getElementById('MenuBurger');
-    if (!menuBurger) {
-        return;
-    }
-    menuBurger.classList.remove('menu-burger-in');
-    menuBurger.classList.add('menu-burger-out');
-}
+import { closeSideBar } from '@/utils/utils';
 
 function scrollToContact() {
     const element = document.getElementById('footer-block')

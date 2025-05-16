@@ -7,7 +7,7 @@ import SidebarMenu from './components/SidebarBlock.vue';
 import { gsap } from "gsap";
 import { reactive, watch, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import { scrollToView, scrollTop } from './utils/utils';
+import { scrollToView, scrollTop, closeSideBar } from './utils/utils';
 import { useScrollInto } from './stores/scrollInto';
 
 const store = useScrollInto();
@@ -30,6 +30,7 @@ let firstEnter: boolean = true;
 const tl = gsap.timeline();
 
 function onBeforeLeave() {
+    closeSideBar();
     transitionTitle.title = String(document.title);
     const transition = document.getElementById('transition');
 
