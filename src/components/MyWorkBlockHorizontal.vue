@@ -325,25 +325,25 @@ onMounted(() => {
 })
 
 function mouseOverToggleMute() {
-    if (parseInt(windowSizeStore.width) > 767 && parseInt(windowSizeStore.height) > 350) {
-        const volumeSlider = document.getElementById('volumeSlider');
+    // if (parseInt(windowSizeStore.width) > 767 && parseInt(windowSizeStore.height) > 350) {
+    // }
+    const volumeSlider = document.getElementById('volumeSlider');
 
-        if (!volumeSlider) return;
+    if (!volumeSlider) return;
 
-        volumeSlider.style.width = '150px';
-        volumeSlider.style.setProperty('--height-thumb', "1rem");
-    }
+    volumeSlider.style.width = '150px';
+    volumeSlider.style.setProperty('--height-thumb', "1rem");
 }
 
 function mouseLeaveToggleMute() {
-    if (parseInt(windowSizeStore.width) > 767 && parseInt(windowSizeStore.height) > 350) {
-        const volumeSlider = document.getElementById('volumeSlider');
+    // if (parseInt(windowSizeStore.width) > 767 && parseInt(windowSizeStore.height) > 350) {
+    // }
+    const volumeSlider = document.getElementById('volumeSlider');
 
-        if (!volumeSlider) return;
+    if (!volumeSlider) return;
 
-        volumeSlider.style.width = '0';
-        volumeSlider.style.setProperty('--height-thumb', "0");
-    }
+    volumeSlider.style.width = '0';
+    volumeSlider.style.setProperty('--height-thumb', "0");
 }
 
 function toggleMute() {
@@ -362,13 +362,17 @@ function toggleMute() {
         updateSliderVolumeWithNoValue();
     } else {
         let volumeValue = oldVolumeValue;
-        if (parseInt(windowSizeStore.width) > 767 && parseInt(windowSizeStore.height) > 350) {
-            if (volumeValue === 0) {
-                oldVolumeValue = 0.1;
-                volumeValue = oldVolumeValue;
-            }
-        } else {
-            volumeValue = 1;
+        // if (parseInt(windowSizeStore.width) > 767 && parseInt(windowSizeStore.height) > 350) {
+        //     if (volumeValue === 0) {
+        //         oldVolumeValue = 0.1;
+        //         volumeValue = oldVolumeValue;
+        //     }
+        // } else {
+        //     volumeValue = 1;
+        // }
+        if (volumeValue === 0) {
+            oldVolumeValue = 0.1;
+            volumeValue = oldVolumeValue;
         }
         slider.value = String(volumeValue);
         video.volume = volumeValue;
