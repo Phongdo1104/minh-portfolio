@@ -6,11 +6,12 @@ const styleContent = 'After experiencing ' + "Huawei's" + 'MatePad Pro and its k
 <template>
     <div>
         <MyWorkBlockHorizontal
-            projectTitle="Talking Head"
+            projectTitle="K.O.P / Talking Head"
             categoryDesc="VIDEOGRAPHY / VIDEO EDITING / MOTION GRAPHICS DESIGN"
             contentDesc="A hands-on review video produced in collaboration with Huawei and Shark Thai Van Linh - a KOL on career growth and self development, showcasing workplace efficiency tips through the practical application of the Huawei MatePad Pro."
             videoProject1="/images/MyWorksAssets/TalkingHead/block-01.mp4"
             imgProject1=""
+            noZoomVideo1=""
             editStyleCategory="Modern / Vibrant / Elegant"
             editStyleContent="After experiencing Huawei&apos;s MatePad Pro and its key features during the launch phase, my first impression was: &quot;It feels like taking notes on paper, yet functions like a laptop — a handcrafted digital experience.&quot; That inspired the motion design, which mimics note-taking animations and blends modern, elegant visuals to bring the product’s versatility to life."
             editStyleVideo=""
@@ -23,6 +24,6 @@ const styleContent = 'After experiencing ' + "Huawei's" + 'MatePad Pro and its k
             endImg=""
             endVideo="/images/MyWorksAssets/TalkingHead/block-04.mp4"
             prevProject='/my-projects/event-recap'
-            nextProject='/my-projects/highlight-reel' />
+            nextProject='/my-projects/tech-guide' />
     </div>
 </template>

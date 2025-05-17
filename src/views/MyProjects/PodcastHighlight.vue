@@ -4,11 +4,12 @@ import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
 <template>
     <div>
         <MyWorkBlockHorizontal
-            projectTitle="T.V.C"
+            projectTitle="Podcast Highlights"
             categoryDesc="VIDEOGRAPHY / VIDEO EDITING "
             contentDesc="A series showcasing the stories of employees at Arches - a business consulting service, reflecting its dynamic, multinational work environment."
             videoProject1="/images/MyWorksAssets/PodcastHighlight/block-01.mp4"
             imgProject1=""
+            noZoomVideo1=""
             editStyleCategory="Energetic / Fast-paced"
             editStyleContent='-'
             editStyleVideo=""
@@ -20,7 +21,7 @@ import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
             videoProject3="/images/MyWorksAssets/PodcastHighlight/block-03.mp4"
             endImg=""
             endVideo="/images/MyWorksAssets/PodcastHighlight/block-04.mp4"
-            prevProject='/my-projects'
-            nextProject='/my-projects' />
+            prevProject='/my-projects/tech-guide'
+            nextProject='/my-projects/showreel' />
     </div>
 </template>

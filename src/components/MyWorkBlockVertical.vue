@@ -139,13 +139,13 @@
             <div class="row text-center">
                 <div class="col-sm d-md-none d-md-inline" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
                     :duration="800">
-                    <RouterLink :to="prevProject" class="pre-next font-oswald-bold nav-link-txt-2 mobile-nav-link-txt-2">
+                    <RouterLink :to="prevProject" class="pre-next prev-text font-oswald-regular nav-link-txt-2 mobile-nav-link-txt-2">
                         The Previous
                     </RouterLink>
                 </div>
                 <div class="col-sm" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
                     :duration="800">
-                    <RouterLink :to="nextProject" class="pre-next font-oswald-bold nav-link-txt-2 mobile-nav-link-txt-2">
+                    <RouterLink :to="nextProject" class="pre-next font-oswald-regular nav-link-txt-2 mobile-nav-link-txt-2">
                         The Next Project
                     </RouterLink>
                 </div>

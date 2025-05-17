@@ -28,8 +28,9 @@
                                         </RouterLink>
                                     </div>
                                 </div>
-                                <div @click="goToIntroBlock()" class="vector-down" v-motion :initial="{ opacity: 0, y: 100 }"
-                                    :visible-once="{ opacity: 1, y: 0 }" :delay="600" :duration="800">
+                                <div @click="goToIntroBlock()" class="vector-down" v-motion
+                                    :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="600"
+                                    :duration="800">
                                     <span class="go-to-intro">
                                         <img class="img-fluid" src="/svg/vector-down.svg" alt="go-to-intro">
                                     </span>
@@ -56,12 +57,28 @@
             </div>
         </div>
         <div class="overflow-hidden">
-            <div id="first-project-block">
-                <div v-if="videoProject1 !== ''">
-                    <video width="100%" autoplay muted loop preload="none" :src="videoProject1"></video>
+            <div v-if="noZoomVideo1 === ''">
+                <div id="first-project-block">
+                    <div v-if="videoProject1 !== ''">
+                        <video width="100%" autoplay muted loop preload="none" :src="videoProject1"></video>
+                    </div>
+                    <div v-else-if="imgProject1 !== ''">
+                        <img class="img-fluid w-100" :src="imgProject1" alt="editing-style-img">
+                    </div>
                 </div>
-                <div v-else-if="imgProject1 !== ''">
-                    <img class="img-fluid w-100" :src="imgProject1" alt="editing-style-img">
+            </div>
+            <div v-else-if="noZoomVideo1 !== ''">
+                <div class="video-controls">
+                    <video id="no-zoom-video" width="100%" autoplay muted loop preload="none"
+                        :src="noZoomVideo1"></video>
+                    <div class="volume-icon">
+                        <span @mouseover="mouseOverToggleMute()" @mouseleave="mouseLeaveToggleMute()">
+                            <div class="volume-slider" @click="toggleMute()">
+                                <img class="volume-icon-btn" id="volume-btn" src="/svg/mute-icon.svg" alt="volume-icon">
+                            </div>
+                            <input class="volume-scroll" id="volumeSlider" type="range" min="0" max="1" step="0.01">
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,8 +89,9 @@
                         :visible-once="{ opacity: 1, y: 0 }" :delay="200" :duration="800">
                         Editing Style
                     </div>
-                    <div class="body mobile-body font-oswald-bold-sm padding-top-1rem" v-motion :initial="{ opacity: 0, y: 100 }"
-                        :visible-once="{ opacity: 1, y: 0 }" :delay="400" :duration="800">
+                    <div class="body mobile-body font-oswald-bold-sm padding-top-1rem" v-motion
+                        :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="400"
+                        :duration="800">
                         <span v-html="editStyleCategory"></span>
                     </div>
                 </div>
@@ -87,7 +105,8 @@
             <div v-if="embeddedAsset === ''" class="overflow-hidden project-container">
                 <div>
                     <div v-if="editStyleVideo !== ''">
-                        <video width="100%" autoplay muted loop preload="none" :src="editStyleVideo" id="edit-style-block"></video>
+                        <video width="100%" autoplay muted loop preload="none" :src="editStyleVideo"
+                            id="edit-style-block"></video>
                     </div>
                     <div v-else-if="editStyleImg !== ''" class="img-wrapper">
                         <img :src="editStyleImg" alt="editing-style-img" id="edit-style-block">
@@ -115,10 +134,11 @@
             <div class="container">
                 <div class="overflow-hidden project-container">
                     <div v-if="intersectVideo !== ''" class="img-wrapper">
-                        <video width="100%" autoplay muted loop preload="none" :src="intersectVideo" id="middle-intersect-block"></video>
+                        <video width="100%" autoplay muted loop preload="none" :src="intersectVideo"
+                            id="middle-intersect-block"></video>
                     </div>
                     <div v-else-if="intersectImg" class="img-wrapper">
-                        <img class="bg-black" :src="intersectImg" id="middle-intersect-block">
+                        <img class="bg-img" :src="intersectImg" id="middle-intersect-block">
                     </div>
                 </div>
             </div>
@@ -145,15 +165,17 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-sm d-md-none d-md-inline" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
-                    :duration="800">
-                    <RouterLink :to="prevProject" class="pre-next prev-text font-oswald-bold nav-link-txt-2 mobile-nav-link-txt-2">
+                <div class="col-sm d-md-none d-md-inline" v-motion :initial="{ opacity: 0, y: 100 }"
+                    :visible-once="{ opacity: 1, y: 0 }" :duration="800">
+                    <RouterLink :to="prevProject"
+                        class="pre-next prev-text font-oswald-regular nav-link-txt-2 mobile-nav-link-txt-2">
                         The Previous
                     </RouterLink>
                 </div>
                 <div class="col-sm" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
                     :duration="800">
-                    <RouterLink :to="nextProject" class="pre-next font-oswald-bold nav-link-txt-2 mobile-nav-link-txt-2">
+                    <RouterLink :to="nextProject"
+                        class="pre-next font-oswald-regular nav-link-txt-2 mobile-nav-link-txt-2">
                         The Next Project
                     </RouterLink>
                 </div>
@@ -172,14 +194,48 @@ import { onMounted, computed } from 'vue'
 
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
+import { windowSize } from "@/stores/windowSize";
 
 gsap.registerPlugin(ScrollTrigger);
+
+let windowSizeStore = windowSize();
+let oldVolumeValue = 0.5;
+
+function setupInputVolume() {
+    const video = <HTMLVideoElement>document.getElementById("no-zoom-video");
+    const slider = <HTMLInputElement>document.getElementById("volumeSlider");
+    const toggleMute = document.getElementById('volume-btn');
+    if (!slider || !video || !toggleMute) return;
+
+    video.volume = 0;
+    slider.value = "0";
+
+    slider.addEventListener('input', function () {
+        let minI = parseInt((<HTMLInputElement>slider).min);
+        let maxI = parseInt((<HTMLInputElement>slider).max);
+        let valueI = parseFloat((<HTMLInputElement>slider).value);
+        slider.style.background = `linear-gradient(to right, red 0%, red ${(valueI - minI) / (maxI - minI) * 100}%, #DEE2E6 ${(valueI - minI) / (maxI - minI) * 100}%, #DEE2E6 100%)`
+        video.volume = valueI;
+        video.muted = valueI === 0;
+        oldVolumeValue = video.volume;
+
+        if (valueI === 0) {
+            toggleMute.setAttribute('src', '/svg/mute-icon.svg');
+        } else {
+            let toggleMuteSrc = <string>toggleMute.getAttribute('src');
+            if (toggleMuteSrc && !toggleMuteSrc.includes("/svg/full-volume.svg")) {
+                toggleMute.setAttribute('src', '/svg/full-volume.svg');
+            }
+        }
+    })
+}
 
 const props = defineProps([
     'projectTitle',
     'categoryDesc',
     'contentDesc',
     'videoProject1',
+    'noZoomVideo1',
     'imgProject1',
     'editStyleCategory',
     'editStyleContent',
@@ -249,7 +305,11 @@ function goToIntroBlock() {
 }
 
 onMounted(() => {
-    assignScrollTriggerToElement('#first-project-block', "-450px", "+=150%", 0.75, 1.25);
+    if (props.noZoomVideo1 === '' || props.noZoomVideo1 === null) {
+        assignScrollTriggerToElement('#first-project-block', "-450px", "+=150%", 0.75, 1.25);
+    } else {
+        setupInputVolume();
+    }
     assignScrollTriggerToElement('#second-project-block', "-450px", "+=150%", 0.75, 1.25);
     assignScrollTriggerToElement('#third-project-block', "-250px", "+=150%", 0.75, 1.25);
     if (props.embeddedAsset === '' || props.embeddedAsset === null) {
@@ -263,4 +323,69 @@ onMounted(() => {
         });
     }, 250);
 })
+
+function mouseOverToggleMute() {
+    if (parseInt(windowSizeStore.width) > 767 && parseInt(windowSizeStore.height) > 350) {
+        const volumeSlider = document.getElementById('volumeSlider');
+
+        if (!volumeSlider) return;
+
+        volumeSlider.style.width = '150px';
+        volumeSlider.style.setProperty('--height-thumb', "1rem");
+    }
+}
+
+function mouseLeaveToggleMute() {
+    if (parseInt(windowSizeStore.width) > 767 && parseInt(windowSizeStore.height) > 350) {
+        const volumeSlider = document.getElementById('volumeSlider');
+
+        if (!volumeSlider) return;
+
+        volumeSlider.style.width = '0';
+        volumeSlider.style.setProperty('--height-thumb', "0");
+    }
+}
+
+function toggleMute() {
+    const toggleMute = document.getElementById('volume-btn');
+    const slider = <HTMLInputElement>document.getElementById("volumeSlider");
+    const video = <HTMLVideoElement>document.getElementById("no-zoom-video");
+    if (!toggleMute || !slider || !video) return;
+
+    const sliderValue = parseFloat(slider.value);
+    if (sliderValue > 0) {
+        toggleMute.setAttribute('src', '/svg/mute-icon.svg');
+        slider.value = "0";
+        video.volume = 0;
+        video.muted = true;
+
+        updateSliderVolumeWithNoValue();
+    } else {
+        let volumeValue = oldVolumeValue;
+        if (parseInt(windowSizeStore.width) > 767 && parseInt(windowSizeStore.height) > 350) {
+            if (volumeValue === 0) {
+                oldVolumeValue = 0.1;
+                volumeValue = oldVolumeValue;
+            }
+        } else {
+            volumeValue = 1;
+        }
+        slider.value = String(volumeValue);
+        video.volume = volumeValue;
+        video.muted = false;
+
+        updateSliderVolumeWithNoValue();
+        toggleMute.setAttribute('src', '/svg/full-volume.svg');
+    }
+}
+
+function updateSliderVolumeWithNoValue() {
+    const slider = <HTMLInputElement>document.getElementById("volumeSlider");
+    if (!slider) return;
+
+    let minI = parseInt((<HTMLInputElement>slider).min);
+    let maxI = parseInt((<HTMLInputElement>slider).max);
+    let valueI = parseFloat((<HTMLInputElement>slider).value);
+    slider.style.background = `linear-gradient(to right, red 0%, red ${(valueI - minI) / (maxI - minI) * 100}%, #DEE2E6 ${(valueI - minI) / (maxI - minI) * 100}%, #DEE2E6 100%)`
+}
 </script>

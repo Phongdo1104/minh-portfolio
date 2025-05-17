@@ -9,6 +9,7 @@ import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
             contentDesc="A video ad showcasing LivWell's face scan feature - a wellness and insurance mobile app, in collaboration with Shark Thai Van Linh, a Vietnamese KOL in business, career, and wellness."
             videoProject1="/images/MyWorksAssets/Tvc/block-01.mp4"
             imgProject1=""
+            noZoomVideo1=""
             editStyleCategory="Modern / Vibrant / Data Visualization."
             editStyleContent='Inspired by the motion of LivWell&apos;s pink bubble and its similarity to the infinity symbol in our Longevity series, I created a seamless visual narrative — from state-the-problem phrase, to the face scan solution, and ending with the CTA: “Check out our collaboration video.”'
             editStyleVideo=""
@@ -20,7 +21,7 @@ import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
             videoProject3=""
             endImg=""
             endVideo="/images/MyWorksAssets/Tvc/block-04.mp4"
-            prevProject='/my-projects/tech-guide'
-            nextProject='/my-projects/event-recap' />
+            prevProject='/my-projects/showreel'
+            nextProject='/my-projects/highlight-reel' />
     </div>
 </template>

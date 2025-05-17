@@ -109,9 +109,9 @@
                             </div>
                             <div class="read-more-block">
                                 <img class="img-fluid" src="/images/Demonstrate_display.png" alt="TVL Media Info">
-                                <RouterLink to="/my-projects"
+                                <RouterLink to="/my-projects/talking-head"
                                     class="read-more-button read-more-button-right read-more-button-right-mobile"
-                                    id="tvl-media-more" @click="setScrollIntoWork('kop-video')">Read
+                                    id="tvl-media-more">Read
                                     More</RouterLink>
                             </div>
                         </div>
@@ -142,9 +142,9 @@
                         </div>
                         <div class="read-more-block">
                             <img class="img-fluid" src="/images/Demonstrate_display.png" alt="Pointer Clicker Info">
-                            <RouterLink to="/my-projects"
+                            <RouterLink to="/my-projects/tech-guide"
                                 class="read-more-button read-more-button-center read-more-button-right-mobile"
-                                id="pointer-clicker-more" @click="setScrollIntoWork('tutorial-video')">Read
+                                id="pointer-clicker-more">Read
                                 More</RouterLink>
                         </div>
                     </div>
@@ -183,9 +183,9 @@
                             </div>
                             <div class="read-more-block">
                                 <img class="img-fluid" src="/images/Demonstrate_display.png" alt="JHGO Channel Info">
-                                <RouterLink to="/my-projects"
+                                <RouterLink to="/my-projects/podcast-highlight"
                                     class="read-more-button read-more-button-right read-more-button-right-mobile"
-                                    id="arches-preview-more" @click="setScrollIntoWork('podcast-highlight')">Read
+                                    id="arches-preview-more">Read
                                     More</RouterLink>
                             </div>
                         </div>
@@ -228,18 +228,11 @@
 <script lang="ts" setup>
 import '../assets/home-page.css';
 import '../assets/my-work-partials.css';
-import { useScrollInto } from '@/stores/scrollInto';
 import { scrollTopSmooth, scrollToView } from '@/utils/utils';
 import { displayShowreelVideo } from './../utils/showreelVideo';
 import ShowReelVideo from './../components/ShowReelVideo.vue';
 
 import TestimonialBlock from '../components/TestimonialBlock.vue';
 import FooterPage from '../components/FooterPage.vue';
-
-const store = useScrollInto();
-
-function setScrollIntoWork(scrollToStr: string) {
-    store.setNewLabel(scrollToStr)
-}
 
 </script>

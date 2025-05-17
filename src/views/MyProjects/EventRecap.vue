@@ -15,7 +15,7 @@ import MyWorkBlockVertical from '@/components/MyWorkBlockVertical.vue';
             embeddedAsset2='<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Flinhthaiofficial%2Fvideos%2F604544468898831%2F%3Frdid%3DeoYQR6Asf7tynypo%23&width=500&show_text=false&height=889&appId" width="500" height="889" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>'
             imgProject2="/images/MyWorksAssets/EventRecap/block-03.png"
             videoProject2=""
-            prevProject='/my-projects/tvc'
+            prevProject='/my-projects/highlight-reel'
             nextProject='/my-projects/talking-head' />
     </div>
 </template>
