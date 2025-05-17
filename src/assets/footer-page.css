@@ -34,12 +34,18 @@
   }
 }
 
-@media (min-width: 350px) {
+@media (min-width: 576px) {
   .responsive-icon-white {
     display: none !important;
   }
   .responsive-icon-black {
     display: flex !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-img {
+    max-width: 80%;
   }
 }
 

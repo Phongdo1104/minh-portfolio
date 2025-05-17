@@ -9,8 +9,10 @@ import { reactive, watch, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { scrollToView, scrollTop, closeSideBar } from './utils/utils';
 import { useScrollInto } from './stores/scrollInto';
+import { windowSize } from './stores/windowSize';
 
 const store = useScrollInto();
+const windowSizeStore = windowSize();
 
 const route = useRoute();
 
@@ -157,6 +159,9 @@ function scrollToWorks(scrollToStr: string) {
 
 window.addEventListener('resize', () => {
     const headerMobile = document.getElementById('fixedSidebar');
+
+    windowSizeStore.setWidth(String(document.body.clientWidth));
+    windowSizeStore.setHeight(String(screen.height));
 
     if (!headerMobile) return;
 

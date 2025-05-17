@@ -9,6 +9,7 @@ import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
             contentDesc="This video showcases the impactful journey and key initiatives of the <strong>'FPT People for Community Fund,'</strong> commemorating its 15th anniversary."
             videoProject1="/images/MyWorksAssets/HighLightReel/block-01.mp4"
             imgProject1=""
+            noZoomVideo1=""
             editStyleCategory="Grid Mosaic Montage / Documentary Highlights / Typography Overlay"
             editStyleContent="This project stands out for its blend of campaign tradition, heartfelt social mission, and compelling storytelling — all captured in the soundtrack 'Điều Tử Tế Bay Xa.' The core editing task was to not to amplify the campaign message, but to elevate the soundtrack's emotion while telling the story through the given footage as well."
             editStyleVideo=""
@@ -21,7 +22,7 @@ import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
             videoProject3="/images/MyWorksAssets/HighLightReel/block-04.mp4"
             endImg=""
             endVideo="/images/MyWorksAssets/HighLightReel/block-05.mp4"
-            prevProject='/my-projects/talking-head'
-            nextProject='/my-projects/showreel' />
+            prevProject='/my-projects/tvc'
+            nextProject='/my-projects/event-recap' />
     </div>
 </template>

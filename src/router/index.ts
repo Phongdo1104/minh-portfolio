@@ -55,6 +55,14 @@ router.beforeEach((to: any, from, next) => {
         .split(' ')
         .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
+
+    if (title) {
+        if (title.toLowerCase() === "talking head") {
+            title = "K.O.P / Talking Head";
+        } else if (title.toLowerCase() === "t.v.c") {
+            title = title.toUpperCase();
+        }
+    }
     document.title = title;
     next();
 });
