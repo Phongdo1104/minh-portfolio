@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
-
-const styleContent = 'After experiencing ' + "Huawei's" + 'MatePad Pro and its key features during the launch phase, my first impression was:' + '"It feels like taking notes on paper, yet functions like a laptop — a handcrafted digital experience." That inspired the motion design, which mimics note-taking animations and blends modern, elegant visuals to bring the' + "product’s" + 'versatility to life.';
 </script>
 <template>
     <div>
@@ -13,12 +11,12 @@ const styleContent = 'After experiencing ' + "Huawei's" + 'MatePad Pro and its k
             imgProject1=""
             noZoomVideo1=""
             editStyleCategory="Modern / Vibrant / Elegant"
-            editStyleContent="After experiencing Huawei&apos;s MatePad Pro and its key features during the launch phase, my first impression was: &quot;It feels like taking notes on paper, yet functions like a laptop — a handcrafted digital experience.&quot; That inspired the motion design, which mimics note-taking animations and blends modern, elegant visuals to bring the product’s versatility to life."
+            editStyleContent="<div class='space-text-between'>After experiencing Huawei&apos;s MatePad Pro and its key features during the launch phase, my first impression was: &quot;It feels like taking notes on paper, yet functions like a laptop — a handcrafted digital experience.&quot;</div><div class='space-text-between'>That inspired the motion design, which mimics note-taking animations and blends modern, elegant visuals to bring the product&apos;s versatility to life.</div>"
             editStyleVideo=""
             embeddedAsset='<iframe width="560" height="315" src="https://www.youtube.com/embed/PJ8X0krx-9E?si=w8oKcnNGRfjuzQ2r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
             editStyleImg="" skipMiddle="true"
             imgProject2="" videoProject2=""
-            intersectImg="" intersectVideo=""
+            intersectImg="" intersectVideo="" isBgColor="false"
             imgProject3=""
             videoProject3="/images/MyWorksAssets/TalkingHead/block-03.mp4"
             endImg=""

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="intro-block" id="enter-animation">
+        <div class="intro-block-container" id="enter-animation">
             <div class="container">
                 <div class="intro-block">
                     <div class="d-sm-none d-sm-inline before-header-block">
@@ -114,8 +114,8 @@
                 </div>
             </div>
             <div v-else class="embedded-element-container">
-                <div class="embedded-element" v-motion :initial="{ opacity: 0, y: 100 }"
-                    :visible-once="{ opacity: 1, y: 0 }" :delay="400" :duration="800">
+                <div class="embedded-element" v-motion :initial="{ opacity: 0 }" :visible-once="{ opacity: 1 }"
+                    :delay="400" :duration="800">
                     <div v-html="embeddedAsset"></div>
                 </div>
             </div>
@@ -131,14 +131,14 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="overflow-hidden project-container">
+            <div :class="{ 'bg-img': isBgColor }">
+                <div class="overflow-hidden" :class="{ 'project-container': !isBgColor }">
                     <div v-if="intersectVideo !== ''" class="img-wrapper">
                         <video width="100%" autoplay muted loop preload="none" :src="intersectVideo"
                             id="middle-intersect-block"></video>
                     </div>
                     <div v-else-if="intersectImg" class="img-wrapper">
-                        <img class="bg-img" :src="intersectImg" id="middle-intersect-block">
+                        <img :src="intersectImg" id="middle-intersect-block">
                     </div>
                 </div>
             </div>
@@ -168,14 +168,14 @@
                 <div class="col-sm d-md-none d-md-inline" v-motion :initial="{ opacity: 0, y: 100 }"
                     :visible-once="{ opacity: 1, y: 0 }" :duration="800">
                     <RouterLink :to="prevProject"
-                        class="pre-next prev-text font-oswald-regular nav-link-txt-2 mobile-nav-link-txt-2">
+                        class="pre-next prev-text font-oswald-regular mobile-nav-link-txt-2">
                         The Previous
                     </RouterLink>
                 </div>
                 <div class="col-sm" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
                     :duration="800">
                     <RouterLink :to="nextProject"
-                        class="pre-next font-oswald-regular nav-link-txt-2 mobile-nav-link-txt-2">
+                        class="pre-next font-oswald-regular mobile-nav-link-txt-2">
                         The Next Project
                     </RouterLink>
                 </div>
@@ -190,7 +190,7 @@
 <script lang="ts" setup>
 import "../assets/my-projects-main.css";
 import FooterPage from './FooterPage.vue';
-import { onMounted, computed } from 'vue'
+import { onMounted } from 'vue'
 
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
@@ -198,8 +198,38 @@ import { windowSize } from "@/stores/windowSize";
 
 gsap.registerPlugin(ScrollTrigger);
 
+
+const props = defineProps([
+    'projectTitle',
+    'categoryDesc',
+    'contentDesc',
+    'videoProject1',
+    'noZoomVideo1',
+    'imgProject1',
+    'editStyleCategory',
+    'editStyleContent',
+    'editStyleVideo',
+    'editStyleImg',
+    'embeddedAsset',
+    'skipMiddle',
+    'videoProject2',
+    'imgProject2',
+    'intersectClass',
+    'intersectVideo',
+    'intersectImg',
+    'isBgColor',
+    'videoProject3',
+    'imgProject3',
+    'endVideo',
+    'endImg',
+    'prevProject',
+    'nextProject',
+    'isEmbedded'
+]);
+
 let windowSizeStore = windowSize();
 let oldVolumeValue = 0.5;
+let isBgColor = props.isBgColor === 'true';
 
 function setupInputVolume() {
     const video = <HTMLVideoElement>document.getElementById("no-zoom-video");
@@ -230,32 +260,19 @@ function setupInputVolume() {
     })
 }
 
-const props = defineProps([
-    'projectTitle',
-    'categoryDesc',
-    'contentDesc',
-    'videoProject1',
-    'noZoomVideo1',
-    'imgProject1',
-    'editStyleCategory',
-    'editStyleContent',
-    'editStyleVideo',
-    'editStyleImg',
-    'embeddedAsset',
-    'skipMiddle',
-    'videoProject2',
-    'imgProject2',
-    'intersectClass',
-    'intersectVideo',
-    'intersectImg',
-    'videoProject3',
-    'imgProject3',
-    'endVideo',
-    'endImg',
-    'prevProject',
-    'nextProject',
-    'isEmbedded'
-]);
+function activeHeaderBtn() {
+    const myProjectBtn = document.getElementById("my-projects");
+    const myProjectSideBtn = document.getElementById("my-projects-side");
+
+    console.log("test 1");
+
+    if (!myProjectBtn || !myProjectSideBtn) return;
+
+    console.log("test");
+
+    myProjectBtn.classList.add("router-link-exact-active");
+    myProjectSideBtn.classList.add("router-link-exact-active");
+}
 
 function assignScrollTriggerToElement(elementName: string, startVal: any, endVal: any, startScale: any, endScale: any) {
     let tl = gsap.timeline({
@@ -271,7 +288,7 @@ function assignScrollTriggerToElement(elementName: string, startVal: any, endVal
     if (startScale > endScale) {
         tl.to(elementName, {
             scale: startScale,
-            opacity: 0.75,
+            opacity: 0,
             duration: 1000,
             ease: "expoScale(0.5,7,none)"
         })
@@ -284,7 +301,7 @@ function assignScrollTriggerToElement(elementName: string, startVal: any, endVal
     } else {
         tl.from(elementName, {
             scale: startScale,
-            opacity: 0.5,
+            opacity: 0,
             duration: 500,
             ease: "expoScale(0.5,7,none)"
         })
@@ -305,15 +322,16 @@ function goToIntroBlock() {
 }
 
 onMounted(() => {
+    activeHeaderBtn();
     if (props.noZoomVideo1 === '' || props.noZoomVideo1 === null) {
-        assignScrollTriggerToElement('#first-project-block', "-450px", "+=150%", 0.75, 1.25);
+        assignScrollTriggerToElement('#first-project-block', "-650px", "+=150%", 0.75, 1.25);
     } else {
         setupInputVolume();
     }
-    assignScrollTriggerToElement('#second-project-block', "-450px", "+=150%", 0.75, 1.25);
-    assignScrollTriggerToElement('#third-project-block', "-250px", "+=150%", 0.75, 1.25);
+    assignScrollTriggerToElement('#second-project-block', "-650px", "+=150%", 0.75, 1.25);
+    assignScrollTriggerToElement('#third-project-block', "-650px", "+=150%", 0.75, 1.25);
     if (props.embeddedAsset === '' || props.embeddedAsset === null) {
-        assignScrollTriggerToElement('#edit-style-block', "-2000px", "top", 3, 1);
+        assignScrollTriggerToElement('#edit-style-block', "-450px", "+=150%", 2, 1);
     }
     assignScrollTriggerToElement('#middle-intersect-block', "-2000px", "top", 3, 1);
     assignScrollTriggerToElement('#end-block', "-2000px", "top", 3, 1);

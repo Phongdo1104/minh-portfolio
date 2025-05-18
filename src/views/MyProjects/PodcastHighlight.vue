@@ -16,7 +16,7 @@ import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
             embeddedAsset='<iframe width="100%" scrolling="no" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7055074561360363520?compact=1" frameborder="0" allowfullscreen></iframe>'
             editStyleImg="" skipMiddle="true"
             imgProject2="" videoProject2=""
-            intersectImg="" intersectVideo=""
+            intersectImg="" intersectVideo="" isBgColor="false"
             imgProject3=""
             videoProject3="/images/MyWorksAssets/PodcastHighlight/block-03.mp4"
             endImg=""

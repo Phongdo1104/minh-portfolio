@@ -11,12 +11,12 @@ import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
             imgProject1=""
             noZoomVideo1=""
             editStyleCategory="Modern / Vibrant / Data Visualization."
-            editStyleContent='Inspired by the motion of LivWell&apos;s pink bubble and its similarity to the infinity symbol in our Longevity series, I created a seamless visual narrative — from state-the-problem phrase, to the face scan solution, and ending with the CTA: “Check out our collaboration video.”'
+            editStyleContent='<div class="space-text-between">After researching LivWell&apos;s face scan feature and brand story through the lens of Thai Van Linh, I developed the idea: “Exercising is just enough — it&apos;s time to care for your health in advance!”</div><div class="space-text-between">Inspired by the motion of LivWell&apos;s pink bubble and its similarity to the infinity symbol in our <strong><i>Longevity</i></strong> series, I created a seamless visual narrative — from state-the-problem phrase, to the face scan solution, and ending with the CTA: “Check out our collaboration video.”</div>'
             editStyleVideo=""
             embeddedAsset='<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1042747953?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="TVC Livwell x S100T - Sống Khỏe Chủ Động Bằng Quét Khuôn Mặt"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>'
             editStyleImg="" skipMiddle="true"
             imgProject2="" videoProject2=""
-            intersectImg="" intersectVideo=""
+            intersectImg="" intersectVideo="" isBgColor="false"
             imgProject3="/images/MyWorksAssets/Tvc/block-03.jpg"
             videoProject3=""
             endImg=""
