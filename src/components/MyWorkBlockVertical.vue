@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="intro-block" id="enter-animation">
+        <div class="intro-block-container" id="enter-animation">
             <div class="container">
                 <div class="intro-block">
                     <div class="d-sm-none d-sm-inline before-header-block">
@@ -69,8 +69,8 @@
             <div class="row flex-embedded-reverse">
                 <div class="col-sm">
                     <div v-if="embeddedAsset1 !== ''">
-                        <div v-html="embeddedAsset1" v-motion :initial="{ opacity: 0, y: 100 }"
-                                :visible-once="{ opacity: 1, y: 0 }" :delay="200" :duration="800"></div>
+                        <div v-html="embeddedAsset1" v-motion :initial="{ opacity: 0 }"
+                                :visible-once="{ opacity: 1 }" :delay="200" :duration="800"></div>
                     </div>
                 </div>
                 <div class="col-sm flex-content-reverse">
@@ -110,8 +110,8 @@
                 <div class="row flex-embedded-reverse">
                     <div class="col-sm">
                         <div v-if="embeddedAsset2 !== ''">
-                            <div class="fb-embedded-element" v-html="embeddedAsset2" v-motion :initial="{ opacity: 0, y: 100 }"
-                                :visible-once="{ opacity: 1, y: 0 }" :delay="200" :duration="800"></div>
+                            <div class="fb-embedded-element" v-html="embeddedAsset2" v-motion :initial="{ opacity: 0 }"
+                                :visible-once="{ opacity: 1 }" :delay="200" :duration="800"></div>
                         </div>
                     </div>
                     <div class="col-sm flex-content-reverse">
@@ -139,13 +139,13 @@
             <div class="row text-center">
                 <div class="col-sm d-md-none d-md-inline" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
                     :duration="800">
-                    <RouterLink :to="prevProject" class="pre-next prev-text font-oswald-regular nav-link-txt-2 mobile-nav-link-txt-2">
+                    <RouterLink :to="prevProject" class="pre-next prev-text font-oswald-regular mobile-nav-link-txt-2">
                         The Previous
                     </RouterLink>
                 </div>
                 <div class="col-sm" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
                     :duration="800">
-                    <RouterLink :to="nextProject" class="pre-next font-oswald-regular nav-link-txt-2 mobile-nav-link-txt-2">
+                    <RouterLink :to="nextProject" class="pre-next font-oswald-regular mobile-nav-link-txt-2">
                         The Next Project
                     </RouterLink>
                 </div>
@@ -235,8 +235,8 @@ function goToIntroBlock() {
 }
 
 onMounted(() => {
-    assignScrollTriggerToElement('#first-project-block', "-450px", "+=150%", 0.75, 1.25);
-    assignScrollTriggerToElement('#second-project-block', "-250px", "+=150%", 0.75, 1.25);
+    assignScrollTriggerToElement('#first-project-block', "-850px", "+=150%", 0.75, 1.25);
+    assignScrollTriggerToElement('#second-project-block', "-650px", "+=150%", 0.75, 1.25);
     setTimeout(() => {
         gsap.delayedCall(0, () => {
             ScrollTrigger.refresh();

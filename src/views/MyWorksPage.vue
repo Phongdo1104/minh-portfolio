@@ -9,13 +9,13 @@ import FooterPage from '../components/FooterPage.vue'
             <div class="container">
                 <div class="before-header under-border">
                     <div class="text-white col-sm" id="my-works-desc">
-                        <div v-motion :initial="{ opacity: 0, y: 50 }" :visible-once="{ opacity: 1, y: 0 }" :delay="50"
+                        <div v-motion :initial="{ opacity: 0, y: 50 }" :visible-once="{ opacity: 1, y: 0 }"
                             :duration="1000">
                             <h1 class="text-uppercase my-works title mobile-title">My Works</h1>
                         </div>
                         <div v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
-                            :delay="100" :duration="1000">
-                            <p class="body mobile-body">
+                            :delay="50" :duration="1000">
+                            <p class="body mobile-body description-work">
                                 <strong>Since 2022</strong>, I've experienced <strong>planning, shooting, and
                                     editing</strong> a range of <strong>small and medium
                                     video projects</strong>, including long-and-short formed YouTube videos, TVCs, and
@@ -25,6 +25,8 @@ import FooterPage from '../components/FooterPage.vue'
                         </div>
                     </div>
                 </div>
+                <div class="border-line w-100" v-motion :initial="{ opacity: 0 }" :visible-once="{ opacity: 1 }" :delay="100"
+                            :duration="1000"></div>
                 <div id="my-works-collection">
                     <div class="flex-block-parent">
                         <div class="flex-works-block">

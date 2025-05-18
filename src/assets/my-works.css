@@ -6,6 +6,10 @@
   background-size: cover;
 }
 
+.description-work {
+    padding-top: 2rem;
+}
+
 .my-works {
   font-family: 'oswald_bold';
   margin: 0;
@@ -37,7 +41,7 @@
   gap: 2rem;
 }
 
-.under-border {
+.border-line {
   border-bottom: 2px solid #fff;
 }
 

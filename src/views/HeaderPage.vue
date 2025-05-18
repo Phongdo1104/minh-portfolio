@@ -1,8 +1,22 @@
 <script lang="ts" setup>
 import '../assets/header-page.css'
+import { useRoute } from 'vue-router';
 import { ref } from 'vue'
 
 let show = ref(false);
+
+let isActive = ref(false);
+
+const route = useRoute();
+
+function showSideMenuMobile() {
+    show.value = !show.value;
+
+    const currentPath = route.path;
+    if (!currentPath) return;
+
+    isActive.value = currentPath.includes("my-projects");
+}
 
 function closePopup() {
     show.value = false;
@@ -20,7 +34,7 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
 <template>
     <div class="d-block d-md-none header-sp fixed-header" id="fixedHeader">
         <div class="position-absolute top-0 end-0 mt-3 me-3">
-            <div href="#" @click="show = !show">
+            <div href="#" @click="showSideMenuMobile()">
                 <img id="menu-icon" src="/svg/menu-btn.svg" alt="" />
             </div>
         </div>
@@ -35,10 +49,11 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
                     <RouterLink to="/about-me" class="nav-link-txt text-decoration-none ms-5 fw-bold" id="about-me">
                         About Me
                     </RouterLink>
-                    <RouterLink to="/my-projects" class="nav-link-txt text-decoration-none ms-5 fw-bold" id="my-projects">
+                    <RouterLink to="/my-projects" class="nav-link-txt text-decoration-none ms-5 fw-bold"
+                        id="my-projects">
                         My Projects
                     </RouterLink>
-                    <span class="text-decoration-none ms-5 nav-link-txt">
+                    <span class="text-decoration-none ms-5 nav-link-txt d-inline-block">
                         <button type="button" id="get-in-touch" @click="scrollToView('footer-block')">Get In
                             Touch</button>
                     </span>
@@ -46,42 +61,34 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
             </div>
         </div>
     </div>
-    <div class="header-bg-mobile">
+    <div class="header-bg-mobile" id="mobile-header">
         <transition appear name="fade">
-            <div v-if="show" class="hide-header h1 sidebar-navigation sidebar-block fixed-header-text"
-                id="fixedSidebar" data-toggle="animation" data-animation-reset="true" data-animation="slide-right">
-                <div
-                    class="menu-mobile-bg"
-                    v-motion
-                    :initial="{ opacity: 0, x: -100 }" :enter="{ opacity: 1, x: 0 }" :delay="150"
-                    :duration="500"
-                >
+            <div v-if="show" class="hide-header h1 sidebar-navigation sidebar-block fixed-header-text" id="fixedSidebar"
+                data-toggle="animation" data-animation-reset="true" data-animation="slide-right">
+                <div class="menu-mobile-bg" v-motion :initial="{ opacity: 0, x: -100 }" :enter="{ opacity: 1, x: 0 }"
+                    :delay="150" :duration="500">
                 </div>
                 <div class="sidebar-content">
                     <div class="fixed-header-text">
                         <RouterLink to="/" @click="closePopup()"
                             class="mb-3 text-decoration-none text-center sidebar-item w-100" v-motion
-                            :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }"
-                            :duration="500">
+                            :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :duration="500">
                             Home
                         </RouterLink>
                         <RouterLink to="/about-me" @click="closePopup()"
-                            class="mb-3 text-decoration-none text-center sidebar-item w-100"
-                            v-motion
-                            :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :delay="50"
-                            :duration="500">
+                            class="mb-3 text-decoration-none text-center sidebar-item w-100" v-motion
+                            :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :delay="50" :duration="500">
                             About me
                         </RouterLink>
                         <RouterLink to="/my-projects" @click="closePopup()"
                             class="mb-3 text-decoration-none text-center sidebar-item w-100"
-                            v-motion
+                            :class="{ 'router-link-exact-active': isActive }" id="my-project-mobile-btn" v-motion
                             :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :delay="100"
                             :duration="500">
                             My Projects
                         </RouterLink>
                         <span to="/contact-me" @click="scrollToView('footer-block', true)"
-                            class="mb-3 text-decoration-none text-center sidebar-item w-100 mobile-contact-me"
-                            v-motion
+                            class="mb-3 text-decoration-none text-center sidebar-item w-100 mobile-contact-me" v-motion
                             :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :delay="150"
                             :duration="500">
                             Get in touch
