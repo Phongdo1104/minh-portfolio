@@ -28,8 +28,9 @@
                                         </RouterLink>
                                     </div>
                                 </div>
-                                <div @click="goToIntroBlock()" class="vector-down" v-motion :initial="{ opacity: 0, y: 100 }"
-                                    :visible-once="{ opacity: 1, y: 0 }" :delay="600" :duration="800">
+                                <div @click="goToIntroBlock()" class="vector-down" v-motion
+                                    :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="600"
+                                    :duration="800">
                                     <span class="go-to-intro">
                                         <img class="img-fluid" src="/svg/vector-down.svg" alt="go-to-intro">
                                     </span>
@@ -69,8 +70,8 @@
             <div class="row flex-embedded-reverse">
                 <div class="col-sm">
                     <div v-if="embeddedAsset1 !== ''">
-                        <div v-html="embeddedAsset1" v-motion :initial="{ opacity: 0 }"
-                                :visible-once="{ opacity: 1 }" :delay="200" :duration="800"></div>
+                        <div v-html="embeddedAsset1" v-motion :initial="{ opacity: 0 }" :visible-once="{ opacity: 1 }"
+                            :delay="200" :duration="800"></div>
                     </div>
                 </div>
                 <div class="col-sm flex-content-reverse">
@@ -86,8 +87,9 @@
                             Editing Style
                         </div>
                         <div>
-                            <div class="body mobile-body font-oswald-bold-sm editing-style-title" v-motion :initial="{ opacity: 0, y: 100 }"
-                                :visible-once="{ opacity: 1, y: 0 }" :delay="400" :duration="800">
+                            <div class="body mobile-body font-oswald-bold-sm editing-style-title" v-motion
+                                :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="400"
+                                :duration="800">
                                 <span v-html="editStyleCategory"></span>
                             </div>
                         </div>
@@ -127,8 +129,9 @@
                                 Editing Style
                             </div>
                             <div>
-                                <div class="body mobile-body font-oswald-bold-sm editing-style-title" v-motion :initial="{ opacity: 0, y: 100 }"
-                                    :visible-once="{ opacity: 1, y: 0 }" :delay="400" :duration="800">
+                                <div class="body mobile-body font-oswald-bold-sm editing-style-title" v-motion
+                                    :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="400"
+                                    :duration="800">
                                     <span v-html="editStyleCategory"></span>
                                 </div>
                             </div>
@@ -137,8 +140,8 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-sm d-md-none d-md-inline" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
-                    :duration="800">
+                <div class="col-sm d-md-none d-md-inline" v-motion :initial="{ opacity: 0, y: 100 }"
+                    :visible-once="{ opacity: 1, y: 0 }" :duration="800">
                     <RouterLink :to="prevProject" class="pre-next prev-text font-oswald-regular mobile-nav-link-txt-2">
                         The Previous
                     </RouterLink>
@@ -187,42 +190,46 @@ const props = defineProps([
     'isEmbedded'
 ]);
 
-function assignScrollTriggerToElement(elementName: string, startVal: any, endVal: any, startScale: any, endScale: any) {
+function assignScrollTriggerToElement(elementName: string, startScale: number, endScale: number) {
     let tl = gsap.timeline({
         scrollTrigger: {
             trigger: elementName,
-            scrub: 0.25,
-            start: startVal + " bottom",
-            end: endVal,
-            invalidateOnRefresh: true
+            scrub: 1,
+            start: "-1000px bottom",
+            end: "center bottom",
+            invalidateOnRefresh: true,
+            onLeave: (self: any) => {
+                self.kill(true, true);
+                self.animation.progress(1);
+            }
         }
     })
 
     if (startScale > endScale) {
         tl.to(elementName, {
             scale: startScale,
-            opacity: 0.75,
+            opacity: 0,
             duration: 1000,
-            ease: "expoScale(0.5,7,none)"
+            ease: "power3.in"
         })
             .to(elementName, {
                 scale: endScale,
                 opacity: 1,
                 duration: 1000,
-                ease: "expoScale(0.5,7,none)"
+                ease: "power3.in"
             })
     } else {
         tl.from(elementName, {
             scale: startScale,
-            opacity: 0.5,
-            duration: 500,
-            ease: "expoScale(0.5,7,none)"
+            opacity: 0,
+            duration: 1000,
+            ease: "power3.in"
         })
             .to(elementName, {
                 scale: endScale,
                 opacity: 1,
                 duration: 1000,
-                ease: "expoScale(0.5,7,none)"
+                ease: "power3.in"
             })
     }
 }
@@ -235,8 +242,8 @@ function goToIntroBlock() {
 }
 
 onMounted(() => {
-    assignScrollTriggerToElement('#first-project-block', "-850px", "+=150%", 0.75, 1.25);
-    assignScrollTriggerToElement('#second-project-block', "-650px", "+=150%", 0.75, 1.25);
+    assignScrollTriggerToElement('#first-project-block', 0.75, 1.25);
+    assignScrollTriggerToElement('#second-project-block', 0.75, 1.25);
     setTimeout(() => {
         gsap.delayedCall(0, () => {
             ScrollTrigger.refresh();

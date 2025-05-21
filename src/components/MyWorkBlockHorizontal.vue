@@ -90,7 +90,7 @@
                         Editing Style
                     </div>
                     <div class="body mobile-body font-oswald-bold-sm padding-top-1rem" v-motion
-                        :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="400"
+                        :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="200"
                         :duration="800">
                         <span v-html="editStyleCategory"></span>
                     </div>
@@ -105,11 +105,11 @@
             <div v-if="embeddedAsset === ''" class="overflow-hidden project-container">
                 <div>
                     <div v-if="editStyleVideo !== ''">
-                        <video width="100%" autoplay muted loop preload="none" :src="editStyleVideo"
+                        <video class="opacity-0-i" width="100%" autoplay muted loop preload="none" :src="editStyleVideo"
                             id="edit-style-block"></video>
                     </div>
                     <div v-else-if="editStyleImg !== ''" class="img-wrapper">
-                        <img :src="editStyleImg" alt="editing-style-img" id="edit-style-block">
+                        <img class="opacity-0-i" :src="editStyleImg" alt="editing-style-img" id="edit-style-block">
                     </div>
                 </div>
             </div>
@@ -134,11 +134,11 @@
             <div :class="{ 'bg-img': isBgColor }">
                 <div class="overflow-hidden" :class="{ 'project-container': !isBgColor }">
                     <div v-if="intersectVideo !== ''" class="img-wrapper">
-                        <video width="100%" autoplay muted loop preload="none" :src="intersectVideo"
+                        <video class="opacity-0-i" width="100%" autoplay muted loop preload="none" :src="intersectVideo"
                             id="middle-intersect-block"></video>
                     </div>
                     <div v-else-if="intersectImg" class="img-wrapper">
-                        <img :src="intersectImg" id="middle-intersect-block">
+                        <img class="opacity-0-i" :src="intersectImg" id="middle-intersect-block">
                     </div>
                 </div>
             </div>
@@ -157,25 +157,24 @@
             <div class="overflow-hidden project-container">
                 <div>
                     <div v-if="endVideo !== ''" class="img-wrapper">
-                        <video width="100%" autoplay muted loop preload="none" :src="endVideo" id="end-block"></video>
+                        <video class="opacity-0-i" width="100%" autoplay muted loop preload="none" :src="endVideo"
+                            id="end-block"></video>
                     </div>
                     <div v-else-if="endImg !== ''" class="img-wrapper">
-                        <img :src="endImg" alt="editing-style-img" id="end-block">
+                        <img class="opacity-0-i" :src="endImg" alt="editing-style-img" id="end-block">
                     </div>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-sm d-md-none d-md-inline" v-motion :initial="{ opacity: 0, y: 100 }"
                     :visible-once="{ opacity: 1, y: 0 }" :duration="800">
-                    <RouterLink :to="prevProject"
-                        class="pre-next prev-text font-oswald-regular mobile-nav-link-txt-2">
+                    <RouterLink :to="prevProject" class="pre-next prev-text font-oswald-regular mobile-nav-link-txt-2">
                         The Previous
                     </RouterLink>
                 </div>
                 <div class="col-sm" v-motion :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }"
                     :duration="800">
-                    <RouterLink :to="nextProject"
-                        class="pre-next font-oswald-regular mobile-nav-link-txt-2">
+                    <RouterLink :to="nextProject" class="pre-next font-oswald-regular mobile-nav-link-txt-2">
                         The Next Project
                     </RouterLink>
                 </div>
@@ -193,11 +192,11 @@ import FooterPage from './FooterPage.vue';
 import { onMounted } from 'vue'
 
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { Observer } from "gsap/Observer";
 import { gsap } from "gsap";
 import { windowSize } from "@/stores/windowSize";
 
-gsap.registerPlugin(ScrollTrigger);
-
+gsap.registerPlugin(ScrollTrigger, Observer);
 
 const props = defineProps([
     'projectTitle',
@@ -274,14 +273,18 @@ function activeHeaderBtn() {
     myProjectSideBtn.classList.add("router-link-exact-active");
 }
 
-function assignScrollTriggerToElement(elementName: string, startVal: any, endVal: any, startScale: any, endScale: any) {
+function assignScrollTriggerToElement(elementName: string, startScale: number, endScale: number) {
     let tl = gsap.timeline({
         scrollTrigger: {
             trigger: elementName,
-            scrub: 0.25,
-            start: startVal + " bottom",
-            end: endVal,
-            invalidateOnRefresh: true
+            scrub: 1,
+            start: "-900px bottom",
+            end: "top bottom",
+            invalidateOnRefresh: true,
+            onLeave: (self: any) => {
+                self.kill(true, true);
+                self.animation.progress(1);
+            }
         }
     })
 
@@ -290,26 +293,26 @@ function assignScrollTriggerToElement(elementName: string, startVal: any, endVal
             scale: startScale,
             opacity: 0,
             duration: 1000,
-            ease: "expoScale(0.5,7,none)"
+            ease: "power3.in"
         })
             .to(elementName, {
                 scale: endScale,
                 opacity: 1,
                 duration: 1000,
-                ease: "expoScale(0.5,7,none)"
+                ease: "power3.in"
             })
     } else {
         tl.from(elementName, {
             scale: startScale,
             opacity: 0,
-            duration: 500,
-            ease: "expoScale(0.5,7,none)"
+            duration: 1000,
+            ease: "power3.in"
         })
             .to(elementName, {
                 scale: endScale,
                 opacity: 1,
                 duration: 1000,
-                ease: "expoScale(0.5,7,none)"
+                ease: "power3.in"
             })
     }
 }
@@ -324,17 +327,17 @@ function goToIntroBlock() {
 onMounted(() => {
     activeHeaderBtn();
     if (props.noZoomVideo1 === '' || props.noZoomVideo1 === null) {
-        assignScrollTriggerToElement('#first-project-block', "-650px", "+=150%", 0.75, 1.25);
+        assignScrollTriggerToElement('#first-project-block', 0.75, 1.25);
     } else {
         setupInputVolume();
     }
-    assignScrollTriggerToElement('#second-project-block', "-650px", "+=150%", 0.75, 1.25);
-    assignScrollTriggerToElement('#third-project-block', "-650px", "+=150%", 0.75, 1.25);
+    assignScrollTriggerToElement('#second-project-block', 0.75, 1.25);
+    assignScrollTriggerToElement('#third-project-block', 0.75, 1.25);
     if (props.embeddedAsset === '' || props.embeddedAsset === null) {
-        assignScrollTriggerToElement('#edit-style-block', "-450px", "+=150%", 2, 1);
+        assignScrollTriggerToElement('#edit-style-block', 3, 1);
     }
-    assignScrollTriggerToElement('#middle-intersect-block', "-2000px", "top", 3, 1);
-    assignScrollTriggerToElement('#end-block', "-2000px", "top", 3, 1);
+    assignScrollTriggerToElement('#middle-intersect-block', 3, 1);
+    assignScrollTriggerToElement('#end-block', 3, 1);
     setTimeout(() => {
         gsap.delayedCall(0, () => {
             ScrollTrigger.refresh();
