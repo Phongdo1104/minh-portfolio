@@ -2,6 +2,10 @@
   height: 100vh;
 }
 
+.opacity-0-i {
+  opacity: 0;
+}
+
 .left-side {
   display: flex;
   flex-direction: column;
