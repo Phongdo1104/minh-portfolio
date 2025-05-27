@@ -29,8 +29,8 @@ import FooterPage from '../components/FooterPage.vue'
                             :duration="1000"></div>
                 <div id="my-works-collection">
                     <div class="flex-block-parent">
-                        <div class="flex-works-block">
-                            <div id="showreel-block" class="work-block-content" v-motion
+                        <div class="row flex-works-reverse">
+                            <div id="showreel-block" class="col-sm work-block-content" v-motion
                                 :initial="{ opacity: 0, y: 50 }" :visible-once="{ opacity: 1, y: 0 }" :delay="50"
                                 :duration="800">
                                 <RouterLink to="/my-projects/showreel" class="text-uppercase h2 mobile-h2">
@@ -38,15 +38,35 @@ import FooterPage from '../components/FooterPage.vue'
                                 </RouterLink>
                                 <p class="body mobile-body desc-work-display">The trailer capturing my edited videos in 2024</p>
                             </div>
-                            <div id="tvc-block" class="work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
-                                :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="800">
+                            <div id="tvc-block" class="col-sm work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
+                                :visible-once="{ opacity: 1, y: 0 }" :delay="75" :duration="800">
                                 <RouterLink to="/my-projects/tvc" class="text-uppercase h2 mobile-h2">
                                     T.V.C
                                 </RouterLink>
                                 <p class="body mobile-body desc-work-display">The motion graphics TVC marked the collaboration of LivWell
                                     and TVL Media</p>
                             </div>
-                            <div id="talking-head" class="work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
+                        </div>
+                        <div class="row flex-works-reverse">
+                            <div id="highlight-reel" class="col-sm work-block-content" v-motion
+                                :initial="{ opacity: 0, y: 50 }" :visible-once="{ opacity: 1, y: 0 }" :delay="100"
+                                :duration="800">
+                                <RouterLink to="/my-projects/highlight-reel" class="text-uppercase h2 mobile-h2">
+                                    Highlight reel
+                                </RouterLink>
+                                <p class="body mobile-body desc-work-display">A campaign highlights marked 15-year anniversary of FPT's
+                                    community fund</p>
+                            </div>
+                            <div id="event-recap" class="col-sm work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
+                                :visible-once="{ opacity: 1, y: 0 }" :delay="125" :duration="800">
+                                <RouterLink to="/my-projects/event-recap" class="text-uppercase h2 mobile-h2">
+                                    Event recap
+                                </RouterLink>
+                                <p class="body mobile-body desc-work-display">The recap video of a KOL in Huawei's product launching </p>
+                            </div>
+                        </div>
+                        <div class="row flex-works-reverse">
+                            <div id="talking-head" class="col-sm work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
                                 :visible-once="{ opacity: 1, y: 0 }" :delay="150" :duration="800">
                                 <RouterLink to="/my-projects/talking-head" class="text-uppercase h2 mobile-h2">
                                     Talking head
@@ -54,30 +74,12 @@ import FooterPage from '../components/FooterPage.vue'
                                 <p class="body mobile-body desc-work-display">The video on the career development in the collaboration
                                     between Huawei and TVL Media </p>
                             </div>
-                        </div>
-                        <div class="flex-works-block">
-                            <div id="tech-guide" class="work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
-                                :visible-once="{ opacity: 1, y: 0 }" :delay="50" :duration="800">
+                            <div id="tech-guide" class="col-sm work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
+                                :visible-once="{ opacity: 1, y: 0 }" :delay="175" :duration="800">
                                 <RouterLink to="/my-projects/tech-guide" class="text-uppercase h2 mobile-h2">
                                     Tech guide
                                 </RouterLink>
                                 <p class="body mobile-body desc-work-display">The case of an AV Tech YouTube channel I had built</p>
-                            </div>
-                            <div id="event-recap" class="work-block-content" v-motion :initial="{ opacity: 0, y: 50 }"
-                                :visible-once="{ opacity: 1, y: 0 }" :delay="100" :duration="800">
-                                <RouterLink to="/my-projects/event-recap" class="text-uppercase h2 mobile-h2">
-                                    Event recap
-                                </RouterLink>
-                                <p class="body mobile-body desc-work-display">The recap video of a KOL in Huawei's product launching </p>
-                            </div>
-                            <div id="highlight-reel" class="work-block-content" v-motion
-                                :initial="{ opacity: 0, y: 50 }" :visible-once="{ opacity: 1, y: 0 }" :delay="150"
-                                :duration="800">
-                                <RouterLink to="/my-projects/highlight-reel" class="text-uppercase h2 mobile-h2">
-                                    Highlight reel
-                                </RouterLink>
-                                <p class="body mobile-body desc-work-display">A campaign highlights marked 15-year anniversary of FPT's
-                                    community fund</p>
                             </div>
                         </div>
                     </div>

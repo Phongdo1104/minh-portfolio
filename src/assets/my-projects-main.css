@@ -6,6 +6,10 @@
   opacity: 0;
 }
 
+.font-bold {
+  font-weight: bold;
+}
+
 .left-side {
   display: flex;
   flex-direction: column;

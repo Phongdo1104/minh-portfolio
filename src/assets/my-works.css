@@ -7,7 +7,7 @@
 }
 
 .description-work {
-    padding-top: 2rem;
+  padding-top: 2rem;
 }
 
 .my-works {
@@ -77,8 +77,8 @@
 
 .flex-block-parent {
   display: flex;
-  flex-direction: row;
-  gap: 4rem;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .desc-work-display {
@@ -127,6 +127,15 @@
 
   .flex-works-block {
     gap: 2rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .flex-works-reverse {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap-reverse;
+    flex-direction: column;
   }
 }
 

@@ -90,7 +90,7 @@
                             <div class="body mobile-body font-oswald-bold-sm editing-style-title" v-motion
                                 :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="400"
                                 :duration="800">
-                                <span v-html="editStyleCategory"></span>
+                                <span class="font-bold" v-html="editStyleCategory"></span>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                                 <div class="body mobile-body font-oswald-bold-sm editing-style-title" v-motion
                                     :initial="{ opacity: 0, y: 100 }" :visible-once="{ opacity: 1, y: 0 }" :delay="400"
                                     :duration="800">
-                                    <span v-html="editStyleCategory"></span>
+                                    <span class="font-bold" v-html="editStyleCategory"></span>
                                 </div>
                             </div>
                         </div>
@@ -195,13 +195,11 @@ function assignScrollTriggerToElement(elementName: string, startScale: number, e
         scrollTrigger: {
             trigger: elementName,
             scrub: 1,
-            start: "-1000px bottom",
-            end: "center bottom",
+            start: "top-=100px center",
+            end: "top bottom",
             invalidateOnRefresh: true,
-            onLeave: (self: any) => {
-                self.kill(true, true);
-                self.animation.progress(1);
-            }
+            immediateRender: false,
+            once: true,
         }
     })
 
@@ -209,27 +207,27 @@ function assignScrollTriggerToElement(elementName: string, startScale: number, e
         tl.to(elementName, {
             scale: startScale,
             opacity: 0,
-            duration: 1000,
-            ease: "power3.in"
+            duration: 10,
+            ease: "power2.in"
         })
             .to(elementName, {
                 scale: endScale,
                 opacity: 1,
-                duration: 1000,
-                ease: "power3.in"
+                duration: 10,
+                ease: "power2.in"
             })
     } else {
         tl.from(elementName, {
             scale: startScale,
             opacity: 0,
-            duration: 1000,
-            ease: "power3.in"
+            duration: 10,
+            ease: "power2.in"
         })
             .to(elementName, {
                 scale: endScale,
                 opacity: 1,
-                duration: 1000,
-                ease: "power3.in"
+                duration: 10,
+                ease: "power2.in"
             })
     }
 }
