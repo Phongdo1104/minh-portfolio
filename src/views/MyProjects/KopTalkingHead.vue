@@ -11,7 +11,7 @@ import MyWorkBlockHorizontal from '@/components/MyWorkBlockHorizontal.vue';
             imgProject1=""
             noZoomVideo1=""
             editStyleCategory="Modern / Vibrant / Elegant"
-            editStyleContent="<div class='space-text-between'>After experiencing Huawei&apos;s MatePad Pro and its key features during the launch phase, my first impression was: &quot;It feels like taking notes on paper, yet functions like a laptop — a handcrafted digital experience.&quot;</div><div class='space-text-between'>That inspired the motion design, which mimics note-taking animations and blends modern, elegant visuals to bring the product&apos;s versatility to life.</div>"
+            editStyleContent="<div class='space-text-between'>After experiencing Huawei&apos;s MatePad Pro and its key features during the launch phase, my first impression was:<br><i>&quot;It feels like taking notes on paper, yet functions like a laptop — a handcrafted digital experience.&quot;</i></div><div class='space-text-between'>That inspired the motion design, which mimics note-taking animations and blends modern, elegant visuals to bring the product&apos;s versatility to life.</div>"
             editStyleVideo=""
             embeddedAsset='<iframe width="560" height="315" src="https://www.youtube.com/embed/PJ8X0krx-9E?si=w8oKcnNGRfjuzQ2r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
             editStyleImg="" skipMiddle="true"
