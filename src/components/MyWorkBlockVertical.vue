@@ -194,8 +194,8 @@ function assignScrollTriggerToElement(elementName: string, startScale: number, e
     let tl = gsap.timeline({
         scrollTrigger: {
             trigger: elementName,
-            scrub: 1,
-            start: "top-=100px center",
+            scrub: 2,
+            start: "top center",
             end: "top bottom",
             invalidateOnRefresh: true,
             immediateRender: false,
