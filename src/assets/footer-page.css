@@ -19,6 +19,11 @@
   scale: 0.7;
 }
 
+.footer-btn-highlight:hover {
+  filter: invert(39%) sepia(69%) saturate(595%) hue-rotate(334deg) brightness(95%) contrast(90%);
+  transition: filter 0.3s ease;
+}
+
 @media (min-width: 768px) {
   .slogan-top {
     display: flex !important;

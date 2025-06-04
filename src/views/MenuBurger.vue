@@ -1,8 +1,5 @@
 <template>
-    <div class="menu-burger menu-burger-out d-md-mobile" id="MenuBurger">
-        <span class="d-flex" href="#" @click="openSideBar()">
-            <img class="img-fluid" src="/svg/menu-btn.svg" alt="MenuBurger">
-        </span>
+    <div class="d-flex menu-burger d-md-mobile" id="MenuBurger" @click="openSideBar()">
     </div>
 </template>
 <script lang="ts" setup>
@@ -31,11 +28,13 @@ window.onscroll = () => {
         headerBlock.right <= (window.innerWidth || document.documentElement.clientWidth)
 
     if (!headerVisible) {
-        menuBurger.classList.add("menu-burger-in");
-        menuBurger.classList.remove("menu-burger-out");
+        menuBurger.style.opacity = "1";
+        menuBurger.style.display = "block";
+        menuBurger.style.pointerEvents = "auto";
     } else {
-        menuBurger.classList.add("menu-burger-out");
-        menuBurger.classList.remove("menu-burger-in");
+        menuBurger.style.opacity = "0";
+        menuBurger.style.display = "none";
+        menuBurger.style.pointerEvents = "none";
     }
 }
 </script>

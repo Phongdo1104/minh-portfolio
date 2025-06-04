@@ -1,7 +1,9 @@
 #showreel-container {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.15s ease;
+  /* transition: opacity 1s ease; */
+  position: sticky;
+  z-index: 99;
 }
 
 .showreel-block {
@@ -24,11 +26,17 @@
   z-index: 6;
   right: 0;
   top: 0;
-  margin: 20px;
+  margin: 1.5rem;
   cursor: pointer;
 }
 
 .close-video-btn img {
-  width: 4rem;
+  width: 2.5rem;
   display: flex;
+}
+
+@media (max-width: 575px) {
+  .close-video-btn img {
+    width: 1.5rem;
+  }
 }

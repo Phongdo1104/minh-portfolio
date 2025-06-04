@@ -2,17 +2,22 @@
     <div id="showreel-container">
         <div class="close-video-btn">
             <span @click="onHideVideo">
-                <img src="/svg/close-circle.svg" alt="close-video">
+                <img src="/svg/close-circle-simplify.svg" alt="close-video">
             </span>
         </div>
         <div class="showreel-block">
-            <video id="showreel-video" width="100%" height="100px"
-                class="video-js vjs-defaultskin"></video>
+            <video id="showreel-video" width="100%" height="100px" class="video-js vjs-defaultskin"></video>
         </div>
     </div>
 </template>
+<style>
+.video-js .vjs-big-play-button {
+    display: none;
+}
+</style>
 <script setup lang="ts">
 import videojs from "video.js";
+import { gsap } from "gsap";
 import 'video.js/dist/video-js.css';
 import './../assets/showreel.css'
 import { onMounted, onBeforeUnmount } from "vue";
@@ -30,6 +35,8 @@ const videoOptions = {
         },
     ]
 }
+
+const tl = gsap.timeline();
 
 onMounted(() => {
     player = videojs(
@@ -55,17 +62,36 @@ onBeforeUnmount(() => {
         player.dispose();
     }
 });
+function playVideoOnStart() {
+    tl.to('#showreel-container', {
+        opacity: 1,
+        duration: 0.8,
+        ease: "expoScale(0.5,7,none)",
+        onComplete: () => {
+            const videoElement = document.getElementById('showreel-container');
+            videoElement!.style.pointerEvents = 'auto';
+            player.muted(false);
+            player.play();
+        }
+    })
+}
 
 function onHideVideo() {
-    const showreelContainer = document.getElementById('showreel-container');
-    const showreelVideo = document.getElementById('showreel-video');
-    if (!showreelContainer || !showreelVideo) return;
-
-    showreelContainer.style.opacity = '0';
-    showreelContainer.style.pointerEvents = 'none';
-
-    player.pause();
-    player.hasStarted(false)
-    player.currentTime(0);
+    // muted video first to avoid unsynced hiding element process
+    player.muted(true);
+    tl.to('#showreel-container', {
+        opacity: 0,
+        duration: 0.8,
+        ease: "expoScale(0.5,7,none)",
+        onComplete: () => {
+            const videoElement = document.getElementById('showreel-container');
+            videoElement!.style.pointerEvents = 'none';
+            player.pause();
+            player.hasStarted(false);
+            player.currentTime(0);
+        }
+    })
 }
+
+defineExpose({ playVideoOnStart });
 </script>

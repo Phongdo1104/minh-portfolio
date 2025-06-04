@@ -16,9 +16,14 @@
   padding: 20px;
 }
 
+#header-links {
+  align-items: center;
+}
+
 #header-links a {
   font-family: 'oswald_light';
   color: #ffffff;
+  text-decoration: none;
 }
 
 @font-face {
@@ -49,7 +54,7 @@
   width: 100%;
   height: 100%;
   position: fixed;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease-in-out;
 }
 .sidebar-content {
   height: 100%;
@@ -62,7 +67,7 @@
   align-items: center;
 }
 .menu-mobile-bg {
-  background: url('/images/profile-bg-2-optimized.png');
+  background: url('/images/menu_mobile.jpg');
   position: fixed;
   width: 50%;
   top: 0;
@@ -103,6 +108,27 @@
   font-family: 'oswald_regular';
   font-size: 20px;
   color: #000000;
+}
+
+.site-active-btn::after {
+  content: '';
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: #e15735;
+  transition: 300ms;
+}
+
+.site-active-btn:hover::after {
+  width: 100%;
+}
+
+.site-active-btn:hover {
+  color: #e15735 !important;
+  opacity: 100%;
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
 }
 
 @media (max-width: 767px) {

@@ -53,10 +53,29 @@
   padding-top: 5rem;
 }
 
-#my-works-collection a {
+#my-works-collection span {
   font-family: 'oswald_bold';
   text-decoration: none;
+  display: inline-block;
   color: #fff;
+}
+
+#my-works-collection span::after {
+  content: '';
+  width: 0px;
+  height: 5px;
+  display: block;
+  background: #e15735;
+  transition: 300ms;
+}
+
+#my-works-collection span:hover::after {
+  width: 100%;
+}
+
+#my-works-collection span:hover {
+  color: #e15735 !important;
+  transition: color 0.3s ease;
 }
 
 #my-works-collection p {

@@ -22,22 +22,22 @@
             </div>
             <div class="position-absolute info-btn contact-info-block">
                 <div class="row d-flex justify-content-evenly" id="icon-contact">
-                    <a href="https://www.behance.net/minhngeditor" target="_blank" class="col-auto btn-prop d-none responsive-icon-black">
+                    <a href="https://www.behance.net/minhngeditor" target="_blank" class="col-auto btn-prop d-none responsive-icon-black footer-btn-highlight">
                         <img class="icon-contact" src="/svg/Be_icon.svg" alt="Be Icon"  aria-label="Contact via Be">
                     </a>
-                    <a href="https://www.behance.net/minhngeditor" target="_blank" class="col-auto btn-prop d-flex responsive-icon-white invert-color-icon">
+                    <a href="https://www.behance.net/minhngeditor" target="_blank" class="col-auto btn-prop d-flex responsive-icon-white invert-color-icon footer-btn-highlight">
                         <img class="icon-contact" src="/svg/Be_icon.svg" alt="Be Icon" aria-label="Contact via Be">
                     </a>
-                    <a href="https://www.linkedin.com/in/minh-nguyen-smvideoeditor" target="_blank" class="icon-mid-left col-auto btn-prop invert-color-icon">
+                    <a href="https://www.linkedin.com/in/minh-nguyen-smvideoeditor" target="_blank" class="icon-mid-left col-auto btn-prop invert-color-icon footer-btn-highlight">
                         <img class="icon-contact" src="/svg/Linkedin.svg" alt="Linkedin Icon" aria-label="Contact via Linkedin">
                     </a>
-                    <a href="mailto:minh.nguyen.editor@gmail.com" class="icon-mid-right col-auto btn-prop invert-color-icon">
+                    <a href="mailto:minh.nguyen.editor@gmail.com" class="icon-mid-right col-auto btn-prop invert-color-icon footer-btn-highlight">
                         <img class="icon-contact" src="/svg/Mail.svg" alt="Mail Icon" aria-label="Contact via Mail">
                     </a>
-                    <a href="#" class="col-auto btn-prop d-none responsive-icon-black">
+                    <a href="#" class="col-auto btn-prop d-none responsive-icon-black footer-btn-highlight">
                         <img class="icon-contact" src="/svg/Icon.svg" alt="Contact Icon" aria-label="Contact via Phone Number">
                     </a>
-                    <a href="#" class="col-auto btn-prop d-flex responsive-icon-white invert-color-icon">
+                    <a href="#" class="col-auto btn-prop d-flex responsive-icon-white invert-color-icon footer-btn-highlight">
                         <img class="icon-contact" src="/svg/Icon.svg" alt="Contact Icon" aria-label="Contact via Phone Number">
                     </a>
                 </div>

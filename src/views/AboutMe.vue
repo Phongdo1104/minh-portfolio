@@ -1,17 +1,22 @@
 <script lang="ts" setup>
+import { ref } from 'vue';
 import '../assets/about-me.css'
 import TestimonialBlock from '../components/TestimonialBlock.vue'
 import FooterPage from '../components/FooterPage.vue'
 import ShowReelVideo from '../components/ShowReelVideo.vue';
 
-import { displayShowreelVideo } from './../utils/showreelVideo';
+const showReelVideo: any = ref(null);
+
+function playOnDisplay() {
+    if (showReelVideo.value) {
+        showReelVideo.value.playVideoOnStart();
+    }
+}
 </script>
 
 <template>
     <div>
-        <div id="show-reel-video-block">
-            <ShowReelVideo />
-        </div>
+        <ShowReelVideo ref="showReelVideo" />
         <div class="desk-angle-1" id="enter-animation">
             <div class="container" id="about-me">
                 <div class="row before-header">
@@ -76,7 +81,7 @@ import { displayShowreelVideo } from './../utils/showreelVideo';
                             documentaries, K.O.P., and TVCs.</div>
                     </div>
                     <div class="col-md show-reel-display-btn">
-                        <span href="#" id="showreel-btn-svg" @click="displayShowreelVideo('showreel-container')">
+                        <span href="#" id="showreel-btn-svg" @click="playOnDisplay()">
                             <img class="show-reel img-fluid" src="/svg/Vector.svg" alt="showReelButton">
                         </span>
                     </div>

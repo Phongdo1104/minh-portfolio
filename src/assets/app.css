@@ -34,7 +34,7 @@ img {
 }
 
 #enter-animation {
-  transition: padding-top 0.3s ease;
+  transition: padding-top 0.8s ease-in-out;
   padding-top: 10rem;
 }
 
@@ -89,7 +89,7 @@ img {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .fade-enter-from,
@@ -105,13 +105,13 @@ img {
 .showreel-view {
   display: block;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .showreel-hide {
   display: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .video-js .vjs-control-bar {
@@ -125,19 +125,22 @@ img {
   z-index: 4;
   cursor: pointer;
   width: 6rem;
-}
-
-.menu-burger-in {
-  display: block;
-  opacity: 1;
-  transition: opacity 0.25s ease;
-}
-
-.menu-burger-out {
+  height: 6rem;
+  background: url('/svg/menu-btn.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease-in-out;
   display: none;
   opacity: 0;
-  transition: opacity 0.25s ease;
   pointer-events: none;
+}
+
+.menu-burger:hover {
+  background: url('/svg/menu-btn-hover.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Animation */
@@ -187,6 +190,16 @@ img {
   font-family: 'oswald_regular' !important;
   color: #e15735 !important;
   pointer-events: none;
+  text-decoration: underline !important;
+  text-underline-offset: 6px;
+}
+
+.highlight_btn_white:hover {
+  color: #e15735 !important;
+  background: #ffff !important;
+  transition:
+    color 0.3s ease-in-out,
+    background 0.3s ease-in-out;
 }
 
 @media (max-width: 1376px) {

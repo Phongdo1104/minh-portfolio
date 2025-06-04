@@ -29,8 +29,9 @@ function closeSideBar() {
     if (!menuBurger) {
         return;
     }
-    menuBurger.classList.remove('menu-burger-in');
-    menuBurger.classList.add('menu-burger-out');
+    menuBurger.style.opacity = "0";
+    menuBurger.style.display = "none";
+    menuBurger.style.pointerEvents = "none";
 }
 
 export { scrollToView, scrollTop, scrollTopSmooth, closeSideBar };

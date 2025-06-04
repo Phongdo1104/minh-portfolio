@@ -41,20 +41,13 @@ function scrollToView(refName: string, closePopupFlg: boolean = false) {
     </div>
     <div class="container-sm d-none d-md-block">
         <div class="header-router">
-            <div class="col-auto row align-self-center">
-                <div class="d-none d-md-block" id="header-links">
-                    <RouterLink to="/" class="nav-link-txt text-decoration-none fw-bold text-center" id="home-page">
-                        Home
-                    </RouterLink>
-                    <RouterLink to="/about-me" class="nav-link-txt text-decoration-none ms-5 fw-bold" id="about-me">
-                        About Me
-                    </RouterLink>
-                    <RouterLink to="/my-projects" class="nav-link-txt text-decoration-none ms-5 fw-bold"
-                        id="my-projects">
-                        My Projects
-                    </RouterLink>
-                    <span class="text-decoration-none ms-5 nav-link-txt d-inline-block">
-                        <button type="button" id="get-in-touch" @click="scrollToView('footer-block')">Get In
+            <div class="col-auto align-self-center">
+                <div class="d-none d-md-flex" id="header-links">
+                    <RouterLink to="/" class="nav-link-txt fw-bold text-center site-active-btn" id="home-page-header">Home</RouterLink>
+                    <RouterLink to="/about-me" class="nav-link-txt ms-5 fw-bold site-active-btn" id="about-me-header">About Me</RouterLink>
+                    <RouterLink to="/my-projects" class="nav-link-txt ms-5 fw-bold site-active-btn" id="my-projects-header">My Projects</RouterLink>
+                    <span class="ms-5 nav-link-txt d-inline-block">
+                        <button class="highlight_btn_white" type="button" id="get-in-touch" @click="scrollToView('footer-block')">Get In
                             Touch</button>
                     </span>
                 </div>
