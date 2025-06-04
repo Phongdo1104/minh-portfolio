@@ -44,6 +44,7 @@
 }
 
 .pre-next {
+  display: inline-block;
   text-decoration: none;
   color: #000;
   font-size: 40px;
@@ -67,7 +68,12 @@
 
 .go-to-intro {
   cursor: pointer;
-  display: flex;
+  display: inline-block;
+}
+
+.go-to-intro:hover {
+  filter: invert(39%) sepia(69%) saturate(595%) hue-rotate(334deg) brightness(95%) contrast(90%);
+  transition: filter 0.3s ease;
 }
 
 .img-wrapper {
@@ -106,6 +112,7 @@
 }
 
 .title-return-btn a {
+  display: inline-block;
   text-decoration: none;
   color: #fff;
 }
@@ -184,7 +191,7 @@
   width: 0;
   outline: none;
   -webkit-appearance: none;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-in-out;
   --height-thumb: 0;
 }
 
@@ -200,13 +207,35 @@
   padding-top: 0.5rem;
 }
 
+.pre-next::after,
+.title-return-btn a::after {
+  content: '';
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: #e15735;
+  transition: 300ms;
+}
+
+.pre-next:hover::after,
+.title-return-btn a:hover::after {
+  width: 100%;
+}
+
+.pre-next:hover,
+.title-return-btn a:hover {
+  color: #e15735 !important;
+  opacity: 100%;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
 input.volume-scroll[type='range']::-webkit-slider-thumb {
   width: 6px;
   -webkit-appearance: none;
   height: var(--height-thumb);
   background: #fff;
   border-radius: 2px;
-  transition: height 0.3s ease;
+  transition: height 0.3s ease-in-out;
 }
 
 @media (min-width: 575px) {

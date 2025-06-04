@@ -4,6 +4,27 @@
   white-space: nowrap;
 }
 
+.sidebar-highlight-btn span::after {
+  content: '';
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: #e15735;
+  transition: 300ms;
+}
+
+.sidebar-highlight-btn span:hover::after {
+  width: 100%;
+}
+
+.sidebar-highlight-btn span:hover {
+  color: #e15735 !important;
+  opacity: 100%;
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
 .sidenav {
   height: 100%;
   width: 0;
@@ -21,16 +42,16 @@
 }
 
 .sidenav a {
-  padding: 8px;
   text-decoration: none;
+}
+
+.sidenav span {
+  padding: 8px;
   color: #000000;
   transition: 0.3s;
   font-family: 'oswald_regular';
   text-align: center;
-}
-
-.sidenav a:hover {
-  color: #000000;
+  display: inline-block;
 }
 
 .sidenav .contact-me {
@@ -39,7 +60,7 @@
   font-family: 'oswald_regular';
   font-size: 20px;
   cursor: pointer;
-  display: flex;
+  display: inline-block;
   flex-direction: column;
 }
 
@@ -51,6 +72,15 @@
   font-size: 36px;
   color: #000000;
   cursor: pointer;
+}
+
+.sidenav .close-btn:hover {
+  color: #e15735;
+  transition: color 0.3s ease-in-out;
+}
+
+.router-link-exact-active span {
+  color: #e15735 !important;
 }
 
 .display-sidebar {

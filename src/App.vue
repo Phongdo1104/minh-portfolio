@@ -5,7 +5,7 @@ import MenuBurger from './views/MenuBurger.vue';
 import SidebarMenu from './components/SidebarBlock.vue';
 
 import { gsap } from "gsap";
-import { reactive, watch, ref } from 'vue';
+import { reactive, watch, ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { scrollToView, scrollTop, closeSideBar } from './utils/utils';
 import { useScrollInto } from './stores/scrollInto';
@@ -18,8 +18,10 @@ const route = useRoute();
 
 const displayShowreel = ref(false);
 
+let currentRouteName = String(route.name);
+
 watch(() => route.name, () => {
-    let currentRouteName = route.name;
+    currentRouteName = String(route.name);
     const display = ['home', 'about-me'].includes(String(currentRouteName));
     displayShowreel.value = display;
 });

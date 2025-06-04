@@ -38,6 +38,10 @@
   font-size: 25px;
 }
 
+.swiper-pagination-bullet-active {
+  background: #e15735 !important;
+}
+
 swiper-container {
   object-fit: cover;
   object-position: center;

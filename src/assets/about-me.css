@@ -145,7 +145,7 @@
 #showreel-btn-svg:hover {
   opacity: 1;
   filter: invert(39%) sepia(69%) saturate(595%) hue-rotate(334deg) brightness(95%) contrast(90%);
-  transition: filter 0.2s ease;
+  transition: filter 0.2s ease-in-out;
 }
 
 @media (max-width: 1400px) {
